@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
-// A static site: `next build` writes plain HTML, CSS and JS to out/. Hosted on Cloudflare Pages
-// (build command `npm run build`, output directory `out`); public/_headers and functions/ are
-// Cloudflare's, and any other static host can serve out/ as it is.
+// A static site: `next build` writes plain HTML, CSS and JS to out/. Served by a Cloudflare Worker as
+// static assets (wrangler.toml, worker/index.js, public/_headers); any other static host can serve
+// out/ as it is.
 const config: NextConfig = {
   output: "export",
   trailingSlash: true,

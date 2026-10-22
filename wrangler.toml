@@ -1,5 +1,18 @@
-# For deploying from the command line (npm run deploy). With Cloudflare's Git integration instead,
-# set the build command to `npm run build` and the output directory to `out` in the dashboard.
+# A Cloudflare Worker serving the static build (out/) as static assets, with a small script for "/".
+# Workers Builds (the dashboard's Git integration): build command `npm run build`, deploy command
+# `npx wrangler deploy`. From a terminal: `npm run deploy`.
+#
+# `name` must match the Worker's name in the Cloudflare dashboard.
 name = "murtahil"
-pages_build_output_dir = "out"
+main = "worker/index.js"
 compatibility_date = "2026-10-01"
+
+[assets]
+directory = "./out"
+binding = "ASSETS"
+# /en/ serves en/index.html; /en redirects to /en/.
+html_handling = "auto-trailing-slash"
+# Unknown paths get out/404.html (app/global-not-found.tsx) with a 404 status.
+not_found_handling = "404-page"
+# The script runs first only for "/" (the language redirect); every other request is a static file.
+run_worker_first = ["/"]

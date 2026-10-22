@@ -3,7 +3,7 @@ import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 
 // The site has two root layouts (/ and /[locale]/), so the 404 for unknown paths is its own page:
-// exported as out/404.html, which Cloudflare Pages serves for anything that doesn't exist.
+// exported as out/404.html, which the Worker's static assets serve for anything that doesn't exist.
 // Bilingual, because an unknown path says nothing about the visitor's language.
 
 const plex = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-plex", display: "swap" });

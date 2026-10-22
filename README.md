@@ -11,30 +11,37 @@ Sans, Plex Sans Arabic and Plex Mono; Forest, Route Green and Harbor.
 npm install
 npm run dev      # http://localhost:3000
 npm run build    # writes the static site to out/
-npm run preview  # out/ under Cloudflare's local Pages runtime, Functions included
+npm run preview  # out/ through the Worker on Cloudflare's local runtime (after a build)
 ```
 
-## Hosting: Cloudflare Pages
+## Hosting: a Cloudflare Worker
 
-With the Git integration, create a Pages project on this repository with:
+The site is a Cloudflare Worker with static assets (Cloudflare's recommended setup for new sites,
+and what the dashboard's "Workers & Pages > Create" makes from a Git repository). In the Worker's
+Settings > Build:
 
 | setting | value |
 |---|---|
-| Framework preset | None |
 | Build command | `npm run build` |
-| Build output directory | `out` |
-| Node version | from `.node-version` (22) |
+| Deploy command | `npx wrangler deploy` |
+| Root directory | `/` |
 
-Or deploy from the command line with `npm run deploy` (`wrangler.toml` names the project and the
-output directory). Cloudflare-specific files:
+The Worker's name in the dashboard must match `name` in `wrangler.toml` (`murtahil`). Node comes
+from `.node-version` (22). From a terminal, `npm run deploy` builds and deploys with your own login.
 
-- `functions/index.js`: `/` redirects to `/ar/` or `/en/` by the browser's Accept-Language, at the
-  edge. It is the only Function, so every other path is static. (On another host, `out/index.html`
-  does the same in the browser.)
+Don't use `wrangler pages deploy` in a Workers build: the token Workers Builds creates can deploy
+Workers but not Pages projects, and the API answers "Authentication error [code: 10000]".
+
+What Cloudflare runs:
+
+- `wrangler.toml` serves `out/` as static assets: `/en/` is `en/index.html`, `/en` redirects to
+  `/en/`, and unknown paths get `out/404.html` (from `app/global-not-found.tsx`) with a 404 status.
+- `worker/index.js` runs for `/` only and redirects to `/ar/`, `/en/` or `/tr/` by the browser's
+  Accept-Language. (On another host, `out/index.html` does the same in the browser.)
 - `public/_headers`: security headers, and caching (`/_next/static/` forever; images a day).
-- `out/404.html` (from `app/global-not-found.tsx`): Pages serves it for any unknown path.
 
-Add the custom domain in the Pages project; `content/site.ts` expects `https://murtahil.net`.
+Add the custom domain under the Worker's Settings > Domains & Routes; `content/site.ts` expects
+`https://murtahil.net`.
 
 ## Before launch, and on launch day
 
