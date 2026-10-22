@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="lm is-shown" viewBox="-24 -6 368 102" preserveAspectRatio="xMidYMax meet" overflow="visible" role="img" aria-label="The Kingdom Centre, Al Faisaliah Tower, Masmak Fort and the Riyadh Metro" focusable="false"><style>svg{--lm-sky:#DDF1FA;--lm-far:#BFD8C7;--lm-stone:#E8D9BC;--lm-stone-2:#D6C3A0;--lm-green:#1F8A4C;--lm-gold:#D4A72C;--lm-glass:#7DB3D1;--lm-water:#2FB1E9;--lm-spray:#8FC2DC;--lm-white:#F7F4EC;--lm-glass-dark:#3F5A6E;--lm-metal:#D8CCB0;--lm-red:#C62B2B;--lm-cream:#F2E7C9;--lm-trees:#6FA35A;--lm-c1:#D93A2B;--lm-c2:#F28C28;--lm-c3:#2E4FB3;--lm-c4:#F3C534;--lm-c5:#3DA35A;--lm-wood:#7A4B2A;--lm-timber:#8A5A33;--lm-tower:#DCC0AA;--lm-tower-2:#C4A08A;--lm-tower-3:#F8F2EA;--lm-rib:#FBF6EF;--lm-glow:transparent;--lm-steel:#C5CBD0;--lm-steel-2:#A9B0B7;--lm-steel-hi:#E2E6E9;--lm-steel-edge:#8D959C;--lm-band:#43494F;--lm-led-1:#4FD6F2;--lm-led-2:#F25CB8;--lm-led-3:#9C6CF2;--lm-bic-glass:#26324C;--lm-bic-mark:rgba(255, 255, 255, 0.45);--lm-bfh:#1FA06C;--lm-bfh-2:#12784F;--lm-bfh-hi:#EFC65C;--lm-bfh-line:rgba(10, 80, 52, 0.55);--lm-bfh-led:#E6CF86;--lm-wtc:#E9ECEB;--lm-wtc-glass:#3F88C8;--lm-wtc-line:#9BB2C6;--lm-wtc-edge:#FBFCFB;--lm-fs:#DCC7A4;--lm-fs-2:#C3A882;--lm-fs-fin:#7E6644;--lm-fs-rib:#9A7F55;--lm-fs-glass:#3A3330;--lm-fs-hall:#EDE4D3;--lm-lights:transparent;--lm-glow-v:transparent;--lm-glow-w:transparent;--lm-yda:#8197AD;--lm-yda-2:#637790;--lm-yda-fin:rgba(234, 241, 247, 0.5);--lm-yda-lit:transparent;--lm-yda-led:#E9EEF2;--lm-ata:#F2F0EB;--lm-ata-2:#CCC8BF;--lm-ata-glass:#3D5064;--lm-ata-dome:#9CC0D9;--lm-ata-lattice:#F5F8FA;--lm-ata-led:rgba(255, 255, 255, 0.35);--lm-ata-screen:#41546A;--lm-koc:#F1ECE1;--lm-koc-2:#D9D0BE;--lm-koc-dome:#6D8496;--lm-clk:#E3D3B4;--lm-clk-2:#C9B793;--lm-roof:#B4583A;--lm-pyr:#E4C48C;--lm-pyr-2:#C49C5E;--lm-pyr-line:rgba(122, 88, 42, 0.32);--lm-sand:#EBD3A2;--lm-ctw:#DCC8A2;--lm-ctw-2:#BFA77F;--lm-ctw-hole:#5C4A35;--lm-ctw-glass:#3F5A6E;--lm-azh:#E6C78F;--lm-azh-2:#C9A468;--lm-azh-dome:#D6D1C6;--lm-azh-tile:#2F80A6;--lm-azh-red:#B9653F;--lm-brn:#DDB67C;--lm-brn-2:#BF975D;--lm-brn-3:#EED3A1;--lm-slate:#55636F;--lm-detail:rgba(74, 58, 36, 0.55);--lm-line:#8C7A5E;--lm-silhouette:#287A10}
+.lm { display: block; width: 100%; height: 100%; overflow: visible; color: var(--lm-silhouette); }
+.lm .lm-sky { fill: transparent; }
+.lm :where([class^="lm-"]:not(.lm-sky, .lm-wood, .lm-line)) { fill: currentColor; }
+.lm .lm-far { opacity: 0.45; }
+.lm .lm-water { opacity: 0.55; }
+.lm .lm-wood { fill: none; stroke: currentColor; stroke-width: 1.6; }
+.lm .lm-wood circle:last-child { fill: currentColor; }
+.lm .lm-line { fill: none; stroke: currentColor; stroke-width: 0.9; }
+.lm .lm-line-fill { fill: currentColor; }
+.lm .lm-detail { opacity: 0; }
+.lm .lm-rib { fill: none; stroke: currentColor; stroke-width: 0.6; }
+.lm .lm-glow { opacity: 0; }
+.lm .lm-steel-edge { fill: none; stroke: currentColor; stroke-width: 0.5; }
+.lm .lm-band { fill: none; stroke: currentColor; opacity: 0; }
+.lm :is(.lm-bic-mark, .lm-bfh-line, .lm-bfh-led, .lm-wtc-line, .lm-wtc-edge) { fill: none; stroke: currentColor; opacity: 0; }
+.lm .lm-bfh-led, .lm .lm-wtc-edge { stroke-width: 0.6; }
+.lm :is(.lm-glow-v, .lm-glow-w, .lm-lights) { opacity: 0; }
+.lm :is(.lm-yda-fin, .lm-yda-lit, .lm-yda-led, .lm-ata-lattice, .lm-ata-led) { fill: none; stroke: currentColor; opacity: 0; }
+.lm .lm-pyr-line { fill: none; stroke: currentColor; opacity: 0; }
+.lm.is-shown .lm-sky { fill: var(--lm-sky); }
+.lm.is-shown .lm-far { fill: var(--lm-far); opacity: 1; }
+.lm.is-shown .lm-stone { fill: var(--lm-stone); }
+.lm.is-shown .lm-stone-2 { fill: var(--lm-stone-2); }
+.lm.is-shown .lm-green { fill: var(--lm-green); }
+.lm.is-shown .lm-gold { fill: var(--lm-gold); }
+.lm.is-shown .lm-glass { fill: var(--lm-glass); }
+.lm.is-shown .lm-water { fill: var(--lm-water); opacity: 1; }
+.lm.is-shown .lm-spray { fill: var(--lm-spray); }
+.lm.is-shown .lm-white { fill: var(--lm-white); }
+.lm.is-shown .lm-glass-dark { fill: var(--lm-glass-dark); }
+.lm.is-shown .lm-metal { fill: var(--lm-metal); }
+.lm.is-shown .lm-red { fill: var(--lm-red); }
+.lm.is-shown .lm-cream { fill: var(--lm-cream); }
+.lm.is-shown .lm-trees { fill: var(--lm-trees); }
+.lm.is-shown .lm-c1 { fill: var(--lm-c1); }
+.lm.is-shown .lm-c2 { fill: var(--lm-c2); }
+.lm.is-shown .lm-c3 { fill: var(--lm-c3); }
+.lm.is-shown .lm-c4 { fill: var(--lm-c4); }
+.lm.is-shown .lm-c5 { fill: var(--lm-c5); }
+.lm.is-shown .lm-slate { fill: var(--lm-slate); }
+.lm.is-shown .lm-timber { fill: var(--lm-timber); }
+.lm.is-shown .lm-tower { fill: var(--lm-tower); }
+.lm.is-shown .lm-tower-2 { fill: var(--lm-tower-2); }
+.lm.is-shown .lm-tower-3 { fill: var(--lm-tower-3); }
+.lm.is-shown .lm-rib { stroke: var(--lm-rib); }
+.lm.is-shown .lm-glow { fill: var(--lm-glow); opacity: 1; }
+.lm.is-shown .lm-steel { fill: var(--lm-steel); }
+.lm.is-shown .lm-steel-2 { fill: var(--lm-steel-2); }
+.lm.is-shown .lm-steel-hi { fill: var(--lm-steel-hi); }
+.lm.is-shown .lm-steel-edge { stroke: var(--lm-steel-edge); }
+.lm.is-shown .lm-band { stroke: var(--lm-band); opacity: 1; }
+.lm.is-shown .lm-led-1 { fill: var(--lm-led-1); }
+.lm.is-shown .lm-led-2 { fill: var(--lm-led-2); }
+.lm.is-shown .lm-led-3 { fill: var(--lm-led-3); }
+.lm.is-shown .lm-bic-glass { fill: var(--lm-bic-glass); }
+.lm.is-shown .lm-bic-mark { stroke: var(--lm-bic-mark); opacity: 1; }
+.lm.is-shown .lm-bfh { fill: var(--lm-bfh); }
+.lm.is-shown .lm-bfh-2 { fill: var(--lm-bfh-2); }
+.lm.is-shown .lm-bfh-hi { fill: var(--lm-bfh-hi); }
+.lm.is-shown .lm-bfh-line { stroke: var(--lm-bfh-line); opacity: 1; }
+.lm.is-shown .lm-bfh-led { stroke: var(--lm-bfh-led); opacity: 1; }
+.lm.is-shown .lm-wtc { fill: var(--lm-wtc); }
+.lm.is-shown .lm-wtc-glass { fill: var(--lm-wtc-glass); }
+.lm.is-shown .lm-wtc-line { stroke: var(--lm-wtc-line); opacity: 1; }
+.lm.is-shown .lm-wtc-edge { stroke: var(--lm-wtc-edge); opacity: 1; }
+.lm.is-shown .lm-fs { fill: var(--lm-fs); }
+.lm.is-shown .lm-fs-2 { fill: var(--lm-fs-2); }
+.lm.is-shown .lm-fs-fin { fill: var(--lm-fs-fin); }
+.lm.is-shown .lm-fs-rib { fill: var(--lm-fs-rib); }
+.lm.is-shown .lm-fs-glass { fill: var(--lm-fs-glass); }
+.lm.is-shown .lm-fs-hall { fill: var(--lm-fs-hall); }
+.lm.is-shown .lm-lights { fill: var(--lm-lights); opacity: 1; }
+.lm.is-shown .lm-glow-v { fill: var(--lm-glow-v); opacity: 1; }
+.lm.is-shown .lm-glow-w { fill: var(--lm-glow-w); opacity: 1; }
+.lm.is-shown .lm-yda { fill: var(--lm-yda); }
+.lm.is-shown .lm-yda-2 { fill: var(--lm-yda-2); }
+.lm.is-shown .lm-yda-fin { stroke: var(--lm-yda-fin); opacity: 1; }
+.lm.is-shown .lm-yda-lit { stroke: var(--lm-yda-lit); opacity: 1; }
+.lm.is-shown .lm-yda-led { stroke: var(--lm-yda-led); opacity: 1; }
+.lm.is-shown .lm-ata { fill: var(--lm-ata); }
+.lm.is-shown .lm-ata-2 { fill: var(--lm-ata-2); }
+.lm.is-shown .lm-ata-glass { fill: var(--lm-ata-glass); }
+.lm.is-shown .lm-ata-dome { fill: var(--lm-ata-dome); }
+.lm.is-shown .lm-ata-lattice { stroke: var(--lm-ata-lattice); opacity: 1; }
+.lm.is-shown .lm-ata-led { stroke: var(--lm-ata-led); opacity: 1; }
+.lm.is-shown .lm-ata-screen { fill: var(--lm-ata-screen); }
+.lm.is-shown .lm-koc { fill: var(--lm-koc); }
+.lm.is-shown .lm-koc-2 { fill: var(--lm-koc-2); }
+.lm.is-shown .lm-koc-dome { fill: var(--lm-koc-dome); }
+.lm.is-shown .lm-clk { fill: var(--lm-clk); }
+.lm.is-shown .lm-clk-2 { fill: var(--lm-clk-2); }
+.lm.is-shown .lm-roof { fill: var(--lm-roof); }
+.lm.is-shown .lm-pyr { fill: var(--lm-pyr); }
+.lm.is-shown .lm-pyr-2 { fill: var(--lm-pyr-2); }
+.lm.is-shown .lm-pyr-line { stroke: var(--lm-pyr-line); opacity: 1; }
+.lm.is-shown .lm-sand { fill: var(--lm-sand); }
+.lm.is-shown .lm-ctw { fill: var(--lm-ctw); }
+.lm.is-shown .lm-ctw-2 { fill: var(--lm-ctw-2); }
+.lm.is-shown .lm-ctw-hole { fill: var(--lm-ctw-hole); }
+.lm.is-shown .lm-ctw-glass { fill: var(--lm-ctw-glass); }
+.lm.is-shown .lm-azh { fill: var(--lm-azh); }
+.lm.is-shown .lm-azh-2 { fill: var(--lm-azh-2); }
+.lm.is-shown .lm-azh-dome { fill: var(--lm-azh-dome); }
+.lm.is-shown .lm-azh-tile { fill: var(--lm-azh-tile); }
+.lm.is-shown .lm-azh-red { fill: var(--lm-azh-red); }
+.lm.is-shown .lm-brn { fill: var(--lm-brn); }
+.lm.is-shown .lm-brn-2 { fill: var(--lm-brn-2); }
+.lm.is-shown .lm-brn-3 { fill: var(--lm-brn-3); }
+.lm.is-shown .lm-wood { stroke: var(--lm-wood); }
+.lm.is-shown .lm-wood circle:last-child { fill: var(--lm-wood); }
+.lm.is-shown .lm-detail { fill: var(--lm-detail); opacity: 1; }
+.lm.is-shown .lm-line { stroke: var(--lm-line); }
+.lm.is-shown .lm-line-fill { fill: #8A8F95; }
+.lm.is-shown .lm-detail g, .lm.is-shown g.lm-detail > * { fill: var(--lm-detail); }</style><rect class="lm-sky" x="-300" y="-200" width="920" height="296"/><path class="lm-far" d="M-300 96V74H-200V66H-180V72H-120V62H-100V70H-40V64H-20V70H10V60H24V68H60V72H100V66H112V96ZM230 96V64H238V56H246V70H300V62H316V68H620V96Z"/><rect class="lm-stone-2" x="-300" y="92" width="920" height="4"/><rect class="lm-stone-2" x="112" y="82" width="78" height="10"/><rect class="lm-detail" x="116" y="85" width="4.6" height="4"/><rect class="lm-detail" x="123.2" y="85" width="4.6" height="4"/><rect class="lm-detail" x="130.4" y="85" width="4.6" height="4"/><rect class="lm-detail" x="137.6" y="85" width="4.6" height="4"/><rect class="lm-detail" x="144.8" y="85" width="4.6" height="4"/><rect class="lm-detail" x="152" y="85" width="4.6" height="4"/><rect class="lm-detail" x="159.2" y="85" width="4.6" height="4"/><rect class="lm-detail" x="166.4" y="85" width="4.6" height="4"/><rect class="lm-detail" x="173.6" y="85" width="4.6" height="4"/><rect class="lm-detail" x="180.8" y="85" width="4.6" height="4"/><path class="lm-glass-dark" fill-rule="evenodd" d="M131.5 92L133 -3H167L168.5 92ZM137.4 2.2Q150 4.4 162.6 2.2Q150 72 137.4 2.2Z"/><path class="lm-line" d="M137.4 2.2Q150 72 162.6 2.2"/><rect class="lm-detail" x="135" y="44" width="2.2" height="1.2"/><rect class="lm-detail" x="140" y="44" width="2.2" height="1.2"/><rect class="lm-detail" x="145" y="44" width="2.2" height="1.2"/><rect class="lm-detail" x="150" y="44" width="2.2" height="1.2"/><rect class="lm-detail" x="155" y="44" width="2.2" height="1.2"/><rect class="lm-detail" x="160" y="44" width="2.2" height="1.2"/><rect class="lm-detail" x="165" y="44" width="2.2" height="1.2"/><rect class="lm-detail" x="135" y="50.8" width="2.2" height="1.2"/><rect class="lm-detail" x="140" y="50.8" width="2.2" height="1.2"/><rect class="lm-detail" x="145" y="50.8" width="2.2" height="1.2"/><rect class="lm-detail" x="150" y="50.8" width="2.2" height="1.2"/><rect class="lm-detail" x="155" y="50.8" width="2.2" height="1.2"/><rect class="lm-detail" x="160" y="50.8" width="2.2" height="1.2"/><rect class="lm-detail" x="165" y="50.8" width="2.2" height="1.2"/><rect class="lm-detail" x="135" y="57.6" width="2.2" height="1.2"/><rect class="lm-detail" x="140" y="57.6" width="2.2" height="1.2"/><rect class="lm-detail" x="145" y="57.6" width="2.2" height="1.2"/><rect class="lm-detail" x="150" y="57.6" width="2.2" height="1.2"/><rect class="lm-detail" x="155" y="57.6" width="2.2" height="1.2"/><rect class="lm-detail" x="160" y="57.6" width="2.2" height="1.2"/><rect class="lm-detail" x="165" y="57.6" width="2.2" height="1.2"/><rect class="lm-detail" x="135" y="64.4" width="2.2" height="1.2"/><rect class="lm-detail" x="140" y="64.4" width="2.2" height="1.2"/><rect class="lm-detail" x="145" y="64.4" width="2.2" height="1.2"/><rect class="lm-detail" x="150" y="64.4" width="2.2" height="1.2"/><rect class="lm-detail" x="155" y="64.4" width="2.2" height="1.2"/><rect class="lm-detail" x="160" y="64.4" width="2.2" height="1.2"/><rect class="lm-detail" x="165" y="64.4" width="2.2" height="1.2"/><rect class="lm-detail" x="135" y="71.2" width="2.2" height="1.2"/><rect class="lm-detail" x="140" y="71.2" width="2.2" height="1.2"/><rect class="lm-detail" x="145" y="71.2" width="2.2" height="1.2"/><rect class="lm-detail" x="150" y="71.2" width="2.2" height="1.2"/><rect class="lm-detail" x="155" y="71.2" width="2.2" height="1.2"/><rect class="lm-detail" x="160" y="71.2" width="2.2" height="1.2"/><rect class="lm-detail" x="165" y="71.2" width="2.2" height="1.2"/><rect class="lm-detail" x="135" y="78" width="2.2" height="1.2"/><rect class="lm-detail" x="140" y="78" width="2.2" height="1.2"/><rect class="lm-detail" x="145" y="78" width="2.2" height="1.2"/><rect class="lm-detail" x="150" y="78" width="2.2" height="1.2"/><rect class="lm-detail" x="155" y="78" width="2.2" height="1.2"/><rect class="lm-detail" x="160" y="78" width="2.2" height="1.2"/><rect class="lm-detail" x="165" y="78" width="2.2" height="1.2"/><path class="lm-metal" d="M198 92L208.3 22H215.7L226 92Z"/><g class="lm-line"><path d="M207.4 28H216.6M206.3 36H217.7M205.2 44H218.8M204 52H220M202.9 60H221.1M201.8 68H222.2M200.6 76H223.4M199.5 84H224.5"/><path d="M206.4 40L212 44L217.6 40M203.2 62L212 66L220.8 62"/></g><rect class="lm-metal" x="207.4" y="20.6" width="9.2" height="2"/><circle class="lm-gold" cx="212" cy="16.4" r="4.2"/><path class="lm-metal" d="M208.5 12.6L212 -5L215.5 12.6H214.3L212 1.6L209.7 12.6Z"/><path class="lm-line" d="M209.4 9H214.6M210.2 5H213.8M211 1.2H213"/><path class="lm-stone" d="M244 92V64H250V58H258V64H262V72H292V64H296V58H304V64H310V92Z"/><g class="lm-detail"><rect x="252" y="68" width="2.4" height="5"/><rect x="298" y="68" width="2.4" height="5"/><path d="M271 92V82a6 6 0 0 1 12 0V92Z"/><rect x="266" y="76" width="2" height="3"/><rect x="286" y="76" width="2" height="3"/></g><rect class="lm-stone-2" x="-300" y="80" width="412" height="3"/><rect class="lm-stone-2" x="12" y="83" width="4" height="9"/><rect class="lm-stone-2" x="70" y="83" width="4" height="9"/><path class="lm-green" d="M4 80V72.5Q4 69 9 69H80Q87 69 89 74.5V80Z"/><g class="lm-detail"><rect x="12" y="71.5" width="6" height="4"/><rect x="21.6" y="71.5" width="6" height="4"/><rect x="31.2" y="71.5" width="6" height="4"/><rect x="40.8" y="71.5" width="6" height="4"/><rect x="50.4" y="71.5" width="6" height="4"/><rect x="60" y="71.5" width="6" height="4"/><rect x="69.6" y="71.5" width="6" height="4"/></g></svg>

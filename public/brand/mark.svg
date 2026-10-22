@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Murtahil mark, vector master. The Kingdom Tower (Harbor, rounded top) with the
+  metro passing through its opening: Route Green, Forest and Signal rings, the
+  train's Harbor face, Sky glass with its Signal-blue highlight, and the Ice lamp.
+
+  Traced from the identity's mark.png (409 x 512) in that pixel space, so 1 unit
+  is 1 px of the original. The opening is symmetric about x = 201.3, which is
+  3.2 units left of the tower's centre, exactly as in the source artwork; the
+  phone icon centres the opening, not the tower.
+
+  Rasterised with rsvg-convert at 409 x 512 and compared with mark.png: mean
+  absolute channel error 0.27 / 255, mean RGB distance 0.53; differences are
+  confined to anti-aliased edge pixels.
+
+  Rules (DESIGN.md): the tower always appears in full with its opening; never
+  recolour it, crop the opening, or add effects, outlines or shadows.
+  Exports: Android brand_tower*.xml VectorDrawables, iOS LaunchMark and
+  LaunchTower image sets and MurtahilMarkShape.swift (see export_mark.py).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="409" height="512" viewBox="0 0 409 512">
+  <path id="tower" fill="#2B5289" d="M0 512 L0 57.94 C0 16.48 13.43 0 61.59 0 L347.41 0 C395.57 0 409 16.48 409 57.94 L409 512 Z"/>
+  <path id="route" fill="#59C52B" d="M201.3 45.46 C217.07 45.46 232.37 46.67 248.2 49.74 C269.96 53.96 295.24 62.75 311.5 75.12 C344 99.85 334.39 129.13 326.3 162.14 C317.25 199.07 305.22 236.89 290.04 273.26 C273.65 312.5 240.92 373.37 201.3 373.37 C161.68 373.37 128.95 312.5 112.56 273.26 C97.38 236.89 85.35 199.07 76.3 162.14 C68.21 129.13 58.6 99.85 91.1 75.12 C107.36 62.75 132.64 53.96 154.4 49.74 C170.23 46.67 185.53 45.46 201.3 45.46 Z"/>
+  <path id="forest" fill="#063400" d="M201.3 69.19 C214.02 69.19 226.68 70.36 239.33 72.51 C257.5 75.59 277.59 81.88 292.71 90.86 C323.67 109.24 308.74 134.8 302.45 159.66 C294.84 189.78 284.07 220.63 271.32 249.93 C257.38 281.94 230.51 334.56 201.3 334.56 C172.09 334.56 145.22 281.94 131.28 249.93 C118.53 220.63 107.76 189.78 100.15 159.66 C93.86 134.8 78.93 109.24 109.89 90.86 C125.01 81.88 145.1 75.59 163.27 72.51 C175.92 70.36 188.58 69.19 201.3 69.19 Z"/>
+  <path id="signal" fill="#0092E3" d="M201.3 92.91 C210.68 92.91 220.01 93.14 229.55 93.98 C242.74 95.15 259.32 96.93 268.61 104.16 C285.61 117.39 284.13 138.11 280.39 157.07 C275.97 179.4 269.41 202.68 259.87 223.78 C248.76 248.4 229.15 277.96 201.3 277.96 C173.45 277.96 153.84 248.4 142.73 223.78 C133.19 202.68 126.63 179.4 122.21 157.07 C118.47 138.11 116.99 117.39 133.99 104.16 C143.28 96.93 159.86 95.15 173.05 93.98 C182.59 93.14 191.92 92.91 201.3 92.91 Z"/>
+  <path id="opening" fill="#2B5289" d="M201.3 92.91 C210.68 92.91 220.01 93.14 229.55 93.98 C239.08 94.83 250.38 95.99 259.43 99.3 C259.43 128.95 258.72 149.07 251.89 179.82 C245.68 207.72 228.01 256.06 201.3 256.06 C174.59 256.06 156.92 207.72 150.71 179.82 C143.88 149.07 143.17 128.95 143.17 99.3 C152.22 95.99 163.52 94.83 173.05 93.98 C182.59 93.14 191.92 92.91 201.3 92.91 Z"/>
+  <path id="glass" fill="#2FB1E9" d="M201.3 134.03 C222.01 134.03 237.56 135.67 252.31 140.15 C249.22 159.6 245.14 178.74 240.38 197.95 C238.1 207.15 235.95 213.87 222.66 214.75 C215.7 215.22 208.42 215.04 201.3 215.04 C194.18 215.04 186.9 215.22 179.94 214.75 C166.65 213.87 164.5 207.15 162.22 197.95 C157.46 178.74 153.38 159.6 150.29 140.15 C165.04 135.67 180.59 134.03 201.3 134.03 Z"/>
+  <path id="highlight" fill="#1E9ED4" d="M251.26 146.5 C248.32 163.77 244.62 180.83 240.38 197.95 C238.1 207.15 235.95 213.87 222.66 214.75 C215.7 215.22 208.42 215.04 201.3 215.04 C194.18 215.04 186.9 215.22 179.94 214.75 C170.81 214.14 166.93 210.78 164.66 205.75 C181.82 198.02 199.52 197.25 216.5 186.38 C229.63 177.98 247.03 162.43 251.26 146.5 Z"/>
+  <path id="lamp" fill="#F0FEFF" d="M201.3 226.1 L210.5 235.3 L201.3 244.5 L192.1 235.3 Z"/>
+</svg>

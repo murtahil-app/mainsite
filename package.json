@@ -1,0 +1,31 @@
+{
+  "name": "murtahil-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The Murtahil organisation website: a static, bilingual (English and Arabic) Next.js site, hosted on Cloudflare Pages.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "npx wrangler pages dev out",
+    "deploy": "next build && npx wrangler pages deploy out",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "2.1.10",
+    "motion": "13.5.1",
+    "next": "16.4.2",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "24.19.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=20.9"
+  }
+}

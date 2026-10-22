@@ -1,0 +1,5 @@
+# For deploying from the command line (npm run deploy). With Cloudflare's Git integration instead,
+# set the build command to `npm run build` and the output directory to `out` in the dashboard.
+name = "murtahil"
+pages_build_output_dir = "out"
+compatibility_date = "2026-10-01"

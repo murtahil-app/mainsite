@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+/* The theme is an attribute on <html>, set before first paint by the script in the layout:
+   the visitor's saved choice, else the system setting. `dark:` follows it. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ------------------------------------------------------------------ tokens
+   From the Murtahil identity (Colour board). Light is the default; dark is derived from Forest.
+   Route Green fills the primary action and the live route; blues carry transit information;
+   neutrals carry everything else. Alert is the only warm colour. */
+:root {
+  color-scheme: light;
+  --forest: #063400;
+  --route: #59c52b;
+  --route-deep: #287a10;
+  --harbor: #2b5289;
+  --signal: #0092e3;
+  --signal-deep: #0a6fb0;
+  --sky: #2fb1e9;
+  --ice: #f0feff;
+
+  --canvas: #f4f7f4;
+  --surface: #ffffff;
+  --surface-2: #ebf1eb;
+  --ink: #0f1a12;
+  --ink-2: #4a5a4e;
+  --ink-3: #5f6d63; /* the identity's #7A877D, darkened to pass AA for small text on canvas */
+  --line: rgb(15 26 18 / 0.09);
+  --line-2: rgb(15 26 18 / 0.16);
+  --alert: #b3462e;
+
+  /* Roles */
+  --accent-text: var(--route-deep); /* green as text or icon */
+  --link: var(--signal-deep);
+  --heading-tint: var(--harbor);
+  --stage: #063400; /* the brand panel behind product shots, the same in both themes */
+  --stage-ring: rgb(255 255 255 / 0.06);
+  --shadow-tint: 6 52 0;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: #071f08;
+  --surface: #0d2e0f;
+  --surface-2: #12391a;
+  --ink: #eef5ee;
+  --ink-2: #a9bbac;
+  --ink-3: #8fa293;
+  --line: rgb(255 255 255 / 0.09);
+  --line-2: rgb(255 255 255 / 0.16);
+  --alert: #d9603f;
+
+  --accent-text: var(--route);
+  --link: var(--sky); /* Signal falls under 4.5:1 on dark surfaces; Sky passes */
+  --heading-tint: var(--ink);
+  --stage: #0a2a0c;
+  --stage-ring: rgb(255 255 255 / 0.08);
+  --shadow-tint: 0 0 0;
+}
+
+@theme inline {
+  --color-forest: var(--forest);
+  --color-route: var(--route);
+  --color-route-deep: var(--route-deep);
+  --color-harbor: var(--harbor);
+  --color-signal: var(--signal);
+  --color-signal-deep: var(--signal-deep);
+  --color-sky: var(--sky);
+  --color-ice: var(--ice);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-alert: var(--alert);
+  --color-accent-text: var(--accent-text);
+  --color-link: var(--link);
+  --color-heading-tint: var(--heading-tint);
+  --color-stage: var(--stage);
+
+  /* IBM Plex Sans and Plex Sans Arabic were drawn as one family; Plex Mono carries every number
+     a traveller acts on. Arabic pages put the Arabic face first (see :lang(ar) below). */
+  --font-sans: var(--font-plex), var(--font-plex-ar), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-arabic: var(--font-plex-ar), var(--font-plex), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ------------------------------------------------------------------ base */
+html {
+  background: var(--canvas);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  text-wrap: pretty;
+  min-height: 100dvh;
+}
+:lang(ar) body,
+:lang(ar) {
+  font-family: var(--font-arabic);
+}
+/* Arabic gets 12% more leading and is never tracked (Typography board). */
+:lang(ar) :where(p, li, dd, summary) {
+  line-height: 1.85;
+}
+:lang(ar) :where(h1, h2, h3) {
+  letter-spacing: 0 !important;
+}
+
+/* Anchored sections land below the sticky header. */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--route) 35%, transparent);
+}
+
+/* Times, platforms and line codes: tabular so they never jitter. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------------------------------------------ theme-specific images
+   Screenshots and landmark scenes come in a light and a dark version; only the one matching the
+   current theme is displayed (a hidden lazy image is never downloaded). */
+:root:not([data-theme="dark"]) .only-dark,
+:root[data-theme="dark"] .only-light {
+  display: none !important;
+}
+
+/* ------------------------------------------------------------------ hero entrance
+   CSS rather than JS so the headline paints at once and the motion never waits for hydration. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--rise, 18px));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 0.9s var(--ease) both;
+}
+
+/* The closing skyline: two copies of the strip, moved by one copy's width. */
+@keyframes skyline {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.skyline {
+  animation: skyline 110s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .skyline {
+    animation: none !important;
+  }
+}
+
+html[data-theme-switching] *,
+html[data-theme-switching] *::before,
+html[data-theme-switching] *::after {
+  transition: none !important;
+}
+
+/* Icons that point along the reading direction flip in Arabic. */
+:root[dir="rtl"] .flip-rtl {
+  transform: scaleX(-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

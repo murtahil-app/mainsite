@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="lm is-shown" viewBox="-24 -6 368 102" preserveAspectRatio="xMidYMax meet" overflow="visible" role="img" aria-label="King Fahd’s Fountain, the Abraj Al-Bait Clock Tower and Masjid an-Nabawi" focusable="false"><style>svg{--lm-sky:#DDF1FA;--lm-far:#BFD8C7;--lm-stone:#E8D9BC;--lm-stone-2:#D6C3A0;--lm-green:#1F8A4C;--lm-gold:#D4A72C;--lm-glass:#7DB3D1;--lm-water:#2FB1E9;--lm-spray:#8FC2DC;--lm-white:#F7F4EC;--lm-glass-dark:#3F5A6E;--lm-metal:#D8CCB0;--lm-red:#C62B2B;--lm-cream:#F2E7C9;--lm-trees:#6FA35A;--lm-c1:#D93A2B;--lm-c2:#F28C28;--lm-c3:#2E4FB3;--lm-c4:#F3C534;--lm-c5:#3DA35A;--lm-wood:#7A4B2A;--lm-timber:#8A5A33;--lm-tower:#DCC0AA;--lm-tower-2:#C4A08A;--lm-tower-3:#F8F2EA;--lm-rib:#FBF6EF;--lm-glow:transparent;--lm-steel:#C5CBD0;--lm-steel-2:#A9B0B7;--lm-steel-hi:#E2E6E9;--lm-steel-edge:#8D959C;--lm-band:#43494F;--lm-led-1:#4FD6F2;--lm-led-2:#F25CB8;--lm-led-3:#9C6CF2;--lm-bic-glass:#26324C;--lm-bic-mark:rgba(255, 255, 255, 0.45);--lm-bfh:#1FA06C;--lm-bfh-2:#12784F;--lm-bfh-hi:#EFC65C;--lm-bfh-line:rgba(10, 80, 52, 0.55);--lm-bfh-led:#E6CF86;--lm-wtc:#E9ECEB;--lm-wtc-glass:#3F88C8;--lm-wtc-line:#9BB2C6;--lm-wtc-edge:#FBFCFB;--lm-fs:#DCC7A4;--lm-fs-2:#C3A882;--lm-fs-fin:#7E6644;--lm-fs-rib:#9A7F55;--lm-fs-glass:#3A3330;--lm-fs-hall:#EDE4D3;--lm-lights:transparent;--lm-glow-v:transparent;--lm-glow-w:transparent;--lm-yda:#8197AD;--lm-yda-2:#637790;--lm-yda-fin:rgba(234, 241, 247, 0.5);--lm-yda-lit:transparent;--lm-yda-led:#E9EEF2;--lm-ata:#F2F0EB;--lm-ata-2:#CCC8BF;--lm-ata-glass:#3D5064;--lm-ata-dome:#9CC0D9;--lm-ata-lattice:#F5F8FA;--lm-ata-led:rgba(255, 255, 255, 0.35);--lm-ata-screen:#41546A;--lm-koc:#F1ECE1;--lm-koc-2:#D9D0BE;--lm-koc-dome:#6D8496;--lm-clk:#E3D3B4;--lm-clk-2:#C9B793;--lm-roof:#B4583A;--lm-pyr:#E4C48C;--lm-pyr-2:#C49C5E;--lm-pyr-line:rgba(122, 88, 42, 0.32);--lm-sand:#EBD3A2;--lm-ctw:#DCC8A2;--lm-ctw-2:#BFA77F;--lm-ctw-hole:#5C4A35;--lm-ctw-glass:#3F5A6E;--lm-azh:#E6C78F;--lm-azh-2:#C9A468;--lm-azh-dome:#D6D1C6;--lm-azh-tile:#2F80A6;--lm-azh-red:#B9653F;--lm-brn:#DDB67C;--lm-brn-2:#BF975D;--lm-brn-3:#EED3A1;--lm-slate:#55636F;--lm-detail:rgba(74, 58, 36, 0.55);--lm-line:#8C7A5E;--lm-silhouette:#287A10}
+.lm { display: block; width: 100%; height: 100%; overflow: visible; color: var(--lm-silhouette); }
+.lm .lm-sky { fill: transparent; }
+.lm :where([class^="lm-"]:not(.lm-sky, .lm-wood, .lm-line)) { fill: currentColor; }
+.lm .lm-far { opacity: 0.45; }
+.lm .lm-water { opacity: 0.55; }
+.lm .lm-wood { fill: none; stroke: currentColor; stroke-width: 1.6; }
+.lm .lm-wood circle:last-child { fill: currentColor; }
+.lm .lm-line { fill: none; stroke: currentColor; stroke-width: 0.9; }
+.lm .lm-line-fill { fill: currentColor; }
+.lm .lm-detail { opacity: 0; }
+.lm .lm-rib { fill: none; stroke: currentColor; stroke-width: 0.6; }
+.lm .lm-glow { opacity: 0; }
+.lm .lm-steel-edge { fill: none; stroke: currentColor; stroke-width: 0.5; }
+.lm .lm-band { fill: none; stroke: currentColor; opacity: 0; }
+.lm :is(.lm-bic-mark, .lm-bfh-line, .lm-bfh-led, .lm-wtc-line, .lm-wtc-edge) { fill: none; stroke: currentColor; opacity: 0; }
+.lm .lm-bfh-led, .lm .lm-wtc-edge { stroke-width: 0.6; }
+.lm :is(.lm-glow-v, .lm-glow-w, .lm-lights) { opacity: 0; }
+.lm :is(.lm-yda-fin, .lm-yda-lit, .lm-yda-led, .lm-ata-lattice, .lm-ata-led) { fill: none; stroke: currentColor; opacity: 0; }
+.lm .lm-pyr-line { fill: none; stroke: currentColor; opacity: 0; }
+.lm.is-shown .lm-sky { fill: var(--lm-sky); }
+.lm.is-shown .lm-far { fill: var(--lm-far); opacity: 1; }
+.lm.is-shown .lm-stone { fill: var(--lm-stone); }
+.lm.is-shown .lm-stone-2 { fill: var(--lm-stone-2); }
+.lm.is-shown .lm-green { fill: var(--lm-green); }
+.lm.is-shown .lm-gold { fill: var(--lm-gold); }
+.lm.is-shown .lm-glass { fill: var(--lm-glass); }
+.lm.is-shown .lm-water { fill: var(--lm-water); opacity: 1; }
+.lm.is-shown .lm-spray { fill: var(--lm-spray); }
+.lm.is-shown .lm-white { fill: var(--lm-white); }
+.lm.is-shown .lm-glass-dark { fill: var(--lm-glass-dark); }
+.lm.is-shown .lm-metal { fill: var(--lm-metal); }
+.lm.is-shown .lm-red { fill: var(--lm-red); }
+.lm.is-shown .lm-cream { fill: var(--lm-cream); }
+.lm.is-shown .lm-trees { fill: var(--lm-trees); }
+.lm.is-shown .lm-c1 { fill: var(--lm-c1); }
+.lm.is-shown .lm-c2 { fill: var(--lm-c2); }
+.lm.is-shown .lm-c3 { fill: var(--lm-c3); }
+.lm.is-shown .lm-c4 { fill: var(--lm-c4); }
+.lm.is-shown .lm-c5 { fill: var(--lm-c5); }
+.lm.is-shown .lm-slate { fill: var(--lm-slate); }
+.lm.is-shown .lm-timber { fill: var(--lm-timber); }
+.lm.is-shown .lm-tower { fill: var(--lm-tower); }
+.lm.is-shown .lm-tower-2 { fill: var(--lm-tower-2); }
+.lm.is-shown .lm-tower-3 { fill: var(--lm-tower-3); }
+.lm.is-shown .lm-rib { stroke: var(--lm-rib); }
+.lm.is-shown .lm-glow { fill: var(--lm-glow); opacity: 1; }
+.lm.is-shown .lm-steel { fill: var(--lm-steel); }
+.lm.is-shown .lm-steel-2 { fill: var(--lm-steel-2); }
+.lm.is-shown .lm-steel-hi { fill: var(--lm-steel-hi); }
+.lm.is-shown .lm-steel-edge { stroke: var(--lm-steel-edge); }
+.lm.is-shown .lm-band { stroke: var(--lm-band); opacity: 1; }
+.lm.is-shown .lm-led-1 { fill: var(--lm-led-1); }
+.lm.is-shown .lm-led-2 { fill: var(--lm-led-2); }
+.lm.is-shown .lm-led-3 { fill: var(--lm-led-3); }
+.lm.is-shown .lm-bic-glass { fill: var(--lm-bic-glass); }
+.lm.is-shown .lm-bic-mark { stroke: var(--lm-bic-mark); opacity: 1; }
+.lm.is-shown .lm-bfh { fill: var(--lm-bfh); }
+.lm.is-shown .lm-bfh-2 { fill: var(--lm-bfh-2); }
+.lm.is-shown .lm-bfh-hi { fill: var(--lm-bfh-hi); }
+.lm.is-shown .lm-bfh-line { stroke: var(--lm-bfh-line); opacity: 1; }
+.lm.is-shown .lm-bfh-led { stroke: var(--lm-bfh-led); opacity: 1; }
+.lm.is-shown .lm-wtc { fill: var(--lm-wtc); }
+.lm.is-shown .lm-wtc-glass { fill: var(--lm-wtc-glass); }
+.lm.is-shown .lm-wtc-line { stroke: var(--lm-wtc-line); opacity: 1; }
+.lm.is-shown .lm-wtc-edge { stroke: var(--lm-wtc-edge); opacity: 1; }
+.lm.is-shown .lm-fs { fill: var(--lm-fs); }
+.lm.is-shown .lm-fs-2 { fill: var(--lm-fs-2); }
+.lm.is-shown .lm-fs-fin { fill: var(--lm-fs-fin); }
+.lm.is-shown .lm-fs-rib { fill: var(--lm-fs-rib); }
+.lm.is-shown .lm-fs-glass { fill: var(--lm-fs-glass); }
+.lm.is-shown .lm-fs-hall { fill: var(--lm-fs-hall); }
+.lm.is-shown .lm-lights { fill: var(--lm-lights); opacity: 1; }
+.lm.is-shown .lm-glow-v { fill: var(--lm-glow-v); opacity: 1; }
+.lm.is-shown .lm-glow-w { fill: var(--lm-glow-w); opacity: 1; }
+.lm.is-shown .lm-yda { fill: var(--lm-yda); }
+.lm.is-shown .lm-yda-2 { fill: var(--lm-yda-2); }
+.lm.is-shown .lm-yda-fin { stroke: var(--lm-yda-fin); opacity: 1; }
+.lm.is-shown .lm-yda-lit { stroke: var(--lm-yda-lit); opacity: 1; }
+.lm.is-shown .lm-yda-led { stroke: var(--lm-yda-led); opacity: 1; }
+.lm.is-shown .lm-ata { fill: var(--lm-ata); }
+.lm.is-shown .lm-ata-2 { fill: var(--lm-ata-2); }
+.lm.is-shown .lm-ata-glass { fill: var(--lm-ata-glass); }
+.lm.is-shown .lm-ata-dome { fill: var(--lm-ata-dome); }
+.lm.is-shown .lm-ata-lattice { stroke: var(--lm-ata-lattice); opacity: 1; }
+.lm.is-shown .lm-ata-led { stroke: var(--lm-ata-led); opacity: 1; }
+.lm.is-shown .lm-ata-screen { fill: var(--lm-ata-screen); }
+.lm.is-shown .lm-koc { fill: var(--lm-koc); }
+.lm.is-shown .lm-koc-2 { fill: var(--lm-koc-2); }
+.lm.is-shown .lm-koc-dome { fill: var(--lm-koc-dome); }
+.lm.is-shown .lm-clk { fill: var(--lm-clk); }
+.lm.is-shown .lm-clk-2 { fill: var(--lm-clk-2); }
+.lm.is-shown .lm-roof { fill: var(--lm-roof); }
+.lm.is-shown .lm-pyr { fill: var(--lm-pyr); }
+.lm.is-shown .lm-pyr-2 { fill: var(--lm-pyr-2); }
+.lm.is-shown .lm-pyr-line { stroke: var(--lm-pyr-line); opacity: 1; }
+.lm.is-shown .lm-sand { fill: var(--lm-sand); }
+.lm.is-shown .lm-ctw { fill: var(--lm-ctw); }
+.lm.is-shown .lm-ctw-2 { fill: var(--lm-ctw-2); }
+.lm.is-shown .lm-ctw-hole { fill: var(--lm-ctw-hole); }
+.lm.is-shown .lm-ctw-glass { fill: var(--lm-ctw-glass); }
+.lm.is-shown .lm-azh { fill: var(--lm-azh); }
+.lm.is-shown .lm-azh-2 { fill: var(--lm-azh-2); }
+.lm.is-shown .lm-azh-dome { fill: var(--lm-azh-dome); }
+.lm.is-shown .lm-azh-tile { fill: var(--lm-azh-tile); }
+.lm.is-shown .lm-azh-red { fill: var(--lm-azh-red); }
+.lm.is-shown .lm-brn { fill: var(--lm-brn); }
+.lm.is-shown .lm-brn-2 { fill: var(--lm-brn-2); }
+.lm.is-shown .lm-brn-3 { fill: var(--lm-brn-3); }
+.lm.is-shown .lm-wood { stroke: var(--lm-wood); }
+.lm.is-shown .lm-wood circle:last-child { fill: var(--lm-wood); }
+.lm.is-shown .lm-detail { fill: var(--lm-detail); opacity: 1; }
+.lm.is-shown .lm-line { stroke: var(--lm-line); }
+.lm.is-shown .lm-line-fill { fill: #8A8F95; }
+.lm.is-shown .lm-detail g, .lm.is-shown g.lm-detail > * { fill: var(--lm-detail); }</style><rect class="lm-sky" x="-300" y="-200" width="920" height="296"/><path class="lm-far" d="M-300 96V58L-300 52.5L-280 53.6L-260 56.8L-240 60.7L-220 63.4L-200 63.8L-180 62.2L-160 59.9L-140 58.6L-120 58.8L-100 59.7L-80 59.8L-60 58.2L-40 55.1L-20 52.2L0 51L20 52.5L40 55.7L60 59.1L80 60.9L100 60.9L120 59.8L140 59.2L160 60L180 61.7L200 63.1L220 62.5L240 59.8L260 55.9L280 52.7L300 51.8L320 53.1L340 55.6L360 57.4L380 57.8L400 57L420 56.5L440 57.6L460 60.2L480 63.2L500 64.9L520 64L540 61L560 57.3L580 54.9L600 54.5L620 55.5V96Z"/><rect class="lm-stone-2" x="-300" y="91" width="920" height="5"/><path class="lm-water" d="M-300 96V84Q-292.5 82.6 -285 84T-270 84Q-262.5 82.6 -255 84T-240 84Q-232.5 82.6 -225 84T-210 84Q-202.5 82.6 -195 84T-180 84Q-172.5 82.6 -165 84T-150 84Q-142.5 82.6 -135 84T-120 84Q-112.5 82.6 -105 84T-90 84Q-82.5 82.6 -75 84T-60 84Q-52.5 82.6 -45 84T-30 84Q-22.5 82.6 -15 84T0 84Q7.5 82.6 15 84T30 84Q37.5 82.6 45 84T60 84Q67.5 82.6 75 84T90 84V96Z"/><path class="lm-spray" d="M34 85L34.6 9Q34.8 1.5 31 2Q24 4 18.5 20Q13 38 10 58Q8 72 4 85Z" opacity="0.45"/><path class="lm-spray" d="M33.6 85L34 12Q34 5.5 31.2 6.4Q26.5 9 22.5 24Q19 40 17.5 58Q16.6 72 15 85Z" opacity="0.6"/><path class="lm-spray" d="M8 70Q9 78 7 85H9.4Q11 78 10.4 70ZM20 66Q21 76 19.4 85H21.6Q23 76 22.4 66Z" opacity="0.5"/><path class="lm-spray" d="M32.8 85L33.2 7Q33.4 3.4 34.3 4L35 85Z"/><rect class="lm-gold" x="31.5" y="83.4" width="5" height="2" rx="1"/><rect class="lm-stone-2" x="26" y="85" width="44" height="1.6"/><rect class="lm-stone-2" x="84" y="72" width="104" height="24"/><rect class="lm-stone-2" x="92" y="46" width="18" height="50"/><path class="lm-stone-2" d="M92 46L101 38L110 46Z"/><rect class="lm-stone-2" x="162" y="46" width="18" height="50"/><path class="lm-stone-2" d="M162 46L171 38L180 46Z"/><rect class="lm-stone-2" x="80" y="60" width="12" height="36"/><rect class="lm-stone-2" x="180" y="60" width="12" height="36"/><rect class="lm-detail" x="95" y="50" width="2.6" height="2"/><rect class="lm-detail" x="101" y="50" width="2.6" height="2"/><rect class="lm-detail" x="107" y="50" width="2.6" height="2"/><rect class="lm-detail" x="95" y="55.2" width="2.6" height="2"/><rect class="lm-detail" x="101" y="55.2" width="2.6" height="2"/><rect class="lm-detail" x="107" y="55.2" width="2.6" height="2"/><rect class="lm-detail" x="95" y="60.4" width="2.6" height="2"/><rect class="lm-detail" x="101" y="60.4" width="2.6" height="2"/><rect class="lm-detail" x="107" y="60.4" width="2.6" height="2"/><rect class="lm-detail" x="95" y="65.6" width="2.6" height="2"/><rect class="lm-detail" x="101" y="65.6" width="2.6" height="2"/><rect class="lm-detail" x="107" y="65.6" width="2.6" height="2"/><rect class="lm-detail" x="95" y="70.8" width="2.6" height="2"/><rect class="lm-detail" x="101" y="70.8" width="2.6" height="2"/><rect class="lm-detail" x="107" y="70.8" width="2.6" height="2"/><rect class="lm-detail" x="95" y="76" width="2.6" height="2"/><rect class="lm-detail" x="101" y="76" width="2.6" height="2"/><rect class="lm-detail" x="107" y="76" width="2.6" height="2"/><rect class="lm-detail" x="95" y="81.2" width="2.6" height="2"/><rect class="lm-detail" x="101" y="81.2" width="2.6" height="2"/><rect class="lm-detail" x="107" y="81.2" width="2.6" height="2"/><rect class="lm-detail" x="95" y="86.4" width="2.6" height="2"/><rect class="lm-detail" x="101" y="86.4" width="2.6" height="2"/><rect class="lm-detail" x="107" y="86.4" width="2.6" height="2"/><rect class="lm-detail" x="95" y="91.6" width="2.6" height="2"/><rect class="lm-detail" x="101" y="91.6" width="2.6" height="2"/><rect class="lm-detail" x="107" y="91.6" width="2.6" height="2"/><rect class="lm-detail" x="165" y="50" width="2.6" height="2"/><rect class="lm-detail" x="171" y="50" width="2.6" height="2"/><rect class="lm-detail" x="177" y="50" width="2.6" height="2"/><rect class="lm-detail" x="165" y="55.2" width="2.6" height="2"/><rect class="lm-detail" x="171" y="55.2" width="2.6" height="2"/><rect class="lm-detail" x="177" y="55.2" width="2.6" height="2"/><rect class="lm-detail" x="165" y="60.4" width="2.6" height="2"/><rect class="lm-detail" x="171" y="60.4" width="2.6" height="2"/><rect class="lm-detail" x="177" y="60.4" width="2.6" height="2"/><rect class="lm-detail" x="165" y="65.6" width="2.6" height="2"/><rect class="lm-detail" x="171" y="65.6" width="2.6" height="2"/><rect class="lm-detail" x="177" y="65.6" width="2.6" height="2"/><rect class="lm-detail" x="165" y="70.8" width="2.6" height="2"/><rect class="lm-detail" x="171" y="70.8" width="2.6" height="2"/><rect class="lm-detail" x="177" y="70.8" width="2.6" height="2"/><rect class="lm-detail" x="165" y="76" width="2.6" height="2"/><rect class="lm-detail" x="171" y="76" width="2.6" height="2"/><rect class="lm-detail" x="177" y="76" width="2.6" height="2"/><rect class="lm-detail" x="165" y="81.2" width="2.6" height="2"/><rect class="lm-detail" x="171" y="81.2" width="2.6" height="2"/><rect class="lm-detail" x="177" y="81.2" width="2.6" height="2"/><rect class="lm-detail" x="165" y="86.4" width="2.6" height="2"/><rect class="lm-detail" x="171" y="86.4" width="2.6" height="2"/><rect class="lm-detail" x="177" y="86.4" width="2.6" height="2"/><rect class="lm-detail" x="165" y="91.6" width="2.6" height="2"/><rect class="lm-detail" x="171" y="91.6" width="2.6" height="2"/><rect class="lm-detail" x="177" y="91.6" width="2.6" height="2"/><rect class="lm-stone" x="118" y="36" width="36" height="60"/><rect class="lm-stone" x="121" y="14" width="30" height="22"/><circle class="lm-glass" cx="136" cy="25" r="9"/><circle class="lm-detail" cx="136" cy="25" r="7.4"/><path class="lm-line" d="M136 25V19.5M136 25L140 27"/><path class="lm-green" d="M125 14H147V11H125Z"/><path class="lm-stone" d="M124 11L129 4H143L148 11Z"/><path class="lm-gold" d="M132.5 4L136 -3L139.5 4Z"/><rect class="lm-gold" x="135.4" y="-4" width="1.2" height="3"/><path class="lm-gold" d="M134.4 -5.6a1.8 1.8 0 1 0 3.2 0a1.4 1.4 0 1 1 -3.2 0Z"/><rect class="lm-gold" x="135.65" y="-5" width="0.7" height="2.2"/><rect class="lm-detail" x="122" y="40" width="3" height="2"/><rect class="lm-detail" x="128.8" y="40" width="3" height="2"/><rect class="lm-detail" x="135.6" y="40" width="3" height="2"/><rect class="lm-detail" x="142.4" y="40" width="3" height="2"/><rect class="lm-detail" x="149.2" y="40" width="3" height="2"/><rect class="lm-detail" x="122" y="44.6" width="3" height="2"/><rect class="lm-detail" x="128.8" y="44.6" width="3" height="2"/><rect class="lm-detail" x="135.6" y="44.6" width="3" height="2"/><rect class="lm-detail" x="142.4" y="44.6" width="3" height="2"/><rect class="lm-detail" x="149.2" y="44.6" width="3" height="2"/><rect class="lm-detail" x="122" y="49.2" width="3" height="2"/><rect class="lm-detail" x="128.8" y="49.2" width="3" height="2"/><rect class="lm-detail" x="135.6" y="49.2" width="3" height="2"/><rect class="lm-detail" x="142.4" y="49.2" width="3" height="2"/><rect class="lm-detail" x="149.2" y="49.2" width="3" height="2"/><rect class="lm-detail" x="122" y="53.8" width="3" height="2"/><rect class="lm-detail" x="128.8" y="53.8" width="3" height="2"/><rect class="lm-detail" x="135.6" y="53.8" width="3" height="2"/><rect class="lm-detail" x="142.4" y="53.8" width="3" height="2"/><rect class="lm-detail" x="149.2" y="53.8" width="3" height="2"/><rect class="lm-detail" x="122" y="58.4" width="3" height="2"/><rect class="lm-detail" x="128.8" y="58.4" width="3" height="2"/><rect class="lm-detail" x="135.6" y="58.4" width="3" height="2"/><rect class="lm-detail" x="142.4" y="58.4" width="3" height="2"/><rect class="lm-detail" x="149.2" y="58.4" width="3" height="2"/><rect class="lm-detail" x="122" y="63" width="3" height="2"/><rect class="lm-detail" x="128.8" y="63" width="3" height="2"/><rect class="lm-detail" x="135.6" y="63" width="3" height="2"/><rect class="lm-detail" x="142.4" y="63" width="3" height="2"/><rect class="lm-detail" x="149.2" y="63" width="3" height="2"/><rect class="lm-detail" x="122" y="67.6" width="3" height="2"/><rect class="lm-detail" x="128.8" y="67.6" width="3" height="2"/><rect class="lm-detail" x="135.6" y="67.6" width="3" height="2"/><rect class="lm-detail" x="142.4" y="67.6" width="3" height="2"/><rect class="lm-detail" x="149.2" y="67.6" width="3" height="2"/><rect class="lm-detail" x="122" y="72.2" width="3" height="2"/><rect class="lm-detail" x="128.8" y="72.2" width="3" height="2"/><rect class="lm-detail" x="135.6" y="72.2" width="3" height="2"/><rect class="lm-detail" x="142.4" y="72.2" width="3" height="2"/><rect class="lm-detail" x="149.2" y="72.2" width="3" height="2"/><rect class="lm-detail" x="122" y="76.8" width="3" height="2"/><rect class="lm-detail" x="128.8" y="76.8" width="3" height="2"/><rect class="lm-detail" x="135.6" y="76.8" width="3" height="2"/><rect class="lm-detail" x="142.4" y="76.8" width="3" height="2"/><rect class="lm-detail" x="149.2" y="76.8" width="3" height="2"/><rect class="lm-detail" x="122" y="81.4" width="3" height="2"/><rect class="lm-detail" x="128.8" y="81.4" width="3" height="2"/><rect class="lm-detail" x="135.6" y="81.4" width="3" height="2"/><rect class="lm-detail" x="142.4" y="81.4" width="3" height="2"/><rect class="lm-detail" x="149.2" y="81.4" width="3" height="2"/><rect class="lm-detail" x="122" y="86" width="3" height="2"/><rect class="lm-detail" x="128.8" y="86" width="3" height="2"/><rect class="lm-detail" x="135.6" y="86" width="3" height="2"/><rect class="lm-detail" x="142.4" y="86" width="3" height="2"/><rect class="lm-detail" x="149.2" y="86" width="3" height="2"/><path class="lm-detail" d="M88 92V86a2 2 0 0 1 4 0V92Z"/><path class="lm-detail" d="M97.6 92V86a2 2 0 0 1 4 0V92Z"/><path class="lm-detail" d="M107.2 92V86a2 2 0 0 1 4 0V92Z"/><path class="lm-detail" d="M116.8 92V86a2 2 0 0 1 4 0V92Z"/><path class="lm-detail" d="M126.4 92V86a2 2 0 0 1 4 0V92Z"/><path class="lm-detail" d="M136 92V86a2 2 0 0 1 4 0V92Z"/><path class="lm-detail" d="M145.6 92V86a2 2 0 0 1 4 0V92Z"/><path class="lm-detail" d="M155.2 92V86a2 2 0 0 1 4 0V92Z"/><path class="lm-detail" d="M164.8 92V86a2 2 0 0 1 4 0V92Z"/><path class="lm-detail" d="M174.4 92V86a2 2 0 0 1 4 0V92Z"/><rect class="lm-stone" x="218" y="70" width="112" height="26"/><path class="lm-detail" d="M223 92V79a3 3 0 0 1 6 0V92Z"/><path class="lm-detail" d="M232.6 92V79a3 3 0 0 1 6 0V92Z"/><path class="lm-detail" d="M242.2 92V79a3 3 0 0 1 6 0V92Z"/><path class="lm-detail" d="M251.8 92V79a3 3 0 0 1 6 0V92Z"/><path class="lm-detail" d="M261.4 92V79a3 3 0 0 1 6 0V92Z"/><path class="lm-detail" d="M271 92V79a3 3 0 0 1 6 0V92Z"/><path class="lm-detail" d="M280.6 92V79a3 3 0 0 1 6 0V92Z"/><path class="lm-detail" d="M290.2 92V79a3 3 0 0 1 6 0V92Z"/><path class="lm-detail" d="M299.8 92V79a3 3 0 0 1 6 0V92Z"/><path class="lm-detail" d="M309.4 92V79a3 3 0 0 1 6 0V92Z"/><path class="lm-detail" d="M319 92V79a3 3 0 0 1 6 0V92Z"/><rect class="lm-stone" x="249" y="57" width="28" height="13"/><path class="lm-green" d="M245 59C245 45 254 38 263 34C272 38 281 45 281 59Z"/><rect class="lm-gold" x="262.4" y="22" width="1.2" height="12"/><path class="lm-gold" d="M261.4 20.6a1.8 1.8 0 1 0 3.2 0a1.4 1.4 0 1 1 -3.2 0Z"/><rect class="lm-gold" x="262.65" y="21.200000000000003" width="0.7" height="2.2"/><path class="lm-slate" d="M284 70C284 63 288 60 292 59C296 60 300 63 300 70Z"/><path class="lm-slate" d="M226 70C226 64 229.5 61.5 233 61C236.5 61.5 240 64 240 70Z"/><rect class="lm-stone" x="219.2" y="18" width="5.6" height="78"/><rect class="lm-stone" x="217.79999999999998" y="30" width="8.399999999999999" height="2" rx="0.6"/><rect class="lm-stone" x="217.79999999999998" y="44" width="8.399999999999999" height="2" rx="0.6"/><rect class="lm-stone" x="217.79999999999998" y="58" width="8.399999999999999" height="2" rx="0.6"/><path class="lm-slate" d="M219.2 18C218.2 12.96 221.4 11.84 222 7.360000000000001C222.6 11.84 225.8 12.96 224.8 18Z"/><path class="lm-gold" d="M220.4 4.960000000000001a1.8 1.8 0 1 0 3.2 0a1.4 1.4 0 1 1 -3.2 0Z"/><rect class="lm-gold" x="221.65" y="5.5600000000000005" width="0.7" height="2.2"/><rect class="lm-stone" x="307.2" y="18" width="5.6" height="78"/><rect class="lm-stone" x="305.8" y="30" width="8.399999999999999" height="2" rx="0.6"/><rect class="lm-stone" x="305.8" y="44" width="8.399999999999999" height="2" rx="0.6"/><rect class="lm-stone" x="305.8" y="58" width="8.399999999999999" height="2" rx="0.6"/><path class="lm-slate" d="M307.2 18C306.2 12.96 309.4 11.84 310 7.360000000000001C310.6 11.84 313.8 12.96 312.8 18Z"/><path class="lm-gold" d="M308.4 4.960000000000001a1.8 1.8 0 1 0 3.2 0a1.4 1.4 0 1 1 -3.2 0Z"/><rect class="lm-gold" x="309.65" y="5.5600000000000005" width="0.7" height="2.2"/><rect class="lm-stone-2" x="327.5" y="30" width="5" height="66"/><rect class="lm-stone-2" x="326.1" y="42" width="7.8" height="2" rx="0.6"/><rect class="lm-stone-2" x="326.1" y="56" width="7.8" height="2" rx="0.6"/><path class="lm-slate" d="M327.5 30C326.5 25.5 329.4 24.5 330 20.5C330.6 24.5 333.5 25.5 332.5 30Z"/><path class="lm-gold" d="M328.4 18.1a1.8 1.8 0 1 0 3.2 0a1.4 1.4 0 1 1 -3.2 0Z"/><rect class="lm-gold" x="329.65" y="18.700000000000003" width="0.7" height="2.2"/><path class="lm-stone-2" d="M234 85Q239 80 244 79Q249 80 254 85L249 83.6L244 85.2L239 83.6Z"/><rect class="lm-stone-2" x="243.4" y="84" width="1.2" height="8"/><path class="lm-stone-2" d="M272 85Q277 80 282 79Q287 80 292 85L287 83.6L282 85.2L277 83.6Z"/><rect class="lm-stone-2" x="281.4" y="84" width="1.2" height="8"/><path class="lm-stone-2" d="M294 85Q299 80 304 79Q309 80 314 85L309 83.6L304 85.2L299 83.6Z"/><rect class="lm-stone-2" x="303.4" y="84" width="1.2" height="8"/></svg>

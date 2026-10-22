@@ -1,0 +1,21 @@
+# Cloudflare Pages response headers (https://developers.cloudflare.com/pages/configuration/headers/).
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Next.js puts a content hash in every file name here, so they never change.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Screenshots, drawings and marks keep their names when replaced: cache for a day, then revalidate.
+/img/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/landmarks/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/flags/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/brand/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
