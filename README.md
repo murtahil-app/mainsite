@@ -55,7 +55,7 @@ links are hidden, and the Apps section and FAQ use their pre-launch copy (`title
 | path | what |
 |---|---|
 | `content/dictionary.ts` | every visible string, English and Arabic |
-| `content/cities.ts` | the nine cities: modes, kinds of times, counts, landmark captions |
+| `content/cities.ts` | the ten cities: modes, kinds of times, counts, landmark captions |
 | `content/site.ts` | the site's address, the web app's address and launch switch, a contact email |
 | `app/[locale]/` | the layout (fonts, theme script, metadata) and the homepage |
 | `components/sections/` | one file per homepage section |
@@ -83,8 +83,8 @@ city really has live data.
   `vendor/landmarks.css` (copied from Murtahil-Web) into standalone SVGs, one per city and theme.
   Re-copy the vendor files and re-run after the web app's drawings change.
 - **Web app screenshots** (`web-*`): the web app on map.murtahil.net (the MapTiler basemap),
-  captured with Playwright at 1440 x 900 (2x), planning real trips (Riyadh: KAFD to Qasr Al Hokm;
-  Istanbul: Kadıköy to Taksim).
+  captured with Playwright at 1440 x 900 (2x), planning real trips (Doha: Hamad International Airport
+  T1 to Katara, departing at 21:00; Istanbul: Kadıköy to Taksim).
 - **iOS screenshots** (`ios-*`): phones always show the native app. `ios-route-riyadh` is an
   iPhone 12 capture; the others come from `Riyadh-Transport-iOS/pics/`, the assistant and arrivals
   ones cropped. `components/phone.tsx` frames them as an iPhone with a Dynamic Island.

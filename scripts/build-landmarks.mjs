@@ -74,8 +74,11 @@ for (const [id, svg] of Object.entries(landmarks)) {
 }
 
 // Silhouettes for the closing skyline: one per country, in the order the cities are listed.
-// Countries of one city (Bahrain, Egypt) use that city's drawing, as the web app's switcher does.
-const skyline = { SA: countries.SA, TR: countries.TR, SY: countries.SY, BH: landmarks.bahrain, EG: landmarks.cairo };
+// Countries of one city (Bahrain, Qatar, Egypt) use that city's drawing, as the web app's switcher does.
+const skyline = {
+  SA: countries.SA, TR: countries.TR, SY: countries.SY,
+  BH: landmarks.bahrain, QA: landmarks.doha, EG: landmarks.cairo,
+};
 for (const [key, svg] of Object.entries(skyline)) {
   const vars = { ...night, "--lm-silhouette": "#1B5A12" };
   fs.writeFileSync(path.join(out, `${key.toLowerCase()}-silhouette.svg`), file(svg, "lm", vars));

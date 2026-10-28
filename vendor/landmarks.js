@@ -27,6 +27,12 @@
  * silhouette), lm-sand (the desert); lm-ctw, lm-ctw-2, lm-ctw-hole (the lattice's openings), lm-ctw-glass: the
  * Cairo Tower; lm-azh, lm-azh-2, lm-azh-dome, lm-azh-tile, lm-azh-red (Qaytbay's bands): Al-Azhar; lm-brn,
  * lm-brn-2, lm-brn-3 (cornices and balustrades): the Baron Empain Palace.
+ * Doha: lm-zb, lm-zb-2, lm-zb-hole (loopholes and the door), lm-qa (the flag's maroon): Al-Zubara Fort;
+ * lm-kt (the slabs), lm-kt-2 (the blades), lm-kt-crown, lm-kt-deck, lm-kt-base, lm-kt-hall (the decks' and the lobby's
+ * glass), lm-kt-line, lm-kt-frame and lm-kt-arc (stroked: floors, the blades' outer edges and their inner edges, lit
+ * white by night; hidden in the silhouette), lm-kt-lit, lm-kt-lit-2 (rooms lit warm and white: by night only): the
+ * Katara Towers; lm-sw, lm-sw-2, lm-sw-hole (the arches), lm-sw-rail (balustrades): Souq Waqif; lm-fn, lm-fn-2,
+ * lm-fn-band, lm-fn-dome, lm-fn-glass and lm-fn-ramp (stroked, hidden in the silhouette): the Islamic Cultural Center.
  *
  * Flags are the official SVGs from Wikimedia Commons, in flags/ (Bahrain's drawn to its specification).
  */
@@ -1158,10 +1164,260 @@
         felucca(48)
     , 'The Great Pyramid of Giza, a felucca on the Nile, the Cairo Tower, Al-Azhar Mosque and the Baron Empain Palace in Heliopolis');
 
+    // ---------------------------------------------------------------- Doha
+    // From the desert to the sea: Al-Zubara Fort in the north-west, its round and square towers under
+    // rounded crenellations, walls pierced with loopholes, a cannon at its foot and the flag of Qatar over
+    // it (floodlit orange by night); the spiral minaret of the Abdullah bin Zaid Al-Mahmoud Islamic Cultural
+    // Center (Al Fanar), banded drums wound round by their ramp up to the lantern and the dome (floodlit
+    // gold by night); in Souq Waqif, a two-storey corner house of white plaster with scalloped arches over
+    // latticed balustrades and the ends of its roof beams standing out under the parapet (lit warm from
+    // inside by night); and the Katara Towers on the Lusail shore, two curved glass blades rising from one
+    // podium like the crossed swords of the emblem, their silver frames sweeping down to cross over the
+    // entrance. By night the glass goes dark but for the lit rooms, a white light traces the crescent of
+    // their inner curve, and the lobby glows.
+
+    // Rounded crenellations along a wall top at y, from x0 to x1, each w wide.
+    function crenels(x0, x1, y, w, cls) {
+        var d = 'M' + f(x0) + ' ' + f(y + 1);
+        for (var x = x0; x + w <= x1 + 0.01; x += w) d += 'V' + f(y) + 'Q' + f(x + w * 0.5) + ' ' + f(y - w * 1.1) + ' ' + f(x + w) + ' ' + f(y);
+        return '<path class="' + (cls || 'lm-zb') + '" d="' + d + 'V' + f(y + 1) + 'Z"/>';
+    }
+    // Loopholes in rows, a little offset row to row.
+    function loopholes(x0, x1, ys, gap) {
+        var d = '';
+        ys.forEach(function (y, r) {
+            for (var x = x0 + (r % 2 ? gap / 2 : 0); x <= x1; x += gap) d += 'M' + f(x) + ' ' + f(y) + 'h0.8v1.1h-0.8Z';
+        });
+        return '<path class="lm-zb-hole" d="' + d + '"/>';
+    }
+
+    // Al-Zubara Fort, from x0 (the foot of its round tower) to x0 + 84.
+    function zubara(x0) {
+        var o = function (dx) { return f(x0 + dx); };
+        return (
+            // the small round tower behind the wall
+            '<rect class="lm-zb-2" x="' + o(24) + '" y="69" width="10" height="8"/>' + crenels(x0 + 24, x0 + 34, 69, 2.5, 'lm-zb-2') +
+            // the wall, its door
+            '<rect class="lm-zb" x="' + o(14) + '" y="72" width="54" height="19"/>' +
+            '<rect class="lm-zb-2" x="' + o(14) + '" y="72" width="54" height="1"/>' +
+            '<rect class="lm-zb-hole" x="' + o(52) + '" y="81.4" width="6.4" height="9.6"/>' +
+            '<rect class="lm-zb-2" x="' + o(51.2) + '" y="80.6" width="8" height="0.8"/>' +
+            loopholes(x0 + 17, x0 + 66, [76, 79.4], 4.6) +
+            // the round corner tower, its foot sloping out, shaded round its west side
+            '<path class="lm-zb" d="M' + o(1) + ' 64V86.6L' + o(-1) + ' 91H' + o(17) + 'L' + o(15) + ' 86.6V64Z"/>' +
+            '<path class="lm-zb-2" d="M' + o(1) + ' 64V86.6L' + o(-1) + ' 91H' + o(3.6) + 'L' + o(4.4) + ' 86.6V64Z"/>' +
+            crenels(x0 + 1, x0 + 15, 64, 2.8) +
+            loopholes(x0 + 3.6, x0 + 13, [68, 72.4, 76.8, 81.2], 3.4) +
+            // the square tower, the flag over it
+            '<rect class="lm-zb" x="' + o(64) + '" y="64" width="20" height="27"/>' +
+            '<rect class="lm-zb-2" x="' + o(80) + '" y="64" width="4" height="27"/>' +
+            crenels(x0 + 64, x0 + 84, 64, 2.5) +
+            loopholes(x0 + 66, x0 + 80, [68, 72.6], 3.6) +
+            '<rect class="lm-zb-hole" x="' + o(67) + '" y="76" width="1.2" height="2.4"/><rect class="lm-zb-hole" x="' + o(74) + '" y="76" width="1.2" height="2.4"/>' +
+            '<rect class="lm-metal" x="' + o(59.6) + '" y="38" width="0.6" height="34"/>' +
+            '<rect class="lm-white" x="' + o(60.2) + '" y="38.4" width="3.4" height="6"/>' +
+            '<path class="lm-qa" d="M' + o(62.4) + ' 38.4H' + o(71) + 'V44.4H' + o(62.4) + 'L' + o(63.4) + ' 43.7L' + o(62.4) + ' 43L' + o(63.4) + ' 42.4L' + o(62.4) + ' 41.7L' +
+                o(63.4) + ' 41.1L' + o(62.4) + ' 40.4L' + o(63.4) + ' 39.8L' + o(62.4) + ' 39.1L' + o(63.4) + ' 38.6Z"/>' +
+            // the cannon on its carriage
+            '<path class="lm-timber" d="M' + o(-14) + ' 87.6L' + o(-2) + ' 85.4L' + o(-1.8) + ' 86.6L' + o(-13.6) + ' 89Z"/>' +
+            '<circle class="lm-timber" cx="' + o(-10) + '" cy="88.4" r="2.6"/>' +
+            '<circle class="lm-zb-hole" cx="' + o(-10) + '" cy="88.4" r="1.4"/>'
+        );
+    }
+
+    // The Katara Towers, centred on cx, drawn as an elevation (the two are alike). Each tower is a hotel slab,
+    // its outer edge swelling out and drawing in again towards its foot, with an observation deck and a
+    // crown of two horns on top; in front of it, the blade: a crescent of glass between two circles centred
+    // over the other tower, so that it sweeps down past the middle to the other tower's foot. The blades'
+    // inner edges make the round hollow between the towers and cross below it over the entrance.
+    function kataraTowers(cx) {
+        var o = function (dx) { return f(cx + dx); };
+        var pt = function (p) { return o(p[0]) + ' ' + f(p[1]); };
+        var flip = function (pts) { return pts.map(function (p) { return [-p[0], p[1]]; }); };
+        var poly = function (pts) { return pts.map(function (p, i) { return (i ? 'L' : 'M') + pt(p); }).join(''); };
+        // points round a circle (centre a, b; radius r) from angle t0 to t1, in degrees (y down)
+        var circle = function (a, b, r, t0, t1, n) {
+            var out = [];
+            for (var i = 0; i <= n; i++) {
+                var t = (t0 + (t1 - t0) * i / n) * Math.PI / 180;
+                out.push([a + r * Math.cos(t), b + r * Math.sin(t)]);
+            }
+            return out;
+        };
+        // the west blade: its inner edge (centre 34, 27; r 58) from the tip down past the middle (where the
+        // two blades cross, at 0, 74) to the east tower's foot; its outer edge (centre 47, 38.5; r 78) from
+        // the ground up to the tip
+        var tip = [-18.1, 1.5];
+        var inner = circle(34, 27, 58, 206.1, 90, 36);
+        var outer = circle(47, 38.5, 78, 137.7, 200.6, 20);
+        var cIn = function (v) { return 34 - Math.sqrt(58 * 58 - (v - 27) * (v - 27)); };
+        var cOut = function (v) { return 47 - Math.sqrt(78 * 78 - (v - 38.5) * (v - 38.5)); };
+        var blade = function (flipped) {
+            var a = [tip].concat(inner, [[35.5, 91]], outer), pts = flipped ? flip(a) : a;
+            var q = flipped ? [23.6, 4.4] : [-23.6, 4.4];
+            return poly(pts) + 'Q' + pt(q) + ' ' + pt(pts[0]) + 'Z';
+        };
+        // the west slab: its outer edge from the foot up to the deck, then down behind the blade
+        var edge = [[-36.5, 91], [-28.6, 88.6], [-28.4, 85], [-31.4, 80], [-36.2, 71], [-40.7, 61], [-43.2, 51], [-43.7, 41], [-42.7, 26], [-40.7, 17.5]];
+        var behind = circle(47, 38.5, 75, 196.3, 135.6, 16);
+        var uOut = function (v) {
+            for (var i = 1; i < edge.length; i++) {
+                var a = edge[i - 1], b = edge[i];
+                if (v <= a[1] && v >= b[1]) return a[0] + (b[0] - a[0]) * (a[1] - v) / (a[1] - b[1]);
+            }
+            return edge[edge.length - 1][0];
+        };
+        var slab = function (flipped) { var a = edge.concat(behind); return poly(flipped ? flip(a) : a) + 'Z'; };
+        // the floors across each slab, and the rooms lit by night: most warm, some white, the slabs more than
+        // the blades; the same every time
+        var floors = '', warm = '', white = '', seed = 11;
+        var rooms = function (y, x0, x1, share) {
+            for (var x = x0; x + 1.2 <= x1; x += 2.1) {
+                seed = (seed * 9301 + 49297) % 233280;
+                var r = seed / 233280;
+                if (r > share) continue;
+                [x, -x - 1.2].forEach(function (wx) {
+                    var win = 'M' + o(wx) + ' ' + f(y) + 'h1.2v1.2h-1.2Z';
+                    if (r < share * 0.25) white += win; else warm += win;
+                });
+            }
+        };
+        for (var y = 19.6; y < 86; y += 2.4) {
+            floors += 'M' + o(uOut(y) + 0.3) + ' ' + f(y) + 'H' + o(cOut(y) - 0.2) + 'M' + o(-cOut(y) + 0.2) + ' ' + f(y) + 'H' + o(-uOut(y) - 0.3);
+            rooms(y + 0.6, uOut(y) + 0.8, cOut(y) - 0.6, 0.6);
+        }
+        for (y = 12.6; y < 72; y += 2.4) rooms(y, cOut(y + 1.2) + 0.7, cIn(y) - 0.7, 0.3);
+        // below the crossing, on both blades, round the entrance
+        for (y = 75.6; y < 86; y += 2.4) rooms(y, cOut(y + 1.2) + 0.7, y > 78 ? -11 : -2, 0.35);
+        // a crown: the outer horn rising from the deck, a notch, and the blade's tip for the inner horn
+        var crown = [[-26.6, 1.6], [-25.2, 6.2], [-23.4, 8.4], [-22.4, 13.6], [-36.6, 13.6]];
+        // its outer slope hollowed into a horn
+        var horn = function (flipped) {
+            var a = flipped ? flip(crown) : crown;
+            return poly(a) + 'Q' + pt([flipped ? 28.4 : -28.4, 10.4]) + ' ' + pt(a[0]) + 'Z';
+        };
+        // a deck, standing out on both sides of its slab, behind the blade
+        var deck = function (s) {
+            var x0 = s < 0 ? -42.6 : 18.4;
+            return '<rect class="lm-kt-deck" x="' + o(x0) + '" y="13.4" width="24.2" height="4.2"/>' +
+                '<rect class="lm-kt-hall" x="' + o(x0 + 1) + '" y="14.6" width="22.2" height="1.6"/>';
+        };
+        var lights = [[-26.6, 1.6], tip, [-43.9, 41]];
+        return (
+            '<path class="lm-kt" d="' + slab(false) + slab(true) + '"/>' +
+            '<path class="lm-kt-line" stroke-width="0.45" d="' + floors + '"/>' +
+            '<path class="lm-kt-crown" d="' + horn(false) + horn(true) + '"/>' +
+            deck(-1) + deck(1) +
+            '<path class="lm-kt-2" d="' + blade(false) + '"/>' +
+            '<path class="lm-kt-2" d="' + blade(true) + '"/>' +
+            '<path class="lm-kt-lit" d="' + warm + '"/><path class="lm-kt-lit-2" d="' + white + '"/>' +
+            // the blades' edges: the outer ones framed in silver (lit by night), the inner ones the round
+            // hollow and the cross below it (lit white by night)
+            '<path class="lm-kt-frame" stroke-width="0.7" d="' + poly(outer) + 'Q' + pt([-23.6, 4.4]) + ' ' + pt(tip) + poly(flip(outer)) + 'Q' + pt([23.6, 4.4]) + ' ' + pt([-tip[0], tip[1]]) + '"/>' +
+            '<path class="lm-kt-arc" stroke-width="0.9" d="' + poly([tip].concat(inner)) + poly(flip([tip].concat(inner))) + '"/>' +
+            // the podium, and the arched entrance under the cross, its glass the lobby lit by night
+            '<rect class="lm-kt-base" x="' + o(-48) + '" y="87" width="96" height="4"/>' +
+            '<rect class="lm-kt-hall" x="' + o(-46) + '" y="88.2" width="92" height="1.6"/>' +
+            '<path class="lm-kt-base" d="M' + o(-11) + ' 91V85.6Q' + o(-10) + ' 79.4 ' + o(0) + ' 79Q' + o(10) + ' 79.4 ' + o(11) + ' 85.6V91Z"/>' +
+            '<path class="lm-kt-hall" d="M' + o(-8.6) + ' 91V86Q' + o(-7.8) + ' 81.6 ' + o(0) + ' 81.3Q' + o(7.8) + ' 81.6 ' + o(8.6) + ' 86V91Z"/>' +
+            lights.concat(flip(lights)).map(function (p) { return '<circle class="lm-red" cx="' + o(p[0]) + '" cy="' + f(p[1]) + '" r="0.55"/>'; }).join('')
+        );
+    }
+
+    // A scalloped arch: a big lobe between two small ones, over straight jambs.
+    function scallop(x, y, w, h, cls) {
+        return '<path class="' + cls + '" d="M' + f(x) + ' ' + f(y + h) + 'V' + f(y + w * 0.62) + 'Q' + f(x) + ' ' + f(y + w * 0.3) + ' ' + f(x + w * 0.24) + ' ' + f(y + w * 0.32) +
+            'Q' + f(x + w * 0.22) + ' ' + f(y) + ' ' + f(x + w * 0.5) + ' ' + f(y) + 'Q' + f(x + w * 0.78) + ' ' + f(y) + ' ' + f(x + w * 0.76) + ' ' + f(y + w * 0.32) +
+            'Q' + f(x + w) + ' ' + f(y + w * 0.3) + ' ' + f(x + w) + ' ' + f(y + w * 0.62) + 'V' + f(y + h) + 'Z"/>';
+    }
+
+    // The corner house of Souq Waqif, from x0: its long face to x0 + 66, its short face, in shade, to x0 + 86.
+    function souqWaqif(x0) {
+        var o = function (dx) { return f(x0 + dx); };
+        var out =
+            '<rect class="lm-sw" x="' + o(0) + '" y="58" width="66" height="33"/>' +
+            '<rect class="lm-sw-2" x="' + o(66) + '" y="58" width="20" height="33"/>' +
+            // the parapet: a lattice band between two copings
+            '<rect class="lm-sw" x="' + o(-0.6) + '" y="53" width="67" height="5.4"/><rect class="lm-sw-2" x="' + o(66.4) + '" y="53" width="20.2" height="5.4"/>' +
+            '<rect class="lm-sw-rail" x="' + o(1) + '" y="54.4" width="64" height="2.4"/><rect class="lm-sw-rail" x="' + o(67.6) + '" y="54.4" width="17.6" height="2.4"/>' +
+            '<rect class="lm-sw" x="' + o(-0.6) + '" y="52.4" width="67" height="1"/><rect class="lm-sw-2" x="' + o(66.4) + '" y="52.4" width="20.2" height="1"/>';
+        // the two storeys of arches, a balustrade under each upper one; a cornice between the storeys
+        [[0, 6, 8.6, 9.6], [66, 4, 4.4, 4.4]].forEach(function (face) {
+            var start = face[0], n = face[1], w = face[2], step = face[3] + (face[0] ? 0.6 : 1.2);
+            for (var i = 0; i < n; i++) {
+                var x = x0 + start + 1.6 + i * step + (face[0] ? 0.4 : 0.6);
+                out += scallop(x, 60.6, w, 12.4, 'lm-sw-hole') + scallop(x, 76.6, w, 14.4, 'lm-sw-hole') +
+                    '<rect class="lm-sw-rail" x="' + f(x) + '" y="69.2" width="' + w + '" height="3.8"/>' +
+                    '<rect class="lm-sw-rail" x="' + f(x) + '" y="85.4" width="' + w + '" height="1.8"/>';
+            }
+        });
+        out += '<rect class="lm-sw" x="' + o(-0.6) + '" y="73.4" width="67" height="1.6"/><rect class="lm-sw-2" x="' + o(66.4) + '" y="73.4" width="20.2" height="1.6"/>';
+        // the ends of the roof and floor beams, standing out from the walls
+        var beams = '';
+        for (var x = 1.4; x < 86; x += 3.4) {
+            beams += 'M' + o(x) + ' 59.2l2.4 -1.2v0.6l-2.4 1.2Z';
+            if (x < 64) beams += 'M' + o(x + 1.7) + ' 75.6l2.4 -1.2v0.6l-2.4 1.2Z';
+        }
+        out += '<path class="lm-timber" d="M' + o(-3) + ' 59.4L' + o(1) + ' 57.8V58.6L' + o(-3) + ' 60.2Z' + beams + '"/>' +
+            // the steps up to the corner door
+            '<path class="lm-sw-2" d="M' + o(-8) + ' 91V89.4H' + o(-6) + 'V87.8H' + o(-4) + 'V86.2H' + o(0) + 'V91Z"/>';
+        return out;
+    }
+
+    // The spiral minaret of the Islamic Cultural Center, centred on cx: banded drums narrowing upwards, each
+    // topped by the ramp's slope as it winds round, then the shaft, the lantern and the dome.
+    function fanar(cx) {
+        var o = function (dx) { return f(cx + dx); };
+        var out =
+            // the centre's block, its windows and the arched door
+            '<rect class="lm-fn" x="' + o(-26) + '" y="79" width="52" height="12"/>' +
+            '<rect class="lm-fn-2" x="' + o(14) + '" y="79" width="12" height="12"/>' +
+            '<rect class="lm-fn" x="' + o(-26.6) + '" y="78" width="53.2" height="1.4"/>' +
+            windows(cx - 23, 83, 3, 1, 1.6, 1.6, 2.4, 0) + windows(cx + 16, 83, 3, 1, 1.6, 1.6, 2.4, 0);
+        // [half width, bottom, top, the ramp's rise across the drum]
+        var drums = [[16, 79, 57, 4], [11, 57, 44, -3.4], [7.6, 44, 33.6, 2.8], [4.6, 33.6, 21, 0]];
+        drums.forEach(function (d) {
+            var r = d[0], bottom = d[1], top = d[2], rise = d[3];
+            out += '<path class="lm-fn" d="M' + o(-r) + ' ' + bottom + 'V' + f(top + rise / 2) + 'L' + o(r) + ' ' + f(top - rise / 2) + 'V' + bottom + 'Z"/>' +
+                '<rect class="lm-fn-2" x="' + o(r * 0.45) + '" y="' + f(top + Math.abs(rise) / 2) + '" width="' + f(r * 0.55) + '" height="' + f(bottom - top - Math.abs(rise) / 2) + '"/>';
+            for (var y = bottom - 3; y > top + Math.abs(rise) / 2 + 1; y -= 3.4) out += '<rect class="lm-fn-band" x="' + o(-r) + '" y="' + f(y) + '" width="' + f(r * 2) + '" height="0.9"/>';
+            if (rise) out += '<path class="lm-fn-ramp" stroke-width="0.6" d="M' + o(-r - 0.4) + ' ' + f(top + rise / 2 - 1) + 'L' + o(r + 0.4) + ' ' + f(top - rise / 2 - 1) + '"/>';
+        });
+        out += '<path class="lm-fn-glass" d="M' + o(-3) + ' 79V71.4Q' + o(-3) + ' 67 ' + o(0) + ' 66Q' + o(3) + ' 67 ' + o(3) + ' 71.4V79Z"/>' +
+            windows(cx - 2.4, 49, 2, 2, 1.4, 1.4, 2, 1.6) + windows(cx - 0.7, 37, 1, 2, 1.4, 1.4, 0, 1.4) +
+            // the lantern: a balcony, arched openings, a cornice, the dome and its crescent
+            '<rect class="lm-fn" x="' + o(-5.6) + '" y="20.4" width="11.2" height="1.2" rx="0.4"/>' +
+            '<rect class="lm-fn" x="' + o(-4) + '" y="14" width="8" height="6.6"/>' +
+            arches(cx - 3.2, 15, 1.6, 4.6, 3, 0.8) +
+            '<rect class="lm-fn" x="' + o(-4.6) + '" y="13" width="9.2" height="1.2" rx="0.4"/>' +
+            '<path class="lm-fn-dome" d="M' + o(-4) + ' 13Q' + o(-4) + ' 7.6 ' + o(0) + ' 7Q' + o(4) + ' 7.6 ' + o(4) + ' 13Z"/>' +
+            '<rect class="lm-gold" x="' + o(-0.25) + '" y="3" width="0.5" height="4.4"/>' + crescent(cx, 1);
+        return out;
+    }
+
+    L.doha = svg(
+        // the desert round Zubara, West Bay's towers far off over the city
+        hills('lm-far', 84, 1.6, 60, 40) +
+        '<path class="lm-far" d="M40 96V82H136V70H142V62H146V70H150V58H154V66H160V74H254V66H258V54H262V60H266V72H' + X1 + 'V96Z"/>' +
+        '<path class="lm-sand" d="M' + X0 + ' 96V88.6Q-120 86.4 -40 88.6Q10 90 46 89.4V96Z"/>' +
+        ground('lm-stone-2', 91) +
+        zubara(-56) +
+        // the Cultural Center and Souq Waqif between palms
+        palm(48, 72, -1.4) +
+        fanar(90) +
+        palm(126, 70, 1.6) +
+        souqWaqif(144) +
+        palm(240, 72, -1.4) +
+        // the Lusail shore and the sea under the Katara Towers, the lobby's light on the water by night
+        water(89, 244, X1) +
+        glow('lm-glow-w', 292, 22) +
+        kataraTowers(292)
+    , 'Al-Zubara Fort, the spiral minaret of the Abdullah bin Zaid Al-Mahmoud Islamic Cultural Center, Souq Waqif and the Katara Towers');
+
     // ---------------------------------------------------------------- countries
     // The switcher's first step: each country of more than one city drawn from the best landmark of each of
     // its cities, smaller, on one ground (the Android app's country drawings). A country of one city
-    // (Bahrain, Egypt) shows that city's own drawing.
+    // (Bahrain, Egypt, Qatar) shows that city's own drawing.
     var C = {};
 
     // A landmark drawn round x = 0 and standing on `from`, moved to x on the ground (y 91) and scaled by k.
@@ -1209,8 +1465,9 @@
     // ---------------------------------------------------------------- flags
     // Official flags from Wikimedia Commons: Syria (since 2025), Saudi Arabia, Türkiye; Bahrain drawn
     // to its 2002 specification (3:5, five white points); Egypt drawn to its 1984 specification (2:3, the
-    // Eagle of Saladin in gold on the white band).
-    var FLAG_FILES = { SY: 'flags/sy.svg', SA: 'flags/sa.svg', TR: 'flags/tr.svg', BH: 'flags/bh.svg', EG: 'flags/eg.svg' };
+    // Eagle of Saladin in gold on the white band); Qatar drawn to its specification (11:28, nine white points,
+    // maroon).
+    var FLAG_FILES = { SY: 'flags/sy.svg', SA: 'flags/sa.svg', TR: 'flags/tr.svg', BH: 'flags/bh.svg', EG: 'flags/eg.svg', QA: 'flags/qa.svg' };
     var FLAGS = {};
     Object.keys(FLAG_FILES).forEach(function (k) {
         FLAGS[k] = '<img class="flag" src="' + FLAG_FILES[k] + '" alt="" width="30" height="20" decoding="async">';

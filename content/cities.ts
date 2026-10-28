@@ -4,9 +4,10 @@ import type { Bi } from "./i18n";
 // `id` is the city’s id in the web app (?city=<id>) and the name of its landmark drawing.
 // Counts come from each city's backend: its README, its data files or the live API the apps use
 // (Riyadh and Istanbul lines from /mtrlines, /buslines and friends; Istanbul stops are physical stops
-// on active routes, ferry piers counted once per name). Leave `facts` empty rather than guess.
+// on active routes, ferry piers counted once per name; Doha lines from /lines, stops from its README).
+// Leave `facts` empty rather than guess.
 
-export type CountryCode = "SA" | "BH" | "TR" | "EG" | "SY";
+export type CountryCode = "SA" | "BH" | "QA" | "TR" | "EG" | "SY";
 
 export type Mode =
   | "metro" | "bus" | "brt" | "suburban" | "highspeed" | "tram" | "ferry" | "funicular"
@@ -32,6 +33,7 @@ export type City = {
 export const countries: Record<CountryCode, Bi> = {
   SA: { en: "Saudi Arabia", ar: "السعودية", tr: "Suudi Arabistan" },
   BH: { en: "Bahrain", ar: "البحرين", tr: "Bahreyn" },
+  QA: { en: "Qatar", ar: "قطر", tr: "Katar" },
   TR: { en: "Türkiye", ar: "تركيا", tr: "Türkiye" },
   EG: { en: "Egypt", ar: "مصر", tr: "Mısır" },
   SY: { en: "Syria", ar: "سوريا", tr: "Suriye" },
@@ -142,6 +144,28 @@ export const cities: City[] = [
       en: "The Sakhir Tower, the Bahrain Financial Harbour towers, the Bahrain World Trade Center and the Four Seasons Bahrain Bay",
       ar: "برج الصخير، وأبراج مرفأ البحرين المالي، ومركز البحرين التجاري العالمي، وفندق فور سيزونز خليج البحرين",
       tr: "Sakhir Kulesi, Bahreyn Finans Limanı kuleleri, Bahreyn Dünya Ticaret Merkezi ve Four Seasons Bahrain Bay",
+    },
+  },
+  {
+    id: "doha",
+    country: "QA",
+    name: { en: "Doha", ar: "الدوحة", tr: "Doha" },
+    modes: ["metro", "tram", "bus"],
+    times: ["scheduled", "estimated"],
+    summary: {
+      en: "All three Doha Metro lines, the Lusail, Education City and Msheireb trams, Karwa’s buses and the MetroLink buses that feed the stations.",
+      ar: "خطوط مترو الدوحة الثلاثة، وترام لوسيل وترام المدينة التعليمية وترام مشيرب، وحافلات كروة، وحافلات مترولينك المغذّية للمحطات.",
+      tr: "Doha Metrosu’nun üç hattının tamamı, Lusail, Eğitim Şehri ve Msheireb tramvayları, Karwa otobüsleri ve istasyonlara bağlanan MetroLink otobüsleri.",
+    },
+    facts: [
+      { value: "10", label: { en: "metro and tram lines", ar: "خطوط المترو والترام", tr: "metro ve tramvay hattı" } },
+      { value: "137", label: { en: "bus and MetroLink lines", ar: "خطوط الحافلات ومترولينك", tr: "otobüs ve MetroLink hattı" } },
+      { value: "3,096", label: { en: "stations", ar: "المحطات", tr: "istasyon ve durak" } },
+    ],
+    landmarks: {
+      en: "Al-Zubara Fort, the spiral minaret of the Fanar, Souq Waqif and the Katara Towers",
+      ar: "قلعة الزبارة، ومئذنة الفنار الحلزونية، وسوق واقف، وأبراج كتارا",
+      tr: "Zubara Kalesi, Fanar’ın sarmal minaresi, Vakıf Çarşısı ve Katara Kuleleri",
     },
   },
   {

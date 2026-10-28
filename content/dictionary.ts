@@ -7,9 +7,9 @@ import type { TimeKind } from "./cities";
 
 const en = {
   meta: {
-    title: "Murtahil: public transport in nine cities",
+    title: "Murtahil: public transport in ten cities",
     description:
-      "Routes, departures and step-by-step guidance for metro, bus, rail and ferry in Riyadh, Jeddah, Makkah, Medina, the Eastern Province, Bahrain, Istanbul, Ankara, Cairo, Damascus and Hama.",
+      "Routes, departures and step-by-step guidance for metro, bus, rail and ferry in Riyadh, Jeddah, Makkah, Medina, the Eastern Province, Bahrain, Doha, Istanbul, Ankara, Cairo, Damascus and Hama.",
   },
   skip: "Skip to content",
   brand: { latin: "Murtahil", arabic: "مرتحل", home: "Murtahil home" },
@@ -27,14 +27,14 @@ const en = {
   },
   hero: {
     title: "Making transportation easier wherever you go.",
-    sub: "Plan routes, see departures and follow each step on metro, bus, rail and ferry, across nine cities in five countries.",
+    sub: "Plan routes, see departures and follow each step on metro, bus, rail and ferry, across ten cities in six countries.",
     secondary: "See the cities",
     webAlt:
-      "The Murtahil web app planning a trip in Riyadh: the Blue Line from KAFD to Qasr Al Hokm, 32 minutes with no changes.",
+      "The Murtahil web app planning a trip in Doha: the Red Line from Hamad International Airport to Katara, 33 minutes with no changes.",
     phoneAlt: "The Murtahil iPhone app planning a Blue Line trip from KAFD to Al Owd: 42 minutes with no changes.",
   },
   cities: {
-    title: "Nine cities in five countries",
+    title: "Ten cities in six countries",
     body: "The same app and the same screens in every one of them. Pick a city to see what Murtahil covers there.",
     modes: "Ways to travel",
     times: "Times you’ll see",
@@ -54,7 +54,7 @@ const en = {
     rows: [
       {
         problem: "Every city keeps its transport information somewhere different.",
-        answer: "Murtahil covers nine cities in five countries with the same screens. Switch city and everything you’ve learned still works.",
+        answer: "Murtahil covers ten cities in six countries with the same screens. Switch city and everything you’ve learned still works.",
       },
       {
         problem: "One trip can mean three different operators.",
@@ -133,7 +133,7 @@ const en = {
     available: "Available now",
     titleSoon: "On the web first. On\u00a0your phone soon.",
     bodySoon:
-      "The web app opens on 30 November 2026 with all nine cities, on any screen. The iPhone and Android apps are in beta, with a store release coming soon.",
+      "The web app opens on 30 November 2026 with all ten cities, on any screen. The iPhone and Android apps are in beta, with a store release coming soon.",
     comingSoon: "Coming soon",
     beta: "Coming soon",
     items: [
@@ -168,13 +168,13 @@ const en = {
       },
       {
         q: "When can I download the phone apps?",
-        a: "The iPhone and Android apps are in closed beta now, and the store release is coming soon. Until then, the web app covers the same nine cities.",
+        a: "The iPhone and Android apps are in closed beta now, and the store release is coming soon. Until then, the web app covers the same ten cities.",
         aSoon:
-          "The iPhone and Android apps are in beta now, and the store release is coming soon. The web app, with the same nine cities, opens on 30 November 2026.",
+          "The iPhone and Android apps are in beta now, and the store release is coming soon. The web app, with the same ten cities, opens on 30 November 2026.",
       },
       {
         q: "Are the times live?",
-        a: "In seven of the nine, yes. The phone apps show live times in Riyadh; Jeddah, Makkah and Medina; the Eastern Province; Bahrain; Istanbul; Ankara; and Cairo. In Damascus and Hama, times are estimated from how often a line runs. Every time is labelled, so you can tell.",
+        a: "In seven of the ten, yes. The phone apps show live times in Riyadh; Jeddah, Makkah and Medina; the Eastern Province; Bahrain; Istanbul; Ankara; and Cairo. In Doha, times come from timetables, or are estimated where none is published. In Damascus and Hama, times are estimated from how often a line runs. Every time is labelled, so you can tell.",
       },
       {
         q: "Which languages does it speak?",
@@ -182,7 +182,7 @@ const en = {
       },
       {
         q: "Which cities does it cover?",
-        a: "Riyadh; Jeddah, Makkah and Medina; the Eastern Province; Bahrain; Istanbul; Ankara; Cairo; Damascus; and Hama. Cities are added one at a time.",
+        a: "Riyadh; Jeddah, Makkah and Medina; the Eastern Province; Bahrain; Doha; Istanbul; Ankara; Cairo; Damascus; and Hama. Cities are added one at a time.",
       },
     ],
   },
@@ -205,9 +205,9 @@ export type Dictionary = typeof en;
 
 const ar: Dictionary = {
   meta: {
-    title: "مرتحل: النقل العام في تسع مدن",
+    title: "مرتحل: النقل العام في عشر مدن",
     description:
-      "مسارات ومواعيد مغادرة وإرشاد خطوة بخطوة للمترو والحافلات والقطارات والعبّارات في الرياض وجدة ومكة والمدينة والمنطقة الشرقية والبحرين وإسطنبول وأنقرة والقاهرة ودمشق وحماة.",
+      "مسارات ومواعيد مغادرة وإرشاد خطوة بخطوة للمترو والحافلات والقطارات والعبّارات في الرياض وجدة ومكة والمدينة والمنطقة الشرقية والبحرين والدوحة وإسطنبول وأنقرة والقاهرة ودمشق وحماة.",
   },
   skip: "انتقل إلى المحتوى",
   brand: { latin: "Murtahil", arabic: "مرتحل", home: "الصفحة الرئيسية لمرتحل" },
@@ -225,13 +225,13 @@ const ar: Dictionary = {
   },
   hero: {
     title: "نُسهّل التنقّل أينما ذهبت.",
-    sub: "خطّط مسارك، واطّلع على مواعيد المغادرة، واتبع كل خطوة في المترو والحافلات والقطارات والعبّارات، في تسع مدن بخمس دول.",
+    sub: "خطّط مسارك، واطّلع على مواعيد المغادرة، واتبع كل خطوة في المترو والحافلات والقطارات والعبّارات، في عشر مدن بست دول.",
     secondary: "تصفّح المدن",
-    webAlt: "تطبيق مرتحل على الويب يخطط رحلة في الرياض: المسار الأزرق من المركز المالي إلى قصر الحكم في 32 دقيقة دون تبديل.",
+    webAlt: "تطبيق مرتحل على الويب يخطط رحلة في الدوحة: الخط الأحمر من مطار حمد الدولي إلى كتارا في 33 دقيقة دون تبديل.",
     phoneAlt: "تطبيق مرتحل على آيفون يخطط رحلة على المسار الأزرق من المركز المالي إلى العود: 42 دقيقة دون تبديل.",
   },
   cities: {
-    title: "تسع مدن في خمس دول",
+    title: "عشر مدن في ست دول",
     body: "التطبيق نفسه والشاشات نفسها في كل مدينة. اختر مدينة لترى ما يغطيه مرتحل فيها.",
     modes: "وسائل التنقّل",
     times: "الأوقات التي ستراها",
@@ -251,7 +251,7 @@ const ar: Dictionary = {
     rows: [
       {
         problem: "لكل مدينة مكانها الخاص لمعلومات النقل.",
-        answer: "يغطي مرتحل تسع مدن في خمس دول بالشاشات نفسها. بدّل المدينة، وكل ما اعتدت عليه يبقى كما هو.",
+        answer: "يغطي مرتحل عشر مدن في ست دول بالشاشات نفسها. بدّل المدينة، وكل ما اعتدت عليه يبقى كما هو.",
       },
       {
         problem: "رحلة واحدة قد تمرّ بثلاث جهات تشغيل.",
@@ -330,7 +330,7 @@ const ar: Dictionary = {
     available: "متاح الآن",
     titleSoon: "على الويب أولًا، وعلى هاتفك قريبًا.",
     bodySoon:
-      "يُفتح تطبيق الويب في 30 نوفمبر 2026 بالمدن التسع، وعلى أي شاشة. وتطبيقا آيفون وأندرويد في المرحلة التجريبية، والإطلاق في المتاجر قريبًا.",
+      "يُفتح تطبيق الويب في 30 نوفمبر 2026 بالمدن العشر، وعلى أي شاشة. وتطبيقا آيفون وأندرويد في المرحلة التجريبية، والإطلاق في المتاجر قريبًا.",
     comingSoon: "قريبًا",
     beta: "تجريبي",
     items: [
@@ -367,11 +367,11 @@ const ar: Dictionary = {
         q: "متى أستطيع تنزيل تطبيقي الهاتف؟",
         a: "تطبيقا آيفون وأندرويد حاليا في المرحلة التجريبية المغلقة، والإطلاق في المتاجر قريبًا..",
         aSoon:
-          "تطبيقا يفون وأندرويد حاليا في المرحلة التجريبية المغلقة. ويُفتح تطبيق في المتاجر بالمدن التسع نفسها، في 30 نوفمبر 2026.",
+          "تطبيقا يفون وأندرويد حاليا في المرحلة التجريبية المغلقة. ويُفتح تطبيق في المتاجر بالمدن العشر نفسها، في 30 نوفمبر 2026.",
       },
       {
         q: "هل الأوقات مباشرة؟",
-        a: "نعم في سبع من المدن التسع. تعرض تطبيقات الهاتف أوقاتًا مباشرة في الرياض، وجدة ومكة والمدينة، والمنطقة الشرقية، والبحرين، وإسطنبول، وأنقرة، والقاهرة. أما في دمشق وحماة فالأوقات تقديرية من تواتر الخط. وكل وقت موسوم بمصدره لتعرف الفرق.",
+        a: "نعم في سبع من المدن العشر. تعرض تطبيقات الهاتف أوقاتًا مباشرة في الرياض، وجدة ومكة والمدينة، والمنطقة الشرقية، والبحرين، وإسطنبول، وأنقرة، والقاهرة. وفي الدوحة تأتي الأوقات من الجداول، وتكون تقديرية حيث لا يُنشر جدول. أما في دمشق وحماة فالأوقات تقديرية من تواتر الخط. وكل وقت موسوم بمصدره لتعرف الفرق.",
       },
       {
         q: "ما اللغات المتاحة؟",
@@ -379,7 +379,7 @@ const ar: Dictionary = {
       },
       {
         q: "ما المدن التي يغطيها؟",
-        a: "الرياض، وجدة ومكة والمدينة، والمنطقة الشرقية، والبحرين، وإسطنبول، وأنقرة، والقاهرة، ودمشق، وحماة. ونضيف المدن واحدة تلو الأخرى.",
+        a: "الرياض، وجدة ومكة والمدينة، والمنطقة الشرقية، والبحرين، والدوحة، وإسطنبول، وأنقرة، والقاهرة، ودمشق، وحماة. ونضيف المدن واحدة تلو الأخرى.",
       },
     ],
   },
@@ -402,9 +402,9 @@ const ar: Dictionary = {
 // tahmini, tarifeli, yaklaşık) and its names for modes and cities, and the apps’ tagline.
 const tr: Dictionary = {
   meta: {
-    title: "Murtahil: dokuz şehirde toplu taşıma",
+    title: "Murtahil: on şehirde toplu taşıma",
     description:
-      "Riyad, Cidde, Mekke, Medine, Doğu Bölgesi, Bahreyn, İstanbul, Ankara, Kahire, Şam ve Hama’da metro, otobüs, tren ve vapur için rotalar, kalkış saatleri ve adım adım yol tarifi.",
+      "Riyad, Cidde, Mekke, Medine, Doğu Bölgesi, Bahreyn, Doha, İstanbul, Ankara, Kahire, Şam ve Hama’da metro, otobüs, tren ve vapur için rotalar, kalkış saatleri ve adım adım yol tarifi.",
   },
   skip: "İçeriğe geç",
   brand: { latin: "Murtahil", arabic: "مرتحل", home: "Murtahil ana sayfası" },
@@ -422,14 +422,14 @@ const tr: Dictionary = {
   },
   hero: {
     title: "Nereye giderseniz gidin, ulaşımı kolaylaştırıyoruz.",
-    sub: "Metro, otobüs, tren ve vapurda rotanızı planlayın, kalkış saatlerini görün ve her adımı takip edin. Beş ülkede, dokuz şehirde.",
+    sub: "Metro, otobüs, tren ve vapurda rotanızı planlayın, kalkış saatlerini görün ve her adımı takip edin. Altı ülkede, on şehirde.",
     secondary: "Şehirlere göz at",
     webAlt:
-      "Murtahil web uygulaması Riyad’da bir yolculuk planlıyor: KAFD’den Qasr Al Hokm’a Mavi Hat, aktarmasız 32 dakika.",
+      "Murtahil web uygulaması Doha’da bir yolculuk planlıyor: Hamad Uluslararası Havalimanı’ndan Katara’ya Kırmızı Hat, aktarmasız 33 dakika.",
     phoneAlt: "Murtahil iPhone uygulaması KAFD’den Al Owd’a Mavi Hat ile bir yolculuk planlıyor: aktarmasız 42 dakika.",
   },
   cities: {
-    title: "Beş ülkede dokuz şehir",
+    title: "Altı ülkede on şehir",
     body: "Hepsinde aynı uygulama, aynı ekranlar. Murtahil’in bir şehirde neleri kapsadığını görmek için o şehri seçin.",
     modes: "Ulaşım türleri",
     times: "Göreceğiniz saatler",
@@ -449,7 +449,7 @@ const tr: Dictionary = {
     rows: [
       {
         problem: "Her şehir ulaşım bilgisini başka bir yerde tutuyor.",
-        answer: "Murtahil beş ülkede dokuz şehri aynı ekranlarla kapsar. Şehir değiştirin, öğrendiğiniz her şey yine işe yarar.",
+        answer: "Murtahil altı ülkede on şehri aynı ekranlarla kapsar. Şehir değiştirin, öğrendiğiniz her şey yine işe yarar.",
       },
       {
         problem: "Tek bir yolculuk üç farklı işletmeci demek olabilir.",
@@ -528,7 +528,7 @@ const tr: Dictionary = {
     available: "Kullanıma açık",
     titleSoon: "Önce web’de. Yakında telefonunuzda.",
     bodySoon:
-      "Web uygulaması 30 Kasım 2026’da dokuz şehrin tamamıyla, her ekranda açılıyor. iPhone ve Android uygulamaları beta aşamasında; mağaza sürümü yakında.",
+      "Web uygulaması 30 Kasım 2026’da on şehrin tamamıyla, her ekranda açılıyor. iPhone ve Android uygulamaları beta aşamasında; mağaza sürümü yakında.",
     comingSoon: "Yakında",
     beta: "Yakında",
     items: [
@@ -563,13 +563,13 @@ const tr: Dictionary = {
       },
       {
         q: "Telefon uygulamalarını ne zaman indirebilirim?",
-        a: "iPhone ve Android uygulamaları şu anda kapalı beta aşamasında ve mağaza sürümü yakında. O zamana kadar web uygulaması aynı dokuz şehri kapsıyor.",
+        a: "iPhone ve Android uygulamaları şu anda kapalı beta aşamasında ve mağaza sürümü yakında. O zamana kadar web uygulaması aynı on şehri kapsıyor.",
         aSoon:
-          "iPhone ve Android uygulamaları şu anda beta aşamasında ve mağaza sürümü yakında. Aynı dokuz şehri kapsayan web uygulaması 30 Kasım 2026’da açılıyor.",
+          "iPhone ve Android uygulamaları şu anda beta aşamasında ve mağaza sürümü yakında. Aynı on şehri kapsayan web uygulaması 30 Kasım 2026’da açılıyor.",
       },
       {
         q: "Saatler canlı mı?",
-        a: "Dokuz şehrin yedisinde evet. Telefon uygulamaları Riyad’da; Cidde, Mekke ve Medine’de; Doğu Bölgesi’nde; Bahreyn’de; İstanbul’da; Ankara’da ve Kahire’de canlı saat gösterir. Şam ve Hama’da saatler, hattın ne sıklıkla çalıştığından tahmin edilir. Her saat etiketlidir, farkı görürsünüz.",
+        a: "On şehrin yedisinde evet. Telefon uygulamaları Riyad’da; Cidde, Mekke ve Medine’de; Doğu Bölgesi’nde; Bahreyn’de; İstanbul’da; Ankara’da ve Kahire’de canlı saat gösterir. Doha’da saatler tarifelerden gelir; tarife yayımlanmayan yerlerde tahmin edilir. Şam ve Hama’da saatler, hattın ne sıklıkla çalıştığından tahmin edilir. Her saat etiketlidir, farkı görürsünüz.",
       },
       {
         q: "Hangi dilleri konuşuyor?",
@@ -577,7 +577,7 @@ const tr: Dictionary = {
       },
       {
         q: "Hangi şehirleri kapsıyor?",
-        a: "Riyad; Cidde, Mekke ve Medine; Doğu Bölgesi; Bahreyn; İstanbul; Ankara; Kahire; Şam ve Hama. Şehirler birer birer eklenir.",
+        a: "Riyad; Cidde, Mekke ve Medine; Doğu Bölgesi; Bahreyn; Doha; İstanbul; Ankara; Kahire; Şam ve Hama. Şehirler birer birer eklenir.",
       },
     ],
   },

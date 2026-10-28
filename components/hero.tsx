@@ -8,7 +8,8 @@ import { WebAppButton } from "./web-app-button";
 
 /**
  * Asymmetric split: the tagline across the top, the pitch and actions on the leading side, and the
- * product on the brand stage: the web app planning a Riyadh trip, on a desktop and on a phone.
+ * product on the brand stage: the web app planning a Doha trip on a desktop, and the iPhone app a
+ * Riyadh one.
  */
 export function Hero({ t, locale }: { t: Dictionary; locale: Locale }) {
   return (
@@ -36,7 +37,7 @@ export function Hero({ t, locale }: { t: Dictionary; locale: Locale }) {
           <div className="relative lg:col-span-8">
             <div className="rise relative aspect-[16/11] overflow-hidden rounded-[32px] bg-stage shadow-[inset_0_0_0_1px_var(--stage-ring)] [animation-delay:120ms] sm:aspect-[16/10]">
               <img
-                src={`/img/web-riyadh-${locale}.webp`}
+                src={`/img/web-doha-${locale}.webp`}
                 alt={t.hero.webAlt}
                 width={1600}
                 height={1000}
