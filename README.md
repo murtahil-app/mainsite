@@ -24,6 +24,7 @@ Settings > Build:
 |---|---|
 | Build command | `npm run build` |
 | Deploy command | `npx wrangler deploy` |
+| Non-production branch deploy command | `npx wrangler preview` (needs the `[previews]` block in `wrangler.toml`) |
 | Root directory | `/` |
 
 The Worker's name in the dashboard must match `name` in `wrangler.toml` (`murtahil`). Node comes

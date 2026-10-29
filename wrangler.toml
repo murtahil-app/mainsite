@@ -16,3 +16,7 @@ html_handling = "auto-trailing-slash"
 not_found_handling = "404-page"
 # The script runs first only for "/" (the language redirect); every other request is a static file.
 run_worker_first = ["/"]
+
+# Branch builds deploy with `npx wrangler preview`, which needs this block. It can stay empty: the site
+# has no vars or bindings of its own, and assets and the compatibility date come from the top level.
+[previews]
