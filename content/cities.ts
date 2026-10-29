@@ -85,7 +85,7 @@ export const cities: City[] = [
     name: { en: "Jeddah, Makkah and Medina", ar: "جدة ومكة والمدينة", tr: "Cidde, Mekke ve Medine" },
     modes: ["bus", "highspeed"],
     times: ["live", "scheduled", "estimated"],
-    liveInAppsOnly: true,
+    liveInAppsOnly: false,
     summary: {
       en: "Buses in all three cities and the Haramain High Speed Railway between them, so one journey can cross cities by train.",
       ar: "الحافلات في المدن الثلاث، وقطار الحرمين السريع بينها، فتعبر الرحلة الواحدة من مدينة إلى أخرى بالقطار.",
@@ -108,7 +108,7 @@ export const cities: City[] = [
     name: { en: "Eastern Province", ar: "المنطقة الشرقية", tr: "Doğu Bölgesi" },
     modes: ["bus"],
     times: ["live", "estimated"],
-    liveInAppsOnly: true,
+    liveInAppsOnly: false,
     summary: {
       en: "SAPTCO’s bus networks in Dammam, Al Khobar, Dhahran and Qatif, and in Al-Ahsa.",
       ar: "شبكتا حافلات سابتكو في الدمام والخبر والظهران والقطيف، وفي الأحساء.",
@@ -130,7 +130,7 @@ export const cities: City[] = [
     name: { en: "Bahrain", ar: "البحرين", tr: "Bahreyn" },
     modes: ["bus"],
     times: ["live", "scheduled"],
-    liveInAppsOnly: true,
+    liveInAppsOnly: false,
     summary: {
       en: "Every Bahrain Bus trip from the official timetables, with fares in dinars and the GO Card daily cap.",
       ar: "كل رحلات حافلات البحرين من الجداول الرسمية، مع الأجرة بالدينار وسقف بطاقة GO اليومي.",
@@ -151,7 +151,7 @@ export const cities: City[] = [
     country: "QA",
     name: { en: "Doha", ar: "الدوحة", tr: "Doha" },
     modes: ["metro", "tram", "bus"],
-    times: ["scheduled", "estimated"],
+    times: ["live", "predicted", "scheduled"],
     summary: {
       en: "All three Doha Metro lines, the Lusail, Education City and Msheireb trams, Karwa’s buses and the MetroLink buses that feed the stations.",
       ar: "خطوط مترو الدوحة الثلاثة، وترام لوسيل وترام المدينة التعليمية وترام مشيرب، وحافلات كروة، وحافلات مترولينك المغذّية للمحطات.",
@@ -220,7 +220,7 @@ export const cities: City[] = [
     name: { en: "Cairo", ar: "القاهرة", tr: "Kahire" },
     modes: ["metro", "lrt", "monorail", "brt", "bus", "microbus"],
     times: ["live", "estimated"],
-    liveInAppsOnly: true,
+    liveInAppsOnly: false,
     summary: {
       en: "Metro lines 1 to 3, the LRT, the monorail, the Ring Road BRT, public buses and microbuses, with fares in pounds.",
       ar: "خطوط المترو من الأول إلى الثالث، والقطار الخفيف، والمونوريل، والأتوبيس الترددي على الطريق الدائري، والأتوبيسات والميكروباص، مع الأجرة بالجنيه.",
