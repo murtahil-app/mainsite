@@ -91,6 +91,34 @@
     --lm-brn: #DDB67C;
     --lm-brn-2: #BF975D;
     --lm-brn-3: #EED3A1;
+    /* Doha by day: Al-Zubara's sun-baked ochre, its loopholes in shadow; the Katara Towers' blue-silver
+       glass and frames; Souq Waqif's white plaster and shaded arches; the Cultural Center's sand-coloured
+       drums with terracotta bands and a grey-green dome; the maroon of the flag. */
+    --lm-zb: #E2B676;
+    --lm-zb-2: #C9965A;
+    --lm-zb-hole: #6B4A2A;
+    --lm-kt: #C2D3E0;
+    --lm-kt-2: #86A4BC;
+    --lm-kt-line: rgba(255, 255, 255, 0.9);
+    --lm-kt-frame: #EEF3F6;
+    --lm-kt-arc: #EEF3F6;
+    --lm-kt-crown: #7D8A96;
+    --lm-kt-deck: #F1F4F6;
+    --lm-kt-base: #D7E0E6;
+    --lm-kt-hall: #7F9AB0;
+    --lm-kt-lit: transparent;
+    --lm-kt-lit-2: transparent;
+    --lm-sw: #F2EADB;
+    --lm-sw-2: #DCCFB8;
+    --lm-sw-hole: #A08A6A;
+    --lm-sw-rail: #E6DBC6;
+    --lm-fn: #E6CDA8;
+    --lm-fn-2: #CFB089;
+    --lm-fn-band: #C98670;
+    --lm-fn-ramp: #F4E7D2;
+    --lm-fn-dome: #6E8A7E;
+    --lm-fn-glass: #2C4558;
+    --lm-qa: #8A1538;
     --lm-slate: #55636F;
     --lm-detail: rgba(74, 58, 36, 0.55);
     --lm-line: #8C7A5E;
@@ -190,6 +218,35 @@
     --lm-brn: #F0B75A;
     --lm-brn-2: #C6853A;
     --lm-brn-3: #FFD88E;
+    /* Doha by night: Al-Zubara floodlit orange; the Katara Towers dark but for the lit rooms and the gold
+       strips along the slabs' floors, a white light along the round hollow between the blades, their outer
+       edges and the decks lit, the lobby glowing; Souq Waqif's plaster washed in cool light, its arches
+       glowing; the Cultural Center floodlit gold. */
+    --lm-zb: #F0A43A;
+    --lm-zb-2: #C97A1E;
+    --lm-zb-hole: #4A2A0C;
+    --lm-kt: #181B21;
+    --lm-kt-2: #101216;
+    --lm-kt-line: #E2B75A;
+    --lm-kt-frame: #D8C38C;
+    --lm-kt-arc: #FFFFFF;
+    --lm-kt-crown: #262A30;
+    --lm-kt-deck: #F2E3BC;
+    --lm-kt-base: #2B2722;
+    --lm-kt-hall: #FFCF6E;
+    --lm-kt-lit: #FFD27A;
+    --lm-kt-lit-2: #F4F1E8;
+    --lm-sw: #EDE4D2;
+    --lm-sw-2: #C8BCA6;
+    --lm-sw-hole: #FFCC66;
+    --lm-sw-rail: #F7E3B0;
+    --lm-fn: #F2C25E;
+    --lm-fn-2: #D29A3A;
+    --lm-fn-band: #E3A24A;
+    --lm-fn-ramp: #FFE3A3;
+    --lm-fn-dome: #3E5A4E;
+    --lm-fn-glass: #FFD98A;
+    --lm-qa: #A3264B;
     --lm-slate: #6E7F8C;
     --lm-detail: #FFD98A;
     --lm-line: #D9C7A0;
@@ -218,6 +275,8 @@
 .lm :is(.lm-glow-v, .lm-glow-w, .lm-lights) { opacity: 0; }
 .lm :is(.lm-yda-fin, .lm-yda-lit, .lm-yda-led, .lm-ata-lattice, .lm-ata-led) { fill: none; stroke: currentColor; opacity: 0; }
 .lm .lm-pyr-line { fill: none; stroke: currentColor; opacity: 0; }
+.lm :is(.lm-kt-line, .lm-kt-frame, .lm-kt-arc, .lm-fn-ramp) { fill: none; stroke: currentColor; opacity: 0; }
+.lm :is(.lm-kt-lit, .lm-kt-lit-2) { opacity: 0; }
 /* Shown: the landmarks in colour. */
 .lm.is-shown .lm-sky { fill: var(--lm-sky); }
 .lm.is-shown .lm-far { fill: var(--lm-far); opacity: 1; }
@@ -308,6 +367,32 @@
 .lm.is-shown .lm-brn { fill: var(--lm-brn); }
 .lm.is-shown .lm-brn-2 { fill: var(--lm-brn-2); }
 .lm.is-shown .lm-brn-3 { fill: var(--lm-brn-3); }
+.lm.is-shown .lm-zb { fill: var(--lm-zb); }
+.lm.is-shown .lm-zb-2 { fill: var(--lm-zb-2); }
+.lm.is-shown .lm-zb-hole { fill: var(--lm-zb-hole); }
+.lm.is-shown .lm-kt { fill: var(--lm-kt); }
+.lm.is-shown .lm-kt-2 { fill: var(--lm-kt-2); }
+.lm.is-shown .lm-kt-base { fill: var(--lm-kt-base); }
+.lm.is-shown .lm-kt-hall { fill: var(--lm-kt-hall); }
+.lm.is-shown .lm-kt-crown { fill: var(--lm-kt-crown); }
+.lm.is-shown .lm-kt-deck { fill: var(--lm-kt-deck); }
+.lm.is-shown .lm-kt-lit { fill: var(--lm-kt-lit); opacity: 1; }
+.lm.is-shown .lm-kt-lit-2 { fill: var(--lm-kt-lit-2); opacity: 1; }
+.lm.is-shown .lm-sw { fill: var(--lm-sw); }
+.lm.is-shown .lm-sw-2 { fill: var(--lm-sw-2); }
+.lm.is-shown .lm-sw-hole { fill: var(--lm-sw-hole); }
+.lm.is-shown .lm-sw-rail { fill: var(--lm-sw-rail); }
+.lm.is-shown .lm-fn { fill: var(--lm-fn); }
+.lm.is-shown .lm-fn-2 { fill: var(--lm-fn-2); }
+.lm.is-shown .lm-fn-band { fill: var(--lm-fn-band); }
+.lm.is-shown .lm-fn-dome { fill: var(--lm-fn-dome); }
+.lm.is-shown .lm-fn-glass { fill: var(--lm-fn-glass); }
+.lm.is-shown .lm-qa { fill: var(--lm-qa); }
+.lm.is-shown :is(.lm-kt-line, .lm-kt-frame, .lm-kt-arc, .lm-fn-ramp) { opacity: 1; }
+.lm.is-shown .lm-kt-line { stroke: var(--lm-kt-line); }
+.lm.is-shown .lm-kt-frame { stroke: var(--lm-kt-frame); }
+.lm.is-shown .lm-kt-arc { stroke: var(--lm-kt-arc); }
+.lm.is-shown .lm-fn-ramp { stroke: var(--lm-fn-ramp); }
 .lm.is-shown .lm-wood { stroke: var(--lm-wood); }
 .lm.is-shown .lm-wood circle:last-child { fill: var(--lm-wood); }
 .lm.is-shown .lm-detail { fill: var(--lm-detail); opacity: 1; }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" class="lm is-shown" viewBox="-24 -6 368 102" preserveAspectRatio="xMidYMax meet" overflow="visible" role="img" aria-label="The Kingdom Centre, Al Faisaliah Tower, Masmak Fort and the Riyadh Metro" focusable="false"><style>svg{--lm-sky:#DDF1FA;--lm-far:#BFD8C7;--lm-stone:#E8D9BC;--lm-stone-2:#D6C3A0;--lm-green:#1F8A4C;--lm-gold:#D4A72C;--lm-glass:#7DB3D1;--lm-water:#2FB1E9;--lm-spray:#8FC2DC;--lm-white:#F7F4EC;--lm-glass-dark:#3F5A6E;--lm-metal:#D8CCB0;--lm-red:#C62B2B;--lm-cream:#F2E7C9;--lm-trees:#6FA35A;--lm-c1:#D93A2B;--lm-c2:#F28C28;--lm-c3:#2E4FB3;--lm-c4:#F3C534;--lm-c5:#3DA35A;--lm-wood:#7A4B2A;--lm-timber:#8A5A33;--lm-tower:#DCC0AA;--lm-tower-2:#C4A08A;--lm-tower-3:#F8F2EA;--lm-rib:#FBF6EF;--lm-glow:transparent;--lm-steel:#C5CBD0;--lm-steel-2:#A9B0B7;--lm-steel-hi:#E2E6E9;--lm-steel-edge:#8D959C;--lm-band:#43494F;--lm-led-1:#4FD6F2;--lm-led-2:#F25CB8;--lm-led-3:#9C6CF2;--lm-bic-glass:#26324C;--lm-bic-mark:rgba(255, 255, 255, 0.45);--lm-bfh:#1FA06C;--lm-bfh-2:#12784F;--lm-bfh-hi:#EFC65C;--lm-bfh-line:rgba(10, 80, 52, 0.55);--lm-bfh-led:#E6CF86;--lm-wtc:#E9ECEB;--lm-wtc-glass:#3F88C8;--lm-wtc-line:#9BB2C6;--lm-wtc-edge:#FBFCFB;--lm-fs:#DCC7A4;--lm-fs-2:#C3A882;--lm-fs-fin:#7E6644;--lm-fs-rib:#9A7F55;--lm-fs-glass:#3A3330;--lm-fs-hall:#EDE4D3;--lm-lights:transparent;--lm-glow-v:transparent;--lm-glow-w:transparent;--lm-yda:#8197AD;--lm-yda-2:#637790;--lm-yda-fin:rgba(234, 241, 247, 0.5);--lm-yda-lit:transparent;--lm-yda-led:#E9EEF2;--lm-ata:#F2F0EB;--lm-ata-2:#CCC8BF;--lm-ata-glass:#3D5064;--lm-ata-dome:#9CC0D9;--lm-ata-lattice:#F5F8FA;--lm-ata-led:rgba(255, 255, 255, 0.35);--lm-ata-screen:#41546A;--lm-koc:#F1ECE1;--lm-koc-2:#D9D0BE;--lm-koc-dome:#6D8496;--lm-clk:#E3D3B4;--lm-clk-2:#C9B793;--lm-roof:#B4583A;--lm-pyr:#E4C48C;--lm-pyr-2:#C49C5E;--lm-pyr-line:rgba(122, 88, 42, 0.32);--lm-sand:#EBD3A2;--lm-ctw:#DCC8A2;--lm-ctw-2:#BFA77F;--lm-ctw-hole:#5C4A35;--lm-ctw-glass:#3F5A6E;--lm-azh:#E6C78F;--lm-azh-2:#C9A468;--lm-azh-dome:#D6D1C6;--lm-azh-tile:#2F80A6;--lm-azh-red:#B9653F;--lm-brn:#DDB67C;--lm-brn-2:#BF975D;--lm-brn-3:#EED3A1;--lm-slate:#55636F;--lm-detail:rgba(74, 58, 36, 0.55);--lm-line:#8C7A5E;--lm-silhouette:#287A10}
+<svg xmlns="http://www.w3.org/2000/svg" class="lm is-shown" viewBox="-24 -6 368 102" preserveAspectRatio="xMidYMax meet" overflow="visible" role="img" aria-label="The Kingdom Centre, Al Faisaliah Tower, Masmak Fort and the Riyadh Metro" focusable="false"><style>svg{--lm-sky:#DDF1FA;--lm-far:#BFD8C7;--lm-stone:#E8D9BC;--lm-stone-2:#D6C3A0;--lm-green:#1F8A4C;--lm-gold:#D4A72C;--lm-glass:#7DB3D1;--lm-water:#2FB1E9;--lm-spray:#8FC2DC;--lm-white:#F7F4EC;--lm-glass-dark:#3F5A6E;--lm-metal:#D8CCB0;--lm-red:#C62B2B;--lm-cream:#F2E7C9;--lm-trees:#6FA35A;--lm-c1:#D93A2B;--lm-c2:#F28C28;--lm-c3:#2E4FB3;--lm-c4:#F3C534;--lm-c5:#3DA35A;--lm-wood:#7A4B2A;--lm-timber:#8A5A33;--lm-tower:#DCC0AA;--lm-tower-2:#C4A08A;--lm-tower-3:#F8F2EA;--lm-rib:#FBF6EF;--lm-glow:transparent;--lm-steel:#C5CBD0;--lm-steel-2:#A9B0B7;--lm-steel-hi:#E2E6E9;--lm-steel-edge:#8D959C;--lm-band:#43494F;--lm-led-1:#4FD6F2;--lm-led-2:#F25CB8;--lm-led-3:#9C6CF2;--lm-bic-glass:#26324C;--lm-bic-mark:rgba(255, 255, 255, 0.45);--lm-bfh:#1FA06C;--lm-bfh-2:#12784F;--lm-bfh-hi:#EFC65C;--lm-bfh-line:rgba(10, 80, 52, 0.55);--lm-bfh-led:#E6CF86;--lm-wtc:#E9ECEB;--lm-wtc-glass:#3F88C8;--lm-wtc-line:#9BB2C6;--lm-wtc-edge:#FBFCFB;--lm-fs:#DCC7A4;--lm-fs-2:#C3A882;--lm-fs-fin:#7E6644;--lm-fs-rib:#9A7F55;--lm-fs-glass:#3A3330;--lm-fs-hall:#EDE4D3;--lm-lights:transparent;--lm-glow-v:transparent;--lm-glow-w:transparent;--lm-yda:#8197AD;--lm-yda-2:#637790;--lm-yda-fin:rgba(234, 241, 247, 0.5);--lm-yda-lit:transparent;--lm-yda-led:#E9EEF2;--lm-ata:#F2F0EB;--lm-ata-2:#CCC8BF;--lm-ata-glass:#3D5064;--lm-ata-dome:#9CC0D9;--lm-ata-lattice:#F5F8FA;--lm-ata-led:rgba(255, 255, 255, 0.35);--lm-ata-screen:#41546A;--lm-koc:#F1ECE1;--lm-koc-2:#D9D0BE;--lm-koc-dome:#6D8496;--lm-clk:#E3D3B4;--lm-clk-2:#C9B793;--lm-roof:#B4583A;--lm-pyr:#E4C48C;--lm-pyr-2:#C49C5E;--lm-pyr-line:rgba(122, 88, 42, 0.32);--lm-sand:#EBD3A2;--lm-ctw:#DCC8A2;--lm-ctw-2:#BFA77F;--lm-ctw-hole:#5C4A35;--lm-ctw-glass:#3F5A6E;--lm-azh:#E6C78F;--lm-azh-2:#C9A468;--lm-azh-dome:#D6D1C6;--lm-azh-tile:#2F80A6;--lm-azh-red:#B9653F;--lm-brn:#DDB67C;--lm-brn-2:#BF975D;--lm-brn-3:#EED3A1;--lm-zb:#E2B676;--lm-zb-2:#C9965A;--lm-zb-hole:#6B4A2A;--lm-kt:#C2D3E0;--lm-kt-2:#86A4BC;--lm-kt-line:rgba(255, 255, 255, 0.9);--lm-kt-frame:#EEF3F6;--lm-kt-arc:#EEF3F6;--lm-kt-crown:#7D8A96;--lm-kt-deck:#F1F4F6;--lm-kt-base:#D7E0E6;--lm-kt-hall:#7F9AB0;--lm-kt-lit:transparent;--lm-kt-lit-2:transparent;--lm-sw:#F2EADB;--lm-sw-2:#DCCFB8;--lm-sw-hole:#A08A6A;--lm-sw-rail:#E6DBC6;--lm-fn:#E6CDA8;--lm-fn-2:#CFB089;--lm-fn-band:#C98670;--lm-fn-ramp:#F4E7D2;--lm-fn-dome:#6E8A7E;--lm-fn-glass:#2C4558;--lm-qa:#8A1538;--lm-slate:#55636F;--lm-detail:rgba(74, 58, 36, 0.55);--lm-line:#8C7A5E;--lm-silhouette:#287A10}
 .lm { display: block; width: 100%; height: 100%; overflow: visible; color: var(--lm-silhouette); }
 .lm .lm-sky { fill: transparent; }
 .lm :where([class^="lm-"]:not(.lm-sky, .lm-wood, .lm-line)) { fill: currentColor; }
@@ -19,6 +19,8 @@
 .lm :is(.lm-glow-v, .lm-glow-w, .lm-lights) { opacity: 0; }
 .lm :is(.lm-yda-fin, .lm-yda-lit, .lm-yda-led, .lm-ata-lattice, .lm-ata-led) { fill: none; stroke: currentColor; opacity: 0; }
 .lm .lm-pyr-line { fill: none; stroke: currentColor; opacity: 0; }
+.lm :is(.lm-kt-line, .lm-kt-frame, .lm-kt-arc, .lm-fn-ramp) { fill: none; stroke: currentColor; opacity: 0; }
+.lm :is(.lm-kt-lit, .lm-kt-lit-2) { opacity: 0; }
 .lm.is-shown .lm-sky { fill: var(--lm-sky); }
 .lm.is-shown .lm-far { fill: var(--lm-far); opacity: 1; }
 .lm.is-shown .lm-stone { fill: var(--lm-stone); }
@@ -108,6 +110,32 @@
 .lm.is-shown .lm-brn { fill: var(--lm-brn); }
 .lm.is-shown .lm-brn-2 { fill: var(--lm-brn-2); }
 .lm.is-shown .lm-brn-3 { fill: var(--lm-brn-3); }
+.lm.is-shown .lm-zb { fill: var(--lm-zb); }
+.lm.is-shown .lm-zb-2 { fill: var(--lm-zb-2); }
+.lm.is-shown .lm-zb-hole { fill: var(--lm-zb-hole); }
+.lm.is-shown .lm-kt { fill: var(--lm-kt); }
+.lm.is-shown .lm-kt-2 { fill: var(--lm-kt-2); }
+.lm.is-shown .lm-kt-base { fill: var(--lm-kt-base); }
+.lm.is-shown .lm-kt-hall { fill: var(--lm-kt-hall); }
+.lm.is-shown .lm-kt-crown { fill: var(--lm-kt-crown); }
+.lm.is-shown .lm-kt-deck { fill: var(--lm-kt-deck); }
+.lm.is-shown .lm-kt-lit { fill: var(--lm-kt-lit); opacity: 1; }
+.lm.is-shown .lm-kt-lit-2 { fill: var(--lm-kt-lit-2); opacity: 1; }
+.lm.is-shown .lm-sw { fill: var(--lm-sw); }
+.lm.is-shown .lm-sw-2 { fill: var(--lm-sw-2); }
+.lm.is-shown .lm-sw-hole { fill: var(--lm-sw-hole); }
+.lm.is-shown .lm-sw-rail { fill: var(--lm-sw-rail); }
+.lm.is-shown .lm-fn { fill: var(--lm-fn); }
+.lm.is-shown .lm-fn-2 { fill: var(--lm-fn-2); }
+.lm.is-shown .lm-fn-band { fill: var(--lm-fn-band); }
+.lm.is-shown .lm-fn-dome { fill: var(--lm-fn-dome); }
+.lm.is-shown .lm-fn-glass { fill: var(--lm-fn-glass); }
+.lm.is-shown .lm-qa { fill: var(--lm-qa); }
+.lm.is-shown :is(.lm-kt-line, .lm-kt-frame, .lm-kt-arc, .lm-fn-ramp) { opacity: 1; }
+.lm.is-shown .lm-kt-line { stroke: var(--lm-kt-line); }
+.lm.is-shown .lm-kt-frame { stroke: var(--lm-kt-frame); }
+.lm.is-shown .lm-kt-arc { stroke: var(--lm-kt-arc); }
+.lm.is-shown .lm-fn-ramp { stroke: var(--lm-fn-ramp); }
 .lm.is-shown .lm-wood { stroke: var(--lm-wood); }
 .lm.is-shown .lm-wood circle:last-child { fill: var(--lm-wood); }
 .lm.is-shown .lm-detail { fill: var(--lm-detail); opacity: 1; }

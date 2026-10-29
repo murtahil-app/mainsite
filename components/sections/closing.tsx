@@ -2,8 +2,8 @@ import type { Dictionary } from "@/content/dictionary";
 import { container } from "../ui";
 import { WebAppButton } from "../web-app-button";
 
-// One skyline from the five countries' landmark silhouettes, in the order the cities are listed.
-const skyline = ["sa", "bh", "tr", "eg", "sy"];
+// One skyline from the six countries' landmark silhouettes, in the order the cities are listed.
+const skyline = ["sa", "bh", "qa", "tr", "eg", "sy"];
 
 /** The app's first question, on the brand stage, over the skyline of every country it covers. */
 export function Closing({ t }: { t: Dictionary }) {
@@ -21,7 +21,7 @@ export function Closing({ t }: { t: Dictionary }) {
             <p className="max-w-[40ch] text-lg text-[#a9bbac] md:text-xl">{t.cta.body}</p>
             <WebAppButton label={t.nav.openApp} soon={t.nav.soon} onStage className="mt-2" />
           </div>
-          {/* The five countries' skylines drift past, the page's one moving band. Static under reduced motion. */}
+          {/* The six countries' skylines drift past, the page's one moving band. Static under reduced motion. */}
           <div aria-hidden dir="ltr" className="pointer-events-none absolute inset-x-0 bottom-0 h-28 overflow-hidden md:h-40">
             <div className="skyline flex h-full w-max">
               {[...skyline, ...skyline].map((k, i) => (
