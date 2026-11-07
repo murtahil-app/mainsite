@@ -20,3 +20,10 @@
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 /brand/*
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+# The terms and privacy pages are bare HTML fragments (no <meta charset>), so declare UTF-8 here or
+# browsers guess Latin-1 and garble the Turkish and Arabic text.
+/terms*
+  Content-Type: text/html; charset=utf-8
+/privacy*
+  Content-Type: text/html; charset=utf-8
