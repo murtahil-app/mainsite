@@ -1,5 +1,7 @@
 import type { Dictionary } from "@/content/dictionary";
-import { container } from "../ui";
+import { site } from "@/content/site";
+import { button, container } from "../ui";
+import { WaitlistButton } from "../waitlist-button";
 import { WebAppButton } from "../web-app-button";
 
 // One skyline from the six countries' landmark silhouettes, in the order the cities are listed.
@@ -19,7 +21,14 @@ export function Closing({ t }: { t: Dictionary }) {
               {t.cta.title}
             </h2>
             <p className="max-w-[40ch] text-lg text-[#a9bbac] md:text-xl">{t.cta.body}</p>
-            <WebAppButton label={t.nav.openApp} soon={t.nav.soon} onStage className="mt-2" />
+            <div className="mt-2 flex flex-wrap gap-3">
+              <WebAppButton label={t.nav.openApp} soon={t.nav.soon} onStage />
+              <WaitlistButton
+                label={t.waitlist.button}
+                message={t.waitlist.message}
+                className={site.webAppPublic ? button.secondaryOnStage : button.primary}
+              />
+            </div>
           </div>
           {/* The six countries' skylines drift past, the page's one moving band. Static under reduced motion. */}
           <div aria-hidden dir="ltr" className="pointer-events-none absolute inset-x-0 bottom-0 h-28 overflow-hidden md:h-40">

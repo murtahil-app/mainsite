@@ -56,8 +56,8 @@ links are hidden, and the Apps section and FAQ use their pre-launch copy (`title
 | path | what |
 |---|---|
 | `content/dictionary.ts` | every visible string, English and Arabic |
-| `content/cities.ts` | the ten cities: modes, kinds of times, counts, landmark captions |
-| `content/site.ts` | the site's address, the web app's address and launch switch, a contact email |
+| `content/cities.ts` | the eleven cities: modes, kinds of times, counts, landmark captions |
+| `content/site.ts` | the site's address, the web app's address and launch switch, the waitlist's WhatsApp number, a contact email |
 | `app/[locale]/` | the layout (fonts, theme script, metadata) and the homepage |
 | `components/sections/` | one file per homepage section |
 | `components/city-explorer.tsx` | the interactive city section |

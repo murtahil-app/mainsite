@@ -16,6 +16,11 @@ export const site = {
   webAppPublic: false,
   launchDate: "30/11/2026",
 
+  // The WhatsApp number of the launch waitlist, digits only with the country code (e.g. "9665XXXXXXXX").
+  // "Join the waitlist" opens a chat with it, the join message typed in; the waitlist backend (wawls)
+  // answers there. Leave null and the buttons are hidden.
+  waitlistWhatsApp: null as string | null,
+
   // A contact address. None exists yet; leave null and the footer omits it.
   contactEmail: null as string | null,
 };
@@ -23,4 +28,10 @@ export const site = {
 /** The web app opened on one city: its switcher reads ?city=<id>. */
 export function webAppCity(cityId: string) {
   return `${site.webApp}/?city=${encodeURIComponent(cityId)}`;
+}
+
+/** A WhatsApp chat with the waitlist number, the join message already typed, or null without a number. */
+export function waitlistLink(message: string) {
+  if (!site.waitlistWhatsApp) return null;
+  return `https://wa.me/${site.waitlistWhatsApp}?text=${encodeURIComponent(message)}`;
 }

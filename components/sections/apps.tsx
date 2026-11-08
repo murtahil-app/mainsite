@@ -4,7 +4,8 @@ import type { Dictionary } from "@/content/dictionary";
 import type { Locale } from "@/content/i18n";
 import { site } from "@/content/site";
 import { Reveal } from "../reveal";
-import { container, sectionBody, sectionTitle } from "../ui";
+import { button, container, sectionBody, sectionTitle } from "../ui";
+import { WaitlistButton } from "../waitlist-button";
 import { WebAppButton } from "../web-app-button";
 
 const icons: Record<string, Icon> = { web: Browser, ios: AppleLogo, android: AndroidLogo };
@@ -74,8 +75,17 @@ export function Apps({ t, locale }: { t: Dictionary; locale: Locale }) {
             })}
           </ul>
 
-          <div>
-            <WebAppButton label={t.nav.openApp} soon={t.nav.soon} />
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-wrap gap-3">
+              <WebAppButton label={t.nav.openApp} soon={t.nav.soon} />
+              {/* Before launch the web app button is inert, so the waitlist takes the green. */}
+              <WaitlistButton
+                label={t.waitlist.button}
+                message={t.waitlist.message}
+                className={live ? button.secondary : button.primary}
+              />
+            </div>
+            {site.waitlistWhatsApp && <p className="text-[15px] text-ink-2">{t.waitlist.note}</p>}
           </div>
         </div>
       </div>

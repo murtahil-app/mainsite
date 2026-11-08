@@ -6,6 +6,10 @@ import { Lockup } from "./lockup";
 import { container } from "./ui";
 
 const linkClass = "text-[15px] text-ink-2 transition-colors hover:text-ink";
+
+// The terms and privacy pages in public/: terms.html and privacy.html in English, a _ar / _tr suffix for
+// the others. Cloudflare serves them without the .html.
+const legalSuffix: Record<Locale, string> = { en: "", ar: "_ar", tr: "_tr" };
 const headClass = "text-[13px] font-semibold text-ink-3";
 
 export function SiteFooter({ t, locale }: { t: Dictionary; locale: Locale }) {
@@ -70,7 +74,15 @@ export function SiteFooter({ t, locale }: { t: Dictionary; locale: Locale }) {
 
       <div className="border-t border-line">
         <div className={`${container} flex flex-col gap-2 py-6 text-sm text-ink-3 md:flex-row md:items-center md:justify-between`}>
-          <p>{t.footer.rights}</p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <p>{t.footer.rights}</p>
+            <a href={`/terms${legalSuffix[locale]}`} className="transition-colors hover:text-ink">
+              {t.footer.terms}
+            </a>
+            <a href={`/privacy${legalSuffix[locale]}`} className="transition-colors hover:text-ink">
+              {t.footer.privacy}
+            </a>
+          </div>
           <p>{t.footer.mapCredit}</p>
         </div>
       </div>

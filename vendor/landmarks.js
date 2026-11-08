@@ -33,6 +33,12 @@
  * white by night; hidden in the silhouette), lm-kt-lit, lm-kt-lit-2 (rooms lit warm and white: by night only): the
  * Katara Towers; lm-sw, lm-sw-2, lm-sw-hole (the arches), lm-sw-rail (balustrades): Souq Waqif; lm-fn, lm-fn-2,
  * lm-fn-band, lm-fn-dome, lm-fn-glass and lm-fn-ramp (stroked, hidden in the silhouette): the Islamic Cultural Center.
+ * Alexandria: lm-qb, lm-qb-2, lm-qb-hole (windows, gates and corbels), lm-eg (the flag's black): the Citadel of Qaitbay;
+ * lm-lh, lm-lh-2, lm-lh-glass (the lantern, blazing by night): the lighthouse; lm-pil, lm-pil-2: the red granite of
+ * Pompey's Pillar and its sphinx; lm-bib, lm-bib-2 (the granite drum and its wings), lm-bib-roof, lm-bib-roof-2 (the
+ * roof's glass and the shadowed step at the foot of each row of panels), lm-bib-glass (the glazing, lit by night),
+ * lm-bib-rib, lm-bib-line and lm-bib-mark (stroked, hidden in the silhouette: the roof's frames and rim, the mullions,
+ * the carved letters): the Bibliotheca Alexandrina.
  *
  * Flags are the official SVGs from Wikimedia Commons, in flags/ (Bahrain's drawn to its specification).
  */
@@ -1414,10 +1420,284 @@
         kataraTowers(292)
     , 'Al-Zubara Fort, the spiral minaret of the Abdullah bin Zaid Al-Mahmoud Islamic Cultural Center, Souq Waqif and the Katara Towers');
 
+    // ---------------------------------------------------------------- Alexandria
+    // West to east, as on the map, along the Mediterranean: the Citadel of Qaitbay on the tip of old Pharos,
+    // its square keep between round corner towers under their corbelled parapets, the central tower with
+    // its paired arched windows over the great arched gate, the outer walls, and the flag of Egypt over it
+    // (floodlit amber by night); the stone lighthouse of the harbour on its rocks, a round sandstone tower
+    // narrowing up to its clock, gallery and green lantern (lit gold by night, its light on the water);
+    // Pompey's Pillar, the granite column on its pedestal under its Corinthian capital, the granite sphinx
+    // on its plinth beside it; and the Bibliotheca Alexandrina on the Corniche between palms, the great
+    // disc of its roof tilted towards the sea, rows of glass panels over the curved granite wall carved with
+    // the letters of the world's scripts, the glass block at its east end. By night the roof glows white
+    // between its frames and the glazing is lit.
+
+    // Square merlons with rounded tops along a wall top at y, from x0 to x1 and centred between them.
+    function battlements(x0, x1, y, w, gap, cls) {
+        var n = Math.floor((x1 - x0 + gap) / (w + gap)), d = '';
+        for (var i = 0, x = x0 + (x1 - x0 - n * w - (n - 1) * gap) / 2; i < n; i++, x += w + gap) {
+            d += 'M' + f(x) + ' ' + f(y) + 'V' + f(y - w * 0.9) + 'Q' + f(x + w / 2) + ' ' + f(y - w * 1.3) + ' ' + f(x + w) + ' ' + f(y - w * 0.9) + 'V' + f(y) + 'Z';
+        }
+        return '<path class="' + (cls || 'lm-qb') + '" d="' + d + '"/>';
+    }
+    // A row of boulders from x0 to x1 standing on y, up to h tall, overlapping; each in shade round its lower
+    // east side, the light on the rest of it. `seed` shapes them.
+    function boulders(x0, x1, y, h, seed) {
+        var lit = '', shade = '';
+        var oval = function (cx, cy, rx, ry) {
+            return 'M' + f(cx - rx) + ' ' + f(cy) + 'a' + f(rx) + ' ' + f(ry) + ' 0 1 0 ' + f(rx * 2) + ' 0a' + f(rx) + ' ' + f(ry) + ' 0 1 0 ' + f(-rx * 2) + ' 0Z';
+        };
+        for (var x = x0; x < x1 - 1;) {
+            seed = (seed * 9301 + 49297) % 233280;
+            var rx = Math.min(1.8 + 1.6 * seed / 233280, (x1 - x) / 2);
+            seed = (seed * 9301 + 49297) % 233280;
+            var ry = h * (0.32 + 0.18 * seed / 233280), cx = x + rx, cy = y - ry;
+            shade += oval(cx, cy, rx, ry);
+            lit += oval(cx - rx * 0.16, cy - ry * 0.18, rx * 0.8, ry * 0.8);
+            x += rx * 1.75;
+        }
+        return '<path class="lm-stone-2" d="' + shade + '"/><path class="lm-stone" d="' + lit + '"/>';
+    }
+
+    // A round corner tower of the citadel on x, r wide each side: its shaft, shaded round the east, and the
+    // parapet standing out over a ring of corbels, its merlons on `top`.
+    function qaitbayTower(x, top, r) {
+        var o = function (dx) { return f(x + dx); };
+        var notches = '';
+        for (var dx = -r - 0.2; dx < r; dx += 1.3) notches += 'M' + o(dx) + ' ' + f(top + 4.2) + 'h0.6v1.4h-0.6Z';
+        return '<rect class="lm-qb" x="' + o(-r) + '" y="' + f(top + 4) + '" width="' + f(r * 2) + '" height="' + f(87 - top - 4) + '"/>' +
+            '<rect class="lm-qb-2" x="' + o(r * 0.3) + '" y="' + f(top + 4) + '" width="' + f(r * 0.7) + '" height="' + f(87 - top - 4) + '"/>' +
+            '<path class="lm-qb-hole" d="' + notches + '"/>' +
+            '<rect class="lm-qb" x="' + o(-r - 0.8) + '" y="' + top + '" width="' + f(r * 2 + 1.6) + '" height="4.2"/>' +
+            '<rect class="lm-qb-2" x="' + o(r * 0.3 + 0.4) + '" y="' + top + '" width="' + f(r * 0.7 + 0.4) + '" height="4.2"/>' +
+            battlements(x - r - 0.8, x + r + 0.8, top, 1.7, 1, 'lm-qb') +
+            '<path class="lm-qb-hole" d="M' + o(-0.5) + ' ' + f(top + 13) + 'h1v2.6h-1ZM' + o(-0.5) + ' ' + f(top + 22) + 'h1v2.6h-1Z"/>';
+    }
+
+    // The Citadel of Qaitbay, its keep centred on cx: walls from cx - 22 to cx + 22 between the corner towers.
+    function qaitbay(cx) {
+        var o = function (dx) { return f(cx + dx); };
+        var out =
+            // the outer walls, lower, either side: a round-arched gate on the west, arches on the east
+            '<rect class="lm-qb" x="' + o(-62) + '" y="74" width="36" height="13"/>' + battlements(cx - 62, cx - 26, 74, 1.7, 1.1) +
+            '<path class="lm-qb-hole" d="M' + o(-44) + ' 87V81.4a2.8 2.8 0 0 1 5.6 0V87Z"/>' +
+            '<rect class="lm-qb" x="' + o(26) + '" y="75" width="16" height="12"/>' + battlements(cx + 26, cx + 42, 75, 1.7, 1.1) +
+            '<rect class="lm-qb-2" x="' + o(39.4) + '" y="75" width="2.6" height="12"/>' +
+            arches(cx + 29.4, 80, 2.6, 7, 3, 1.6, 'lm-qb-hole') +
+            // the keep's walls, a box machicolation and small arched windows on each
+            '<rect class="lm-qb" x="' + o(-22) + '" y="56" width="44" height="31"/>' + battlements(cx - 22, cx + 22, 56, 1.7, 1.1);
+        [-12, 12].forEach(function (dx) {
+            out += '<rect class="lm-qb" x="' + o(dx - 2) + '" y="58.4" width="4" height="3.4"/>' +
+                '<path class="lm-qb-hole" d="M' + o(dx - 1.6) + ' 61.8h0.7v1h-0.7ZM' + o(dx - 0.35) + ' 61.8h0.7v1h-0.7ZM' + o(dx + 0.9) + ' 61.8h0.7v1h-0.7Z"/>' +
+                arches(cx + dx - 0.7, 67, 1.4, 3, 1, 0, 'lm-qb-hole') + arches(cx + dx - 3.2, 74, 1.4, 3, 2, 3.6, 'lm-qb-hole');
+        });
+        out +=
+            qaitbayTower(cx - 22, 51, 5.6) + qaitbayTower(cx + 22, 51, 5.6) +
+            // the central tower: its battlements, the paired arched windows, a band of openings, the gate
+            '<rect class="lm-qb" x="' + o(-7.6) + '" y="46.6" width="15.2" height="40.4"/>' +
+            '<rect class="lm-qb-2" x="' + o(5.8) + '" y="46.6" width="1.8" height="40.4"/>' +
+            battlements(cx - 7.6, cx + 7.6, 46.6, 1.7, 1.05) +
+            arches(cx - 4.2, 49.6, 3, 7.6, 2, 2.4, 'lm-qb-hole') +
+            '<rect class="lm-qb-2" x="' + o(-7.6) + '" y="58.4" width="15.2" height="0.9"/>' +
+            '<path class="lm-qb-hole" d="M' + o(-5.6) + ' 60.4h1v1.2h-1ZM' + o(-3) + ' 60.4h1v1.2h-1ZM' + o(-0.5) + ' 60.4h1v1.2h-1ZM' + o(2) + ' 60.4h1v1.2h-1ZM' + o(4.6) + ' 60.4h1v1.2h-1Z"/>' +
+            '<path class="lm-qb-2" d="M' + o(-5) + ' 87V71.6Q' + o(-4.8) + ' 67.6 ' + cx + ' 65.6Q' + o(4.8) + ' 67.6 ' + o(5) + ' 71.6V87Z"/>' +
+            '<rect class="lm-qb-hole" x="' + o(-1.8) + '" y="80.4" width="3.6" height="6.6"/>' +
+            '<rect class="lm-qb-hole" x="' + o(-0.7) + '" y="75.4" width="1.4" height="2.4"/>' +
+            // the flag of Egypt over it
+            '<rect class="lm-metal" x="' + o(-1.6) + '" y="24" width="0.6" height="21"/>' +
+            '<rect class="lm-red" x="' + o(-1) + '" y="24.4" width="9.6" height="2.1"/>' +
+            '<rect class="lm-white" x="' + o(-1) + '" y="26.5" width="9.6" height="2.1"/>' +
+            '<rect class="lm-eg" x="' + o(-1) + '" y="28.6" width="9.6" height="2.1"/>' +
+            '<path class="lm-gold" d="M' + o(3.2) + ' 26.9h1.2v1.3l-0.6 0.3l-0.6 -0.3Z"/>';
+        return out;
+    }
+
+    // The lighthouse on its rocks, centred on cx: the round tower narrowing up to the clock, the gallery and its
+    // railing, the green lantern under its dome, and the store on the platform at its foot.
+    function lighthouse(cx) {
+        var o = function (dx) { return f(cx + dx); };
+        var rail = 'M' + o(-5.6) + ' 18.2H' + o(5.6) + 'V18.7H' + o(-5.6) + 'Z';
+        for (var dx = -5.6; dx < 5.8; dx += 1.4) rail += 'M' + o(dx) + ' 18.4h0.3v2.4h-0.3Z';
+        return (
+            // the platform and the store
+            '<rect class="lm-lh" x="' + o(4.4) + '" y="75.4" width="9" height="7.4"/>' +
+            '<rect class="lm-lh-2" x="' + o(11) + '" y="75.4" width="2.4" height="7.4"/>' +
+            '<rect class="lm-lh" x="' + o(4) + '" y="74.6" width="9.8" height="1.2"/>' +
+            '<rect class="lm-detail" x="' + o(6.4) + '" y="77.4" width="2.6" height="5.4"/>' +
+            '<rect class="lm-lh-2" x="' + o(-14) + '" y="82.4" width="28.6" height="2.8"/>' +
+            // the tower, shaded on its east side, its door, a slit and a small window
+            '<path class="lm-lh" d="M' + o(-5.8) + ' 82.6L' + o(-4.4) + ' 26H' + o(4.4) + 'L' + o(5.8) + ' 82.6Z"/>' +
+            '<path class="lm-lh-2" d="M' + o(1.9) + ' 82.6L' + o(1.5) + ' 26H' + o(4.4) + 'L' + o(5.8) + ' 82.6Z"/>' +
+            '<path class="lm-detail" d="M' + o(-1.3) + ' 82.6V79.4a1.3 1.3 0 0 1 2.6 0V82.6Z"/>' +
+            '<rect class="lm-detail" x="' + o(-0.4) + '" y="47" width="0.8" height="3"/>' +
+            '<rect class="lm-detail" x="' + o(-1.6) + '" y="61" width="1.6" height="2"/>' +
+            // the clock between two arched windows, under the gallery
+            '<path class="lm-detail" d="M' + o(-3.9) + ' 30.4V28.4a0.55 0.55 0 0 1 1.1 0V30.4ZM' + o(2.8) + ' 30.4V28.4a0.55 0.55 0 0 1 1.1 0V30.4Z"/>' +
+            '<circle class="lm-lh-2" cx="' + o(-0.2) + '" cy="28.4" r="2.2"/><circle class="lm-white" cx="' + o(-0.2) + '" cy="28.4" r="1.8"/>' +
+            '<path class="lm-slate" d="M' + o(-0.35) + ' 27.2h0.3v1.35h-0.3ZM' + o(-0.2) + ' 28.25h1.2v0.3h-1.2Z"/>' +
+            '<rect class="lm-lh" x="' + o(-6.2) + '" y="20.8" width="12.4" height="1.6"/>' +
+            '<rect class="lm-lh-2" x="' + o(-5.4) + '" y="22.4" width="10.8" height="0.8"/>' +
+            // the lantern, its mullions, its railing in front, the cornice, the dome and the finial
+            '<rect class="lm-lh-glass" x="' + o(-3.4) + '" y="12.8" width="6.8" height="8"/>' +
+            '<path class="lm-lh" d="M' + o(-1.4) + ' 12.8h0.4v8h-0.4ZM' + o(1) + ' 12.8h0.4v8h-0.4Z"/>' +
+            '<path class="lm-slate" d="' + rail + '"/>' +
+            '<rect class="lm-lh" x="' + o(-4.4) + '" y="11.8" width="8.8" height="1.3"/>' +
+            '<path class="lm-lh" d="M' + o(-3.6) + ' 12Q' + o(-3.4) + ' 8.2 ' + cx + ' 7.8Q' + o(3.4) + ' 8.2 ' + o(3.6) + ' 12Z"/>' +
+            '<path class="lm-lh-2" d="M' + o(1.2) + ' 12Q' + o(1.2) + ' 8.6 ' + cx + ' 7.8Q' + o(3.4) + ' 8.2 ' + o(3.6) + ' 12Z"/>' +
+            '<circle class="lm-lh" cx="' + cx + '" cy="6.8" r="1"/>' +
+            '<rect class="lm-slate" x="' + o(-0.15) + '" y="2.4" width="0.3" height="4"/>'
+        );
+    }
+
+    // Pompey's Pillar, centred on cx: the pedestal on its footing, the column's base, the shaft swelling a
+    // little and shaded on its east side, and the capital: two rows of acanthus round the bell, the volutes
+    // and the abacus.
+    function pompeysPillar(cx) {
+        var o = function (dx) { return f(cx + dx); };
+        var leaf = function (x, y, w, h) {
+            return 'M' + o(x - w / 2) + ' ' + f(y) + 'Q' + o(x - w / 2) + ' ' + f(y - h * 0.7) + ' ' + o(x) + ' ' + f(y - h) + 'Q' + o(x + w / 2) + ' ' + f(y - h * 0.7) + ' ' + o(x + w / 2) + ' ' + f(y) + 'Z';
+        };
+        return (
+            '<rect class="lm-pil-2" x="' + o(-9.4) + '" y="84" width="18.8" height="3"/>' +
+            '<rect class="lm-pil" x="' + o(-7.2) + '" y="74" width="14.4" height="10"/>' +
+            '<rect class="lm-pil-2" x="' + o(3.6) + '" y="74" width="3.6" height="10"/>' +
+            '<rect class="lm-pil" x="' + o(-8.2) + '" y="82.6" width="16.4" height="1.8"/>' +
+            '<rect class="lm-pil" x="' + o(-8.2) + '" y="72.6" width="16.4" height="2"/>' +
+            '<rect class="lm-pil-2" x="' + o(4.2) + '" y="72.6" width="4" height="2"/><rect class="lm-pil-2" x="' + o(4.2) + '" y="82.6" width="4" height="1.8"/>' +
+            '<rect class="lm-pil" x="' + o(-5.8) + '" y="70.8" width="11.6" height="2" rx="0.9"/>' +
+            '<rect class="lm-pil" x="' + o(-5.2) + '" y="69.2" width="10.4" height="1.8" rx="0.8"/>' +
+            '<path class="lm-pil" d="M' + o(-4.4) + ' 69.6C' + o(-4.8) + ' 48 ' + o(-4.4) + ' 28 ' + o(-3.8) + ' 16.4H' + o(3.8) + 'C' + o(4.4) + ' 28 ' + o(4.8) + ' 48 ' + o(4.4) + ' 69.6Z"/>' +
+            '<path class="lm-pil-2" d="M' + o(1.7) + ' 69.6C' + o(1.9) + ' 48 ' + o(1.7) + ' 28 ' + o(1.5) + ' 16.4H' + o(3.8) + 'C' + o(4.4) + ' 28 ' + o(4.8) + ' 48 ' + o(4.4) + ' 69.6Z"/>' +
+            '<rect class="lm-pil" x="' + o(-4.4) + '" y="15.4" width="8.8" height="1.5" rx="0.6"/>' +
+            '<path class="lm-pil" d="M' + o(-4) + ' 15.6C' + o(-4.2) + ' 12 ' + o(-5.8) + ' 9.6 ' + o(-6.6) + ' 7.6H' + o(6.6) + 'C' + o(5.8) + ' 9.6 ' + o(4.2) + ' 12 ' + o(4) + ' 15.6Z"/>' +
+            '<path class="lm-pil-2" d="' + leaf(-3.4, 15.6, 2.2, 3.6) + leaf(-1.1, 15.6, 2.2, 3.8) + leaf(1.2, 15.6, 2.2, 3.8) + leaf(3.5, 15.6, 2.2, 3.6) +
+                leaf(-4.6, 12.4, 2.4, 3.4) + leaf(-2.3, 12.4, 2.3, 3.8) + leaf(0, 12.4, 2.3, 3.9) + leaf(2.3, 12.4, 2.3, 3.8) + leaf(4.6, 12.4, 2.4, 3.4) + '"/>' +
+            '<circle class="lm-pil" cx="' + o(-6.4) + '" cy="8.4" r="1.2"/><circle class="lm-pil" cx="' + o(6.4) + '" cy="8.4" r="1.2"/>' +
+            '<circle class="lm-pil-2" cx="' + o(-6.4) + '" cy="8.4" r="0.5"/><circle class="lm-pil-2" cx="' + o(6.4) + '" cy="8.4" r="0.5"/>' +
+            '<path class="lm-pil" d="M' + o(-7.8) + ' 7.8L' + o(-7) + ' 5.2H' + o(7) + 'L' + o(7.8) + ' 7.8Z"/>' +
+            '<path class="lm-pil-2" d="M' + o(4.6) + ' 7.8L' + o(4.4) + ' 5.2H' + o(7) + 'L' + o(7.8) + ' 7.8Z"/>'
+        );
+    }
+
+    // The granite sphinx on its plinth, centred on x: lying with its paws forward, looking west, the headdress
+    // falling to its shoulders.
+    function sphinx(x) {
+        var o = function (dx, y) { return f(x + dx) + ' ' + y; };
+        return (
+            '<rect class="lm-stone" x="' + f(x - 11.4) + '" y="79.6" width="22.8" height="7.4"/>' +
+            '<rect class="lm-stone-2" x="' + f(x + 7) + '" y="79.6" width="4.4" height="7.4"/>' +
+            '<rect class="lm-stone" x="' + f(x - 12.4) + '" y="78.6" width="24.8" height="1.6"/>' +
+            '<rect class="lm-pil-2" x="' + f(x - 10.4) + '" y="74" width="20.8" height="4.8"/>' +
+            '<path class="lm-pil" d="M' + o(-10, 74) + 'V72.6Q' + o(-10, 71.9) + ' ' + o(-9.2, 71.9) + 'L' + o(-5, 71.9) + 'L' + o(-4.6, 70.2) +
+                'L' + o(-5.6, 69.4) + 'L' + o(-5.7, 68.1) + 'L' + o(-6.1, 67.5) + 'L' + o(-6.5, 66.3) + 'L' + o(-6, 65.6) + 'L' + o(-6.2, 64.4) +
+                'L' + o(-5.7, 63.2) + 'Q' + o(-4.6, 62.4) + ' ' + o(-3.4, 62.4) + 'Q' + o(-1.9, 62.5) + ' ' + o(-1.5, 63.8) + 'L' + o(-0.4, 67.4) + 'L' + o(0.4, 69.6) +
+                'Q' + o(4, 69) + ' ' + o(7.4, 69.6) + 'Q' + o(9.6, 70.1) + ' ' + o(9.6, 72.6) + 'V74Z"/>' +
+            // the headdress behind the face, the haunch and the eye
+            '<path class="lm-pil-2" d="M' + o(-4.9, 64) + 'Q' + o(-3.4, 63.4) + ' ' + o(-1.9, 63.8) + 'L' + o(-0.9, 67.4) + 'L' + o(-0.2, 69.6) + 'L' + o(-3.6, 69.6) + 'L' + o(-3.8, 66.2) + 'Z' +
+                'M' + o(3.8, 74) + 'Q' + o(3.8, 70.8) + ' ' + o(6.6, 70.6) + 'Q' + o(8.8, 70.8) + ' ' + o(8.8, 74) + 'Z"/>' +
+            '<circle class="lm-pil-2" cx="' + f(x - 5.4) + '" cy="65.5" r="0.35"/>'
+        );
+    }
+
+    // The Bibliotheca Alexandrina, its drum centred on cx. The drum is a cylinder of radius r; the roof's plane
+    // cuts it h0 over the Corniche at the centre and falls s across the radius, to the east and (g from east)
+    // towards the sea in front. So the far rim rises to a shoulder over the west end, the near rim runs down
+    // over the drum to the east, and the roof shows its face to the sea. Its panels lie in rows, a shadowed
+    // step at the foot of each, crossed by their frames; the glass block and a low stone wing stand beyond.
+    function bibliotheca(cx) {
+        var r = 68, base = 87, h0 = 29, s = 24, g = 34 * Math.PI / 180;
+        var cg = Math.cos(g), sg = Math.sin(g);
+        // a point of the roof, (x, d) on the unit disc (d towards us), as drawn
+        var P = function (x, d) { return f(cx + r * x) + ' ' + f(base - h0 + s * (x * cg + d * sg)); };
+        var nearY = function (x) { return base - h0 + s * (x * cg + Math.sqrt(Math.max(0, 1 - x * x)) * sg); };
+        // the chord of the unit disc where p.(nx, nd) = c, as [x0, d0, x1, d1]
+        var chord = function (c, nx, nd) {
+            var h = Math.sqrt(1 - c * c);
+            return [c * nx + h * nd, c * nd - h * nx, c * nx - h * nd, c * nd + h * nx];
+        };
+        var rim = '', drum = 'M' + P(1, 0), shade = '', k, a;
+        for (k = 0; k < 72; k++) { a = k * Math.PI / 36; rim += (k ? 'L' : 'M') + P(Math.cos(a), Math.sin(a)); }
+        // (the drum runs up under the whole roof, so the two meet without a seam)
+        for (k = 1; k <= 36; k++) { a = -k * Math.PI / 36; drum += 'L' + P(Math.cos(a), Math.sin(a)); }
+        drum += 'V' + base + 'H' + f(cx + r) + 'Z';
+        // the drum turns away from the light on its east side
+        shade = 'M' + P(0.7, Math.sqrt(1 - 0.7 * 0.7));
+        for (k = 0; k <= 8; k++) { a = Math.acos(0.7) - k * Math.acos(0.7) / 8; shade += 'L' + P(Math.cos(a), Math.sin(a)); }
+        shade += 'V' + base + 'H' + f(cx + r * 0.7) + 'Z';
+        // the rows of panels: the shadowed step at the foot of each
+        var nx = Math.cos(1.45), nd = -Math.sin(1.45), rows = '', frames = '';
+        for (var c = -0.9; c < 0.9; c += 0.18) {
+            var p = chord(c, nx, nd), q = chord(c + 0.05, nx, nd);
+            rows += 'M' + P(p[0], p[1]) + 'L' + P(p[2], p[3]) + 'L' + P(q[2], q[3]) + 'L' + P(q[0], q[1]) + 'Z';
+        }
+        // and the frames across them
+        for (c = -0.95; c < 0.96; c += 0.1) {
+            var e = chord(c, nd, -nx);
+            frames += 'M' + P(e[0], e[1]) + 'L' + P(e[2], e[3]);
+        }
+        // the far rim's edge, catching the light
+        var edge = '';
+        for (k = 36; k <= 72; k++) { a = k * Math.PI / 36; edge += (k > 36 ? 'L' : 'M') + P(Math.cos(a), Math.sin(a)); }
+        // the letters carved in the drum, in rows
+        var letters = '', seed = 7, rnd = function () { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
+        var glyphs = ['v1.3', 'v1.3h0.8', 'h0.9m-0.45 0v1.3', 'h0.8v1.3h-0.8', 'm0 0.65h0.9', 'v1.3m0.8 -1.3v1.3m-0.8 -0.65h0.8',
+            'm0 1.3l0.45 -1.3l0.45 1.3', 'm0.45 0a0.45 0.65 0 1 0 0.01 0', 'm0 1.3q0.9 0 0.9 -1.3', 'l0.8 1.3m0 -1.3l-0.8 1.3'];
+        for (var y = base - 7.4; y > base - h0 - s; y -= 2.8) {
+            for (var x = cx - r + 1.8 + rnd() * 1.2; x < cx + r - 2; x += 1.9 + rnd() * 1.4) {
+                if (rnd() < 0.35 || y - 1.6 < nearY((x - cx) / r) + 0.8) continue;
+                letters += 'M' + f(x) + ' ' + f(y - 1.3) + glyphs[Math.floor(rnd() * glyphs.length)];
+            }
+        }
+        // the glass block at the east end, its mullions
+        var bx = cx + r * 0.55, bw = r * 0.45 + 20, mull = '';
+        for (x = bx + 2.6; x < bx + bw; x += 2.8) mull += 'M' + f(x) + ' 61.6V' + base;
+        for (y = 66; y < base; y += 4.4) mull += 'M' + f(bx) + ' ' + y + 'H' + f(bx + bw);
+        var band = '';
+        for (x = cx - r + 2; x < cx + r; x += 2.6) band += 'M' + f(x) + ' ' + (base - 4.4) + 'V' + base;
+        return (
+            // the low stone wing beyond it
+            '<rect class="lm-bib" x="' + f(bx + bw - 1) + '" y="70" width="23" height="17"/>' +
+            '<rect class="lm-bib-2" x="' + f(bx + bw + 18.6) + '" y="70" width="3.4" height="17"/>' +
+            '<rect class="lm-bib-glass" x="' + f(bx + bw + 2) + '" y="73.4" width="15" height="2.4"/><rect class="lm-bib-glass" x="' + f(bx + bw + 2) + '" y="78.6" width="15" height="2.4"/>' +
+            '<rect class="lm-bib-glass" x="' + f(bx) + '" y="60.6" width="' + f(bw) + '" height="' + f(base - 60.6) + '"/>' +
+            '<path class="lm-bib-line" stroke-width="0.35" d="' + mull + '"/>' +
+            '<rect class="lm-bib-2" x="' + f(bx - 0.4) + '" y="59.8" width="' + f(bw + 0.8) + '" height="1.4"/>' +
+            '<path class="lm-bib" d="' + drum + '"/>' +
+            '<path class="lm-bib-2" d="' + shade + '"/>' +
+            '<path class="lm-bib-mark" stroke-width="0.3" d="' + letters + '"/>' +
+            '<rect class="lm-bib-glass" x="' + f(cx - r) + '" y="' + (base - 4.4) + '" width="' + f(2 * r) + '" height="4.4"/>' +
+            '<path class="lm-bib-line" stroke-width="0.35" d="' + band + '"/>' +
+            '<path class="lm-bib-roof" d="' + rim + 'Z"/>' +
+            '<path class="lm-bib-roof-2" d="' + rows + '"/>' +
+            '<path class="lm-bib-rib" stroke-width="0.3" d="' + frames + '"/>' +
+            '<path class="lm-bib-rib" stroke-width="0.8" d="' + edge + '"/>'
+        );
+    }
+
+    L.alexandria = svg(
+        // the city's blocks behind the Corniche and across the harbour
+        blocks('lm-far', 83, 29) +
+        place(14, 87, 1.15, qaitbay(0)) +
+        palm(65, 66, 1.4) +
+        pompeysPillar(134) +
+        place(158, 87, 1.15, sphinx(0)) +
+        bibliotheca(256) +
+        palm(208, 66, -1.6) + palm(300, 70, 1.2) + palm(338, 64, 2) + palm(380, 66, 1.4) +
+        // the Corniche either side of the harbour, the sea, the light on it by night
+        '<rect class="lm-stone-2" x="' + X0 + '" y="86.6" width="' + (70 - X0) + '" height="3"/>' +
+        '<rect class="lm-stone-2" x="116" y="86.6" width="' + (X1 - 116) + '" height="3"/>' +
+        water(89) + water(87.2, 68, 118) +
+        glow('lm-glow-w', 14, 46) + glow('lm-glow-w', 93, 10) + glow('lm-glow-w', 256, 56) +
+        boulders(188, 392, 89.6, 3.6, 13) + boulders(186, 394, 91.2, 3.2, 11) +
+        // the lighthouse on its rocks in the harbour
+        place(93, 87, 0.9, '<path class="lm-stone-2" d="M-22 90Q-18 83.4 -10 82.6H4Q12 83.4 16 90Z"/>' + lighthouse(0) +
+            boulders(-19, 16, 86.4, 5, 5) + boulders(-22, 19, 88.6, 5, 7) + boulders(-25, 22, 91, 4.6, 3))
+    , 'The Citadel of Qaitbay, a lighthouse on the harbour rocks, Pompey\'s Pillar with its sphinx and the Bibliotheca Alexandrina');
+
     // ---------------------------------------------------------------- countries
     // The switcher's first step: each country of more than one city drawn from the best landmark of each of
     // its cities, smaller, on one ground (the Android app's country drawings). A country of one city
-    // (Bahrain, Egypt, Qatar) shows that city's own drawing.
+    // (Bahrain, Qatar) shows that city's own drawing.
     var C = {};
 
     // A landmark drawn round x = 0 and standing on `from`, moved to x on the ground (y 91) and scaled by k.
@@ -1461,6 +1741,22 @@
         stand(309, 91, 0.95, clockTower(0)) +
         ground('lm-stone-2', 91)
     , 'Galata Tower, the Blue Mosque, Atakule and the Ankara Clock Tower');
+
+    // Egypt: Pompey's Pillar with its sphinx and the Bibliotheca Alexandrina by the sea (Alexandria), the
+    // pyramids of Giza at the desert's edge and Al-Azhar Mosque (Cairo).
+    C.EG = svg(
+        hills('lm-far', 74, 4, 70) +
+        water(86, X0, 166) +
+        '<path class="lm-sand" d="M158 96V88Q190 85.6 228 88.2Q256 89.8 284 88.8V96Z"/>' +
+        ground('lm-stone-2', 91) +
+        stand(-12, 87, 0.78, pompeysPillar(0)) +
+        stand(8, 87, 0.9, sphinx(0)) +
+        palm(21, 68, -1.4) +
+        stand(76, 87, 0.78, bibliotheca(0)) +
+        stand(190, 91, 0.78, pyramid(0, 50, 34, 8, 0.6)) +
+        stand(224, 91, 0.78, pyramid(0, 30, 54, 10, 1.2)) +
+        stand(304, 91, 0.78, alAzhar(-50))
+    , 'Pompey\'s Pillar, the Bibliotheca Alexandrina, the pyramids of Giza and Al-Azhar Mosque');
 
     // ---------------------------------------------------------------- flags
     // Official flags from Wikimedia Commons: Syria (since 2025), Saudi Arabia, Türkiye; Bahrain drawn

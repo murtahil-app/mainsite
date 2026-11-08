@@ -119,6 +119,26 @@
     --lm-fn-dome: #6E8A7E;
     --lm-fn-glass: #2C4558;
     --lm-qa: #8A1538;
+    /* Alexandria by day: Qaitbay's sandstone; the lighthouse's paler stone and green lantern; the red
+       granite of Pompey's Pillar and its sphinx; the Bibliotheca's grey granite, carved with letters, under
+       the sky-blue glass of its roof, its glazing blue-green; the black of the flag. */
+    --lm-qb: #E5C688;
+    --lm-qb-2: #C9A061;
+    --lm-qb-hole: #6E5233;
+    --lm-eg: #1F1F1F;
+    --lm-lh: #EBD6AA;
+    --lm-lh-2: #CDB07C;
+    --lm-lh-glass: #4FA897;
+    --lm-pil: #CFA286;
+    --lm-pil-2: #A9785C;
+    --lm-bib: #D9D1C2;
+    --lm-bib-2: #BDB3A1;
+    --lm-bib-mark: rgba(92, 78, 58, 0.5);
+    --lm-bib-roof: #B5D8EC;
+    --lm-bib-roof-2: #6B97B5;
+    --lm-bib-rib: rgba(255, 255, 255, 0.9);
+    --lm-bib-glass: #3E7389;
+    --lm-bib-line: rgba(220, 238, 246, 0.55);
     --lm-slate: #55636F;
     --lm-detail: rgba(74, 58, 36, 0.55);
     --lm-line: #8C7A5E;
@@ -247,6 +267,26 @@
     --lm-fn-dome: #3E5A4E;
     --lm-fn-glass: #FFD98A;
     --lm-qa: #A3264B;
+    /* Alexandria by night: Qaitbay floodlit amber; the lighthouse lit gold, its lantern blazing; Pompey's
+       Pillar floodlit; the Bibliotheca's roof glowing white between its frames, its granite washed in cool
+       light, its glazing lit warm. */
+    --lm-qb: #F2AA45;
+    --lm-qb-2: #C97C22;
+    --lm-qb-hole: #4A2A0C;
+    --lm-eg: #141414;
+    --lm-lh: #F6C95E;
+    --lm-lh-2: #CF9233;
+    --lm-lh-glass: #FFF4CC;
+    --lm-pil: #E8B587;
+    --lm-pil-2: #B8794A;
+    --lm-bib: #B7BEC8;
+    --lm-bib-2: #939BA6;
+    --lm-bib-mark: rgba(36, 42, 52, 0.55);
+    --lm-bib-roof: #E4F0FA;
+    --lm-bib-roof-2: #1F2E3D;
+    --lm-bib-rib: #FFFFFF;
+    --lm-bib-glass: #FFD98A;
+    --lm-bib-line: rgba(120, 78, 20, 0.55);
     --lm-slate: #6E7F8C;
     --lm-detail: #FFD98A;
     --lm-line: #D9C7A0;
@@ -277,6 +317,7 @@
 .lm .lm-pyr-line { fill: none; stroke: currentColor; opacity: 0; }
 .lm :is(.lm-kt-line, .lm-kt-frame, .lm-kt-arc, .lm-fn-ramp) { fill: none; stroke: currentColor; opacity: 0; }
 .lm :is(.lm-kt-lit, .lm-kt-lit-2) { opacity: 0; }
+.lm :is(.lm-bib-rib, .lm-bib-line, .lm-bib-mark) { fill: none; stroke: currentColor; opacity: 0; }
 /* Shown: the landmarks in colour. */
 .lm.is-shown .lm-sky { fill: var(--lm-sky); }
 .lm.is-shown .lm-far { fill: var(--lm-far); opacity: 1; }
@@ -393,6 +434,24 @@
 .lm.is-shown .lm-kt-frame { stroke: var(--lm-kt-frame); }
 .lm.is-shown .lm-kt-arc { stroke: var(--lm-kt-arc); }
 .lm.is-shown .lm-fn-ramp { stroke: var(--lm-fn-ramp); }
+.lm.is-shown .lm-qb { fill: var(--lm-qb); }
+.lm.is-shown .lm-qb-2 { fill: var(--lm-qb-2); }
+.lm.is-shown .lm-qb-hole { fill: var(--lm-qb-hole); }
+.lm.is-shown .lm-eg { fill: var(--lm-eg); }
+.lm.is-shown .lm-lh { fill: var(--lm-lh); }
+.lm.is-shown .lm-lh-2 { fill: var(--lm-lh-2); }
+.lm.is-shown .lm-lh-glass { fill: var(--lm-lh-glass); }
+.lm.is-shown .lm-pil { fill: var(--lm-pil); }
+.lm.is-shown .lm-pil-2 { fill: var(--lm-pil-2); }
+.lm.is-shown .lm-bib { fill: var(--lm-bib); }
+.lm.is-shown .lm-bib-2 { fill: var(--lm-bib-2); }
+.lm.is-shown .lm-bib-roof { fill: var(--lm-bib-roof); }
+.lm.is-shown .lm-bib-roof-2 { fill: var(--lm-bib-roof-2); }
+.lm.is-shown .lm-bib-glass { fill: var(--lm-bib-glass); }
+.lm.is-shown :is(.lm-bib-rib, .lm-bib-line, .lm-bib-mark) { opacity: 1; }
+.lm.is-shown .lm-bib-rib { stroke: var(--lm-bib-rib); }
+.lm.is-shown .lm-bib-line { stroke: var(--lm-bib-line); }
+.lm.is-shown .lm-bib-mark { stroke: var(--lm-bib-mark); }
 .lm.is-shown .lm-wood { stroke: var(--lm-wood); }
 .lm.is-shown .lm-wood circle:last-child { fill: var(--lm-wood); }
 .lm.is-shown .lm-detail { fill: var(--lm-detail); opacity: 1; }

@@ -237,6 +237,27 @@ export const cities: City[] = [
     },
   },
   {
+    id: "alexandria",
+    country: "EG",
+    name: { en: "Alexandria", ar: "الإسكندرية", tr: "İskenderiye" },
+    modes: ["tram", "bus", "microbus", "suburban"],
+    times: ["scheduled", "estimated"],
+    summary: {
+      en: "The City tram, APTA’s buses and minibuses, the services standing in for the Raml tram and the Abu Qir railway, microbuses, and the train to New Borg El Arab.",
+      ar: "ترام المدينة، وأتوبيسات وميني باصات هيئة النقل العام، والخطوط البديلة لترام الرمل وقطار أبو قير، والميكروباص، وقطار برج العرب الجديدة.",
+      tr: "Şehir tramvayı, APTA’nın otobüs ve minibüsleri, Raml tramvayı ile Ebu Kır demiryolunun yerine çalışan hatlar, mikrobüsler ve Yeni Burg el-Arab treni.",
+    },
+    facts: [
+      { value: "234", label: { en: "lines", ar: "الخطوط", tr: "hat" } },
+      { value: "626", label: { en: "stops", ar: "المواقف", tr: "durak" } },
+    ],
+    landmarks: {
+      en: "The Citadel of Qaitbay, the harbour lighthouse, Pompey’s Pillar and its sphinx, and the Bibliotheca Alexandrina",
+      ar: "قلعة قايتباي، وفنار الميناء، وعمود السواري وأبو الهول بجانبه، ومكتبة الإسكندرية",
+      tr: "Kayıtbay Kalesi, liman feneri, Pompeius Sütunu ve sfenksi, ve İskenderiye Kütüphanesi",
+    },
+  },
+  {
     id: "damascus",
     country: "SY",
     name: { en: "Damascus", ar: "دمشق", tr: "Şam" },
