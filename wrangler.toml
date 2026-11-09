@@ -14,8 +14,9 @@ binding = "ASSETS"
 html_handling = "auto-trailing-slash"
 # Unknown paths get out/404.html (app/global-not-found.tsx) with a 404 status.
 not_found_handling = "404-page"
-# The script runs first only for "/" (the language redirect); every other request is a static file.
-run_worker_first = ["/"]
+# The script runs first only for "/" and "/delete" (the language redirects) and /api/ (the deletion
+# page's subscription check); every other request is a static file.
+run_worker_first = ["/", "/delete", "/delete/", "/api/*"]
 
 # Branch builds deploy with `npx wrangler preview`, which needs this block. It can stay empty: the site
 # has no vars or bindings of its own, and assets and the compatibility date come from the top level.

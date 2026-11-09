@@ -37,8 +37,10 @@ What Cloudflare runs:
 
 - `wrangler.toml` serves `out/` as static assets: `/en/` is `en/index.html`, `/en` redirects to
   `/en/`, and unknown paths get `out/404.html` (from `app/global-not-found.tsx`) with a 404 status.
-- `worker/index.js` runs for `/` only and redirects to `/ar/`, `/en/` or `/tr/` by the browser's
-  Accept-Language. (On another host, `out/index.html` does the same in the browser.)
+- `worker/index.js` runs for `/` and redirects to `/ar/`, `/en/` or `/tr/` by the browser's
+  Accept-Language, and `/delete` the same way to `/<language>/delete/`. (On another host,
+  `out/index.html` and `out/delete/index.html` do this in the browser.) It also answers
+  `/api/appwrite/` and `/api/billing-status` for the deletion page (see "Account deletion").
 - `public/_headers`: security headers, and caching (`/_next/static/` forever; images a day).
 
 Add the custom domain under the Worker's Settings > Domains & Routes; `content/site.ts` expects
@@ -51,6 +53,123 @@ button is a grayed-out "Coming soon on 30/11/2026" (`launchDate`), the per-city 
 links are hidden, and the Apps section and FAQ use their pre-launch copy (`titleSoon`,
 `bodySoon`, `aSoon` in `content/dictionary.ts`). On launch day set it to `true` and rebuild.
 
+## Account deletion (`/delete`)
+
+`murtahil.net/delete` is the account and data deletion page the store listings link to (Google Play
+requires one). The Worker sends it to `/<language>/delete/`. Visitors sign in with the apps' own
+accounts (the Murtahil Appwrite project, `site.accounts` in `content/site.ts`) by Google, Apple, or
+email and password, see their account, plan and what is stored with it, and ask for either their
+data or their whole account to be deleted. Each request becomes a row in a table, which is the queue.
+Then the visitor is signed out, and the page says it may take up to 30 days.
+
+- **Delete my data** writes the row, then signs the account out on every device, so no phone
+  uploads its lists again while the request waits.
+- **Delete my account** writes the row, then blocks the account (`PATCH /account/status`). A blocked
+  account cannot sign in, and every session it had is ended.
+- **Premium:** the page asks the stores, through the Murtahil function's `/billing/status`, whether
+  the subscription still renews. While it does, account deletion is turned off and the page links to
+  that store's subscription settings. Once it is cancelled, deletion is allowed. If the check can't
+  be answered, the visitor has to tick "I've cancelled my subscription" instead. A plan granted by
+  hand in the console needs nothing.
+
+Both deletions ask the visitor to tick "can't be undone" and type a word. Nothing is blocked or
+signed out unless the row was written. `lib/account.ts` holds the Appwrite calls, and
+`components/delete-account.tsx` holds the page.
+
+Appwrite answers only the Web platforms registered on the project, and the free plan has room for
+`murtahil.inirl.net` only. So the page never calls Appwrite itself: it calls `/api/appwrite/...` on
+this site, and the Worker makes each call as `murtahil.inirl.net` (only the routes the page uses).
+A Google or Apple sign-in comes back to `https://murtahil.inirl.net/delete/`, a small page in
+Riyadh-Transport-Android's `web/` folder, which sends it on to `murtahil.net/<language>/delete/`.
+Test locally with `npm run build && npm run preview` (the Worker), not `npm run dev`, which has no
+`/api/`.
+
+What it needs, once:
+
+1. **murtahil.inirl.net:** deploy Riyadh-Transport-Android's `web/` folder again, so `/delete/` is
+   live next to `/verify`.
+2. **Appwrite > Databases**, database `68f146de0013ba3e183a`: create the table `deletion_requests`
+   with the columns `user_id` (string, 36, required), `scope` (enum `account`, `data`, required)
+   and `email` (string, 320). Under Permissions, give **Create** to **Users** and nothing else, and
+   turn on row security. Each row is then readable by its own account only, and nobody but the
+   project can change or remove it.
+3. **Sign in with Apple on the web** (below). Google already works.
+4. **The Worker's client key** (below).
+
+Moving to murtahil.net later: register it as a Web platform, set `signInReturn` in
+`content/site.ts` to `null`, and set the Worker variable `APPWRITE_ORIGIN` to
+`https://murtahil.net`. The return page on murtahil.inirl.net can then go.
+
+### Sign in with Apple on the web
+
+The iOS app uses Apple's own sheet and sends Apple's token straight to Appwrite, which needs no
+web setup. A website can only use Apple's browser sign-in, which Appwrite runs as the Apple OAuth
+provider; it is off on the project today. It needs a Services ID and a key from the same Apple team
+as the app (`com.murtahil.app`), so that Apple gives the same user id on the web as in the app and
+the same Murtahil account signs in.
+
+1. **Appwrite Console > Auth > Settings > OAuth2 Providers > Apple.** Open it and copy the
+   redirect URI it shows. It should be
+   `https://fra.cloud.appwrite.io/v1/account/sessions/oauth2/callback/apple/68f141dd000f83849c21`.
+   Leave the dialog open, and leave any native settings (the `com.murtahil.app` client ID) as they
+   are: the iOS app depends on them.
+2. **developer.apple.com > Certificates, Identifiers & Profiles > Identifiers.** Open the App ID
+   `com.murtahil.app` and check that **Sign in with Apple** is ticked (it is, if the app's sign-in
+   works).
+3. **Identifiers > + > Services IDs > Continue.** Description `Murtahil Web`, identifier
+   `com.murtahil.app.web` (any reverse-domain name that differs from the App ID). Register.
+4. Open the new Services ID, tick **Sign in with Apple**, and choose **Configure**:
+   - Primary App ID: `com.murtahil.app`
+   - Domains and Subdomains: `fra.cloud.appwrite.io`
+   - Return URLs: the redirect URI from step 1
+
+   Next, Done, Continue, Save. Apple sends the sign-in to Appwrite, not to this site, which is why
+   only Appwrite's domain goes here.
+5. **Keys > +.** Name it `Murtahil Sign in with Apple`, tick **Sign in with Apple**, Configure,
+   choose `com.murtahil.app` as the primary App ID, Save, Continue, Register. **Download** the
+   `.p8` file (Apple offers it once only; keep it somewhere safe) and note the **Key ID**.
+6. Note your **Team ID** (Membership details, or the top right corner of the developer site).
+7. Back in Appwrite's Apple dialog, turn the provider on and fill in:
+   - Services ID: `com.murtahil.app.web`
+   - Key ID: from step 5
+   - Team ID: from step 6
+   - P8 file: the contents of the `.p8` file, from `-----BEGIN PRIVATE KEY-----` to the end
+
+   Update.
+8. Check it: on murtahil.net/delete, choose **Continue with Apple** and sign in with an Apple ID
+   that already uses the iOS app. The page should show that account, with its saved places. A new,
+   empty account means the Services ID is on a different team from the app.
+
+### The Worker's client key
+
+The page asks the Murtahil function (`/billing/status`) whether a Premium subscription still
+renews. When the function has `APP_CLIENT_KEY` set, it refuses callers without it, so the Worker
+needs the same value as a secret. A secret is stored encrypted on Cloudflare and never appears in
+the page or in this repository.
+
+1. Find the value: Appwrite Console > Functions > Murtahil-feedbacker > Settings > Environment
+   variables > `APP_CLIENT_KEY`. If there is no such variable, the function takes calls without a
+   key, and there is nothing to do.
+2. Add it to the Worker, either way:
+   - From this folder: `npx wrangler login` (once), then `npx wrangler secret put APP_CLIENT_KEY`
+     and paste the value when asked. It applies to the deployed Worker straight away.
+   - Or in the Cloudflare dashboard: Workers & Pages > `murtahil` > Settings > Variables and
+     Secrets > Add, type **Secret**, name `APP_CLIENT_KEY`, the value, then Deploy.
+3. For `npm run preview` on this machine, put `APP_CLIENT_KEY=<the value>` in a `.dev.vars` file in
+   this folder (git ignores it).
+4. Check it: sign in on murtahil.net/delete with an account on Premium. The Subscription line shows
+   "Renews on ..." or "Cancelled ...". If the key is missing or wrong, the line is missing and the
+   page asks the visitor to tick "I've cancelled" instead.
+
+Secrets survive later deploys, from a terminal or from Git.
+
+Carrying out a request (within 30 days): for `data`, clear the user's preferences (Auth > Users >
+the user > Preferences) and their feedback and invitation details. For `account`, delete the user,
+which also removes their sessions and plan membership. Then delete the row.
+
+A password can't be reset on the site or in the apps yet. Set `contactEmail` in `content/site.ts`
+and the sign-in form offers it for a forgotten password.
+
 ## Where things are
 
 | path | what |
@@ -58,7 +177,8 @@ links are hidden, and the Apps section and FAQ use their pre-launch copy (`title
 | `content/dictionary.ts` | every visible string, English and Arabic |
 | `content/cities.ts` | the eleven cities: modes, kinds of times, counts, landmark captions |
 | `content/site.ts` | the site's address, the web app's address and launch switch, the waitlist's WhatsApp number, a contact email |
-| `app/[locale]/` | the layout (fonts, theme script, metadata) and the homepage |
+| `app/[locale]/` | the layout (fonts, theme script, metadata), the homepage and `delete/` |
+| `lib/account.ts`, `components/delete-account.tsx` | the account deletion page's Appwrite calls and UI |
 | `components/sections/` | one file per homepage section |
 | `components/city-explorer.tsx` | the interactive city section |
 | `app/globals.css` | identity tokens for both themes, Tailwind theme |

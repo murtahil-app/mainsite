@@ -5,11 +5,25 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { List, Moon, Sun, X } from "@phosphor-icons/react";
 import type { Dictionary } from "@/content/dictionary";
 import { localeNames, otherLocales, type Locale } from "@/content/i18n";
+import { site } from "@/content/site";
 import { Lockup } from "./lockup";
-import { container } from "./ui";
+import { button, container } from "./ui";
+import { WaitlistButton } from "./waitlist-button";
 import { WebAppButton } from "./web-app-button";
 
 const THEME_KEY = "murtahil-theme";
+
+/** Before launch the header's call to action is the waitlist; after, the web app. */
+function HeaderAction({ t, className, compact = false }: { t: Dictionary; className?: string; compact?: boolean }) {
+  if (site.webAppPublic) return <WebAppButton label={t.nav.openApp} soon={t.nav.soon} compact={compact} className={className} />;
+  return (
+    <WaitlistButton
+      label={t.waitlist.button}
+      message={t.waitlist.message}
+      className={`${button.primary} ${compact ? "!h-10 !px-4" : ""} ${className ?? ""}`}
+    />
+  );
+}
 
 export function SiteHeader({ t, locale }: { t: Dictionary; locale: Locale }) {
   const [open, setOpen] = useState(false);
@@ -104,7 +118,7 @@ export function SiteHeader({ t, locale }: { t: Dictionary; locale: Locale }) {
             <Sun size={20} className="only-dark" aria-hidden />
           </button>
           <span className="ms-2 hidden md:block">
-            <WebAppButton label={t.nav.openApp} soon={t.nav.soon} compact />
+            <HeaderAction t={t} compact />
           </span>
           <button
             ref={toggleRef}
@@ -156,7 +170,7 @@ export function SiteHeader({ t, locale }: { t: Dictionary; locale: Locale }) {
                 ))}
               </span>
               <span className="mt-3 flex md:hidden">
-                <WebAppButton label={t.nav.openApp} soon={t.nav.soon} className="flex-1" />
+                <HeaderAction t={t} className="flex-1" />
               </span>
             </nav>
           </motion.div>

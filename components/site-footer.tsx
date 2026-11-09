@@ -82,6 +82,9 @@ export function SiteFooter({ t, locale }: { t: Dictionary; locale: Locale }) {
             <a href={`/privacy${legalSuffix[locale]}`} className="transition-colors hover:text-ink">
               {t.footer.privacy}
             </a>
+            <a href={`/${locale}/delete/`} className="transition-colors hover:text-ink">
+              {t.footer.deleteAccount}
+            </a>
           </div>
           <p>{t.footer.mapCredit}</p>
         </div>
