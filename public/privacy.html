@@ -1,41 +1,47 @@
 <h2>Privacy Policy</h2>
-<p><i>Effective 14 September 2026</i></p>
-<p>This policy explains what Murtahil collects, why, and what you can do about it. We collect as little as the app needs to work and to run the early access programme.</p>
+<p><i>Effective 10 November 2026</i></p>
+<p>This policy explains what the Murtahil apps for Android, Wear OS and iPhone collect, why, who else handles it, and what you can do about it. We collect what the app needs to work, and we do not sell your personal data.</p>
 
 <h3>1. What we collect</h3>
-<p><b>Account.</b> Your email address, full name and a password, or the name and email that Google provides when you sign in with Google. Passwords are stored only in hashed form by our account provider.</p>
-<p><b>Invitation.</b> Your invite code, the phone model, the Android version, how you signed in, and your name and email. These are written to the invitation record so we know which tester is behind which code.</p>
-<p><b>Feedback.</b> The message you send, with the app version, phone model, Android version, region, language and invite code attached, so we can reproduce what you report.</p>
-<p><b>Location.</b> When you allow it, your phone's location is used to set your starting point, to list nearby stops, and to guide you during navigation. Coordinates are sent to our routing servers to plan a route or find stops; they are not stored against your account.</p>
-<p><b>Assistant.</b> If you use the in-app assistant, the messages you type and the tools it calls on your behalf are sent to the AI provider that powers it. Do not put personal details in those messages.</p>
-<p><b>On this phone.</b> Saved places, recent searches, language, region and cached line data stay on your device.</p>
+<p><b>Account.</b> Your email address, full name and a password, or the name and email that Google or Apple provides when you sign in with them. Passwords are stored only in hashed form by our account provider. We also keep whether your email is verified and which plan you are on (Free, Premium or beta).</p>
+<p><b>Saved with your account.</b> Your saved places, your most recent searches and your assistant conversations are stored with your account, so they appear on every phone you sign in on.</p>
+<p><b>Location.</b> When you allow it, your location is used to set your starting point, show you on the map, list nearby stops, guide you during navigation and notice when you have boarded a bus you are tracking. While you track a bus or navigate a trip and leave the app, it keeps reading your location in the background for that trip only; on Android a notification shows while it does. Coordinates are sent to the services in section 3 to answer each request. We do not keep a history of your location.</p>
+<p><b>Transit requests.</b> When you are signed in, each request the app makes to our transit servers carries a short-lived token that names your account, this device and the city. The servers count requests per account, day and type, to stop abuse and plan capacity.</p>
+<p><b>Assistant.</b> If you use the in-app assistant, what you type, and what its tools look up for you (such as nearby stops, routes or your saved places), is sent to our server and passed to one of the AI providers in section 3. Do not put sensitive personal details in those messages. Each answer has a Report button; a report sends us the answer and the question before it.</p>
+<p><b>Voice mode.</b> On Premium and the beta, voice mode records your voice through the microphone only while it is listening. The recording is sent to a speech-to-text provider, and the assistant's reply to a text-to-speech provider. We do not keep the recordings.</p>
+<p><b>Purchases.</b> Premium is bought through Google Play or the App Store. We receive the purchase's identifiers, product and status, check them with the store and keep a subscription record linked to your account. We never see your card or payment details.</p>
+<p><b>Ads.</b> On the free plan, some screens show ads from Google AdMob. AdMob collects your device's advertising identifier, IP address, device information and how you interact with ads, and may use them to choose ads, under Google's own policy. Premium and beta accounts see no ads.</p>
+<p><b>Feedback.</b> The message you send through Send Feedback, with the app version, device model, operating system version, region, language and your account ID attached, so we can reproduce what you report.</p>
+<p><b>On this device.</b> Your language, region, theme, settings and cached line data stay on the device. Your sign-in session is stored encrypted, under a key held in the device's secure hardware, and is left out of device backups.</p>
+<p><b>Wear OS.</b> The watch app receives from your phone your region, saved places, the bus you are tracking, your navigation steps, and a token of its own for our transit servers.</p>
 
 <h3>2. Why we use it</h3>
-<p>To run your account and the invitation programme, to plan routes and show what is near you, to act on your feedback, and to keep the beta secure. We do not sell your data and do not use it for advertising.</p>
+<p>To run your account and keep your saved data in step across devices, to plan routes and show live times and stops near you, to answer the assistant, to verify purchases and give you the plan you paid for, to show ads on the free plan, to act on your feedback and reports, and to keep the service secure and fair to everyone. We do not sell your personal data.</p>
 
 <h3>3. Who processes it</h3>
 <ul>
-<li><b>Appwrite</b> (Frankfurt, Germany) hosts accounts, invitations, service alerts and feedback.</li>
-<li><b>Google</b> handles sign-in when you choose Sign in with Google.</li>
-<li><b>MapTiler</b> serves the map tiles your screen requests.</li>
-<li><b>Our routing servers</b> receive the coordinates needed to plan a route or find nearby stops.</li>
-<li><b>AI providers</b> receive assistant conversations only when you use the assistant.</li>
+<li><b>Appwrite</b> (Frankfurt, Germany) hosts accounts, saved data, subscription records, feedback and service alerts, and runs our server.</li>
+<li><b>Our transit servers</b>, hosted with providers including Cloudflare and Vercel, receive the coordinates, stops and lines needed to plan routes and show arrivals.</li>
+<li><b>Public transport operators' information services</b> receive the stop, line or area you ask about, to return live times and service information.</li>
+<li><b>OpenStreetMap Nominatim, OSRM and MapTiler</b> receive place searches, the points of walking routes and the map area on your screen.</li>
+<li><b>AI providers</b>: Google (Gemini), Groq, Mistral AI, Cloudflare Workers AI, OpenRouter, Z.ai and SambaNova receive assistant conversations, whichever has capacity at the time; Google, Groq and Mistral AI receive voice mode audio and text. They receive them only when you use the assistant.</li>
+<li><b>Google</b> handles Sign in with Google, Google Play purchases and AdMob ads. <b>Apple</b> handles Sign in with Apple and App Store purchases.</li>
 </ul>
 
 <h3>4. How long we keep it</h3>
-<p>Account and invitation records are kept for as long as you take part in the early access programme. Feedback is kept while it is useful for improving the app. Route requests are not tied to your account and are not kept beyond what is needed to answer them.</p>
+<p>Your account and the data saved with it are kept until you delete the account. Subscription records are kept while the subscription runs and afterwards for as long as accounting and the law require. Feedback and reports are kept while they help us improve the app. Request counts are kept as daily totals for as long as they are needed to prevent abuse and plan capacity. Location is used to answer each request and is not stored.</p>
 
 <h3>5. Your choices</h3>
-<p>You can change your password, sign out, or delete your account from the Profile tab. Deleting your account removes it and clears your name, email and sign-in method from the invitation record. You can withdraw location permission at any time in your phone's settings. You can ask us what we hold about you, or ask for it to be corrected or deleted, through Send Feedback.</p>
+<p>You can change your password, sign out, or delete your account in the app (Profile, then your account, then Delete account), or on the web at <a href="https://murtahil.net/en/delete/">murtahil.net/delete</a>. Deleting your account deletes it with the places, searches and conversations saved with it. It does not cancel a subscription: cancel that in Google Play or the App Store. You can turn background tracking off in Profile, withdraw location or microphone permission in your device's settings, and reset or delete your advertising identifier there too. You can ask us what we hold about you, or ask for it to be corrected or deleted, as described in section 9.</p>
 
 <h3>6. Security</h3>
-<p>Data travels over encrypted connections. Your session is stored on your phone in the app's private storage. No system is perfectly secure; tell us at once if you think your account has been misused.</p>
+<p>Every connection the app makes is encrypted. Passwords are stored only hashed, your session is encrypted on your device, and the keys our server uses never ship inside the app. No system is perfectly secure; tell us at once if you think your account has been misused.</p>
 
 <h3>7. Children</h3>
-<p>The early access programme is for invited adults. We do not knowingly collect data from children.</p>
+<p>Murtahil is not directed at children under 13, and we do not knowingly collect personal data from them. If you believe a child has given us personal data, contact us and we will delete it.</p>
 
 <h3>8. Changes</h3>
-<p>We will show you an updated policy in the app before it takes effect.</p>
+<p>When this policy changes we will update the date above and show you the new policy in the app before it takes effect.</p>
 
 <h3>9. Contact</h3>
-<p>Questions about privacy can be sent through <b>Send Feedback</b> in the Profile tab.</p>
+<p>Questions and requests about privacy can be sent through <b>Send Feedback</b> in the Profile tab, or to the developer email shown on Murtahil's Google Play and App Store pages.</p>
